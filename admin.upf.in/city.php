@@ -111,8 +111,66 @@
 
         <!-- Right bar overlay-->
         <div class="rightbar-overlay"></div>
+        <button type="button" class="btn btn-primary btn-sm waves-effect waves-light show-upf-success-popup" style="display:none;" data-toggle="modal" data-target=".upf-modal-success-popup"></button>
+        <button type="button" class="btn btn-primary btn-sm waves-effect waves-light show-upf-alert-popup" style="display:none;" data-toggle="modal" data-target=".upf-modal-alert-popup"></button>
         <?php include_once("layouts/footer_links.php"); ?>
-        
+        <script>
+            $(document).ready(function(){
+
+                // add city form
+                $('.upf-add-city').on('submit', function(e){
+                  e.preventDefault();
+                  $.ajax({
+                    url         : "tva/hewhoremains_city.php",
+                    method      : "post",
+                    data        : new FormData(this),
+                    contentType : false,
+                    processData : false,
+                    // dataType : 'JSON',
+                    success     : function (argument) {
+                      // console.log(argument);
+                        argument=argument.trim();
+                        var message="";
+                        if(argument=="success"){
+                            message="City saved.";
+                            $('.show-upf-success-popup').click();
+                            $(".succMessage").html(message);
+                        }else if(argument=="duplicate"){
+                            message="yeah empty";
+                            $('.show-upf-alert-popup').click();
+                        }else if(argument=="error"){
+                            message="yeah empty";
+                            $('.show-upf-alert-popup').click();
+                        }else if(argument=="empty"){
+                            message="yeah empty";
+                            $('.show-upf-alert-popup').click();
+                            $(".errorMessage").html(message);
+                        }else if(argument=="logout"){
+                            message="Oh no logout";
+                            $('.show-upf-alert-popup').click();
+                            $(".errorMessage").html(message);
+                        }
+
+                        // window.location.reload;
+                    }
+                  }); 
+                });
+
+
+                load_city();
+                function load_city(){
+                    $.ajax({
+                      url       : "kattegat/useroath.php",
+                      method    : "POST",
+                      data      : {load_city:1},
+                      // dataType  : "JSON",
+                      success   : function(city){
+                        // console.log(city);
+                      }
+                    });
+                }
+            });
+        </script>
     </body>
 </html>
 <div class="modal fade bs-example-modal-center" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
@@ -132,13 +190,83 @@
                                 <div class="form-group row">
                                     <label for="example-text-input" class="col-md-2 col-form-label">City Name</label>
                                     <div class="col-md-10">
-                                        <input class="form-control" type="text" placeholder="Enter city name" id="example-text-input" spellcheck="false" data-ms-editor="true">
+                                        <form class="upf-add-city">
+                                        <input class="form-control" type="text" name="add-city" placeholder="Enter city name" id="example-text-input" spellcheck="false" data-ms-editor="true">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-md-12">
+                                        <input type="hidden"  name="add-city-btn">
                                         <button type="submit" class="btn btn-primary mt-3 mt-sm-0">Submit</button>
                                     </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+
+<div class="modal fade upf-modal-success-popup" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-modal="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card alert border p-0 mb-0">
+                            <div class="card-header bg-soft-success">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                                <h5 class="font-size-16 text-success my-1">Success Alert</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="text-center">
+                                    <div class="mb-4">
+                                        <i class="mdi mdi-checkbox-marked-circle-outline display-4 text-success"></i>
+                                    </div>
+                                    <h4 class="alert-heading font-18">Well done!</h4>
+                                    <p class="succMessage"></p>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        Ok
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+<div class="modal fade upf-modal-alert-popup" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-modal="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card alert border mt-4 mt-lg-0 p-0 mb-0">
+                            <div class="card-header bg-soft-danger">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                                <h5 class="font-size-16 text-danger my-1">Danger Alert</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="text-center">
+                                    <div class="mb-4">
+                                        <i class="mdi mdi-alert-outline display-4 text-danger"></i>
+                                    </div>
+                                    <h4 class="alert-heading font-18">Something went wrong</h4>
+                                    <p class="errorMessage"></p>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        Ok
+                                    </button>
                                 </div>
                             </div>
                         </div>
