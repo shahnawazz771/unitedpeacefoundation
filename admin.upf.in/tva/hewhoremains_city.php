@@ -51,15 +51,15 @@ class Earth616_city extends multiverse_con{
 				$slno++;
 				$xavier.='
 					<tr>
-						<td>'.$slno.'</td>
+						<td class="text-center">'.$slno.'</td>
 						<td>'.$row['city_name'].'</td>
 						<td>'.$row['Uname'].'</td>
 						<td>'.date('d M Y h:i:s a', strtotime($row['createdat'])).'</td>
 						<td>'.$row['Uname'].'</td>
 						<td>'.date('d M Y h:i:s a', strtotime($row['updatedat'])).'</td>
 						<td>
-							<button type="button" class="btn btn-info waves-effect waves-light"><i class="mdi mdi-pencil-outline"></i></button>
-							<button type="button" class="btn btn-danger waves-effect waves-light"><i class="mdi mdi-trash-can-outline"></i></button>
+							<a href="javascript:void(0)" class="btn btn-info waves-effect waves-light upf-edit-city" id="'.$row['city_id'].'"><i class="mdi mdi-pencil-outline"></i></a>
+							<a href="javascript:void(0)" class="btn btn-danger waves-effect waves-light upf-delet-city" id="'.$row['city_id'].'"><i class="mdi mdi-trash-can-outline"></i></a>
 						</td>
 					</tr>
 				';

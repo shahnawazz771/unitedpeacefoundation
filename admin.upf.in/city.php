@@ -140,7 +140,6 @@
                       data      : {load_city:1},
                       dataType  : "JSON",
                       success   : function(city){
-                        console.log(city);
                         $('.upf-city-table-data').html(city);
                       }
                     });
