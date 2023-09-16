@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="utf-8" />
-        <title>City | United Peace Foundation</title>
+        <title>Info | United Peace Foundation</title>
         <?php include_once("layouts/header_links.php"); ?>
     </head>
     <body data-sidebar="dark">
@@ -26,11 +26,11 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box d-flex align-items-center justify-content-between">
-                                    <h4 class="mb-0 font-size-18">City</h4>
+                                    <h4 class="mb-0 font-size-18">Info</h4>
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
                                             <li class="breadcrumb-item"><a href="javascript: void(0);">United Peace Foundation</a></li>
-                                            <li class="breadcrumb-item active">City</li>
+                                            <li class="breadcrumb-item active">Info</li>
                                         </ol>
                                     </div>
                                 </div>
@@ -43,7 +43,7 @@
                             <div class="col-sm-12 col-xl-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="header-title"><button type="button" class="btn btn-primary btn-sm waves-effect waves-light" data-toggle="modal" data-target=".bs-example-modal-center">Add City</button></h4>        
+                                        <h4 class="header-title"><button type="button" class="btn btn-primary btn-sm waves-effect waves-light" data-toggle="modal" data-target=".bs-example-modal-center">Add Info</button></h4>        
                                         <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                             <thead>
                                             <tr>
@@ -94,7 +94,7 @@
                                 </div>
                             </div>    
                         </div>
-
+                        
                         <!-- end row -->
                         
                     </div> <!-- container-fluid -->
@@ -119,7 +119,7 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title mt-0">Add City</h5>
+                <h5 class="modal-title mt-0">Add Info</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -130,9 +130,9 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="form-group row">
-                                    <label for="example-text-input" class="col-md-2 col-form-label">City Name</label>
+                                    <label for="example-text-input" class="col-md-2 col-form-label">Info</label>
                                     <div class="col-md-10">
-                                        <input class="form-control" type="text" placeholder="Enter city name" id="example-text-input" spellcheck="false" data-ms-editor="true">
+                                        <input class="form-control" type="text" placeholder="Enter inforamtion" id="example-text-input" spellcheck="false" data-ms-editor="true">
                                     </div>
                                 </div>
                                 <div class="form-group row">

@@ -14,14 +14,22 @@
                             </li>
                             <li>
                                 <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class="mdi mdi-email-multiple-outline"></i>
+                                    <i class="mdi mdi-key-star"></i>
                                     <span>Master</span>
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
                                     <li><a href="city.php">City</a></li>
-                                    <li><a href="email-read.html">Email Read</a></li>
-                                    <li><a href="email-compose.html">Email Compose</a></li>
                                 </ul>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="info.php">Info</a></li>
+                                </ul>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="state.php">State</a></li>
+                                </ul>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="user.php">User</a></li>
+                                </ul>
+
                             </li>
                         </ul>
                     </div>
