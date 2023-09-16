@@ -32,10 +32,52 @@ class Earth616_city extends multiverse_con{
 
 		return $xavier;
 	}
+	public function show_city(){
+		$xavier="";
+		$xavier_getquery=mysqli_query($this->upf_dbs, "
+			SELECT 
+				C.id city_id,
+				C.name city_name,
+				U.name Uname,
+				C.created_at createdat,
+				C.updated_at updatedat
+			FROM city C 
+			LEFT JOIN users U 
+			ON C.created_by=U.id 
+		");
+		if(mysqli_num_rows($xavier_getquery)>0){
+			$slno=0;
+			foreach($xavier_getquery as $row){
+				$slno++;
+				$xavier.='
+					<tr>
+						<td>'.$slno.'</td>
+						<td>'.$row['city_name'].'</td>
+						<td>'.$row['Uname'].'</td>
+						<td>'.date('d M Y h:i:s a', strtotime($row['createdat'])).'</td>
+						<td>'.$row['Uname'].'</td>
+						<td>'.date('d M Y h:i:s a', strtotime($row['updatedat'])).'</td>
+						<td>
+							<button type="button" class="btn btn-info waves-effect waves-light"><i class="mdi mdi-pencil-outline"></i></button>
+							<button type="button" class="btn btn-danger waves-effect waves-light"><i class="mdi mdi-trash-can-outline"></i></button>
+						</td>
+					</tr>
+				';
+			}
+		}else{
+			$xavier='
+				<tr>
+					<td>No record found!!!</td>
+				</tr>
+			';
+		}
+		return $xavier;
+	}
 }
 #<--------------------------------------------------------------------------------------------------------->
 #<--------------------------------------Object sections of city class-------------------------------------->
 #<--------------------------------------------------------------------------------------------------------->
+// Add city
 if(isset($_POST['add-city-btn'])){
 	$out='';
 	$city_name = $_POST['add-city'];
@@ -45,9 +87,21 @@ if(isset($_POST['add-city-btn'])){
 		// $out="logout";
 	}else{
 		$illuminati=new Earth616_city();
-		$out->illuminati->add_city($city_name);
+		$out=$illuminati->add_city($city_name);
 	}
 	echo $out;
 }
 
+// Load City
+if(isset($_POST['load_city'])){
+	$out='';
+
+	// if (empty(@$_SESSION['upf_login_info'])){
+		// $out="logout";
+	// }else{
+		$illuminati=new Earth616_city();
+		$out=$illuminati->show_city();
+	// }
+	echo json_encode($out);
+}
 ?>

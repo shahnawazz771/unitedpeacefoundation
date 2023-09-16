@@ -47,46 +47,18 @@
                                         <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                             <thead>
                                             <tr>
-                                                <th>Name</th>
-                                                <th>Position</th>
-                                                <th>Office</th>
-                                                <th>Age</th>
-                                                <th>Start date</th>
-                                                <th>Salary</th>
+                                                <th class="text-center">Slno</th>
+                                                <th class="text-center">City name</th>
+                                                <th class="text-center">Created by</th>
+                                                <th class="text-center">Created at</th>
+                                                <th class="text-center">Updated by</th>
+                                                <th class="text-center">Updated at</th>
+                                                <th class="text-center">Action</th>
                                             </tr>
                                             </thead>        
-                                            <tbody>
+                                            <tbody class="upf-city-table-data">
                                             <tr>
-                                                <td>Jonas Alexander</td>
-                                                <td>Developer</td>
-                                                <td>San Francisco</td>
-                                                <td>30</td>
-                                                <td>2010/07/14</td>
-                                                <td>$86,500</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Shad Decker</td>
-                                                <td>Regional Director</td>
-                                                <td>Edinburgh</td>
-                                                <td>51</td>
-                                                <td>2008/11/13</td>
-                                                <td>$183,000</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Michael Bruce</td>
-                                                <td>Javascript Developer</td>
-                                                <td>Singapore</td>
-                                                <td>29</td>
-                                                <td>2011/06/27</td>
-                                                <td>$183,000</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Donna Snider</td>
-                                                <td>Customer Support</td>
-                                                <td>New York</td>
-                                                <td>27</td>
-                                                <td>2011/01/25</td>
-                                                <td>$112,000</td>
+                                                <td>loading...</td>
                                             </tr>
                                             </tbody>
                                         </table>                                        
@@ -132,6 +104,8 @@
                         argument=argument.trim();
                         var message="";
                         if(argument=="success"){
+                            load_city();
+                            $('.addcitybtnclose').click();
                             message="City saved.";
                             $('.show-upf-success-popup').click();
                             $(".succMessage").html(message);
@@ -156,16 +130,18 @@
                   }); 
                 });
 
+                // Load city
 
                 load_city();
                 function load_city(){
                     $.ajax({
-                      url       : "kattegat/useroath.php",
+                      url       : "tva/hewhoremains_city.php",
                       method    : "POST",
                       data      : {load_city:1},
-                      // dataType  : "JSON",
+                      dataType  : "JSON",
                       success   : function(city){
-                        // console.log(city);
+                        console.log(city);
+                        $('.upf-city-table-data').html(city);
                       }
                     });
                 }
@@ -178,7 +154,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title mt-0">Add City</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="addcitybtnclose" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
