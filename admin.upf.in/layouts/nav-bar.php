@@ -19,14 +19,8 @@
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
                                     <li><a href="city.php">City</a></li>
-                                </ul>
-                                <ul class="sub-menu" aria-expanded="false">
                                     <li><a href="info.php">Info</a></li>
-                                </ul>
-                                <ul class="sub-menu" aria-expanded="false">
                                     <li><a href="state.php">State</a></li>
-                                </ul>
-                                <ul class="sub-menu" aria-expanded="false">
                                     <li><a href="user.php">User</a></li>
                                 </ul>
 
