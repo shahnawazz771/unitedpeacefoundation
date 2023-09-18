@@ -7,141 +7,60 @@
   <title> Charity | Teamplate</title>
   <meta name="description" content>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
-
-  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-  <link rel="stylesheet" href="assets/css/slicknav.css">
-  <link rel="stylesheet" href="assets/css/flaticon.css">
-  <link rel="stylesheet" href="assets/css/progressbar_barfiller.css">
-  <link rel="stylesheet" href="assets/css/gijgo.css">
-  <link rel="stylesheet" href="assets/css/animate.min.css">
-  <link rel="stylesheet" href="assets/css/animated-headline.css">
-  <link rel="stylesheet" href="assets/css/magnific-popup.css">
-  <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
-  <link rel="stylesheet" href="assets/css/themify-icons.css">
-  <link rel="stylesheet" href="assets/css/slick.css">
-  <link rel="stylesheet" href="assets/css/nice-select.css">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <?php include_once("layouts/link-header.php");?>
   <script
-    nonce="bf9276f2-36b4-4157-a835-192214f2afca">(function (w, d) { !function (a, b, c, d) { a[c] = a[c] || {}; a[c].executed = []; a.zaraz = { deferred: [], listeners: [] }; a.zaraz.q = []; a.zaraz._f = function (e) { return async function () { var f = Array.prototype.slice.call(arguments); a.zaraz.q.push({ m: e, a: f }) } }; for (const g of ["track", "set", "debug"]) a.zaraz[g] = a.zaraz._f(g); a.zaraz.init = () => { var h = b.getElementsByTagName(d)[0], i = b.createElement(d), j = b.getElementsByTagName("title")[0]; j && (a[c].t = b.getElementsByTagName("title")[0].text); a[c].x = Math.random(); a[c].w = a.screen.width; a[c].h = a.screen.height; a[c].j = a.innerHeight; a[c].e = a.innerWidth; a[c].l = a.location.href; a[c].r = b.referrer; a[c].k = a.screen.colorDepth; a[c].n = b.characterSet; a[c].o = (new Date).getTimezoneOffset(); if (a.dataLayer) for (const n of Object.entries(Object.entries(dataLayer).reduce(((o, p) => ({ ...o[1], ...p[1] })), {}))) zaraz.set(n[0], n[1], { scope: "page" }); a[c].q = []; for (; a.zaraz.q.length;) { const q = a.zaraz.q.shift(); a[c].q.push(q) } i.defer = !0; for (const r of [localStorage, sessionStorage]) Object.keys(r || {}).filter((t => t.startsWith("_zaraz_"))).forEach((s => { try { a[c]["z_" + s.slice(7)] = JSON.parse(r.getItem(s)) } catch { a[c]["z_" + s.slice(7)] = r.getItem(s) } })); i.referrerPolicy = "origin"; i.src = "/cdn-cgi/zaraz/s.js?z=" + btoa(encodeURIComponent(JSON.stringify(a[c]))); h.parentNode.insertBefore(i, h) };["complete", "interactive"].includes(b.readyState) ? zaraz.init() : a.addEventListener("DOMContentLoaded", zaraz.init) }(w, d, "zarazData", "script"); })(window, document);</script>
+    nonce="ff9f9c6d-7b7c-4c21-8cfe-bc1f791605a6">(function (w, d) { !function (a, b, c, d) { a[c] = a[c] || {}; a[c].executed = []; a.zaraz = { deferred: [], listeners: [] }; a.zaraz.q = []; a.zaraz._f = function (e) { return async function () { var f = Array.prototype.slice.call(arguments); a.zaraz.q.push({ m: e, a: f }) } }; for (const g of ["track", "set", "debug"]) a.zaraz[g] = a.zaraz._f(g); a.zaraz.init = () => { var h = b.getElementsByTagName(d)[0], i = b.createElement(d), j = b.getElementsByTagName("title")[0]; j && (a[c].t = b.getElementsByTagName("title")[0].text); a[c].x = Math.random(); a[c].w = a.screen.width; a[c].h = a.screen.height; a[c].j = a.innerHeight; a[c].e = a.innerWidth; a[c].l = a.location.href; a[c].r = b.referrer; a[c].k = a.screen.colorDepth; a[c].n = b.characterSet; a[c].o = (new Date).getTimezoneOffset(); if (a.dataLayer) for (const n of Object.entries(Object.entries(dataLayer).reduce(((o, p) => ({ ...o[1], ...p[1] })), {}))) zaraz.set(n[0], n[1], { scope: "page" }); a[c].q = []; for (; a.zaraz.q.length;) { const q = a.zaraz.q.shift(); a[c].q.push(q) } i.defer = !0; for (const r of [localStorage, sessionStorage]) Object.keys(r || {}).filter((t => t.startsWith("_zaraz_"))).forEach((s => { try { a[c]["z_" + s.slice(7)] = JSON.parse(r.getItem(s)) } catch { a[c]["z_" + s.slice(7)] = r.getItem(s) } })); i.referrerPolicy = "origin"; i.src = "/cdn-cgi/zaraz/s.js?z=" + btoa(encodeURIComponent(JSON.stringify(a[c]))); h.parentNode.insertBefore(i, h) };["complete", "interactive"].includes(b.readyState) ? zaraz.init() : a.addEventListener("DOMContentLoaded", zaraz.init) }(w, d, "zarazData", "script"); })(window, document);</script>
 </head>
 
 <body>
-
-  <div id="preloader-active">
-    <div class="preloader d-flex align-items-center justify-content-center">
-      <div class="preloader-inner position-relative">
-        <div class="preloader-circle"></div>
-        <div class="preloader-img pere-text">
-          <img src="assets/img/logo/loder.png" alt>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <header>
-
-    <div class="header-area">
-      <div class="main-header ">
-        <div class="header-top d-none d-lg-block">
-          <div class="container-fluid">
-            <div class="col-xl-12">
-              <div class="row d-flex justify-content-between align-items-center">
-                <div class="header-info-left d-flex">
-                  <ul>
-                    <li>Phone: +99 (0) 101 0000 888</li>
-                    <li>Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__"
-                        data-cfemail="b5dbdac7d0c5d9ccf5ccdac0c7d1dad8d4dcdb9bd6dad8">[email&#160;protected]</a></li>
-                  </ul>
-                  <div class="header-social">
-                    <ul>
-                      <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                      <li><a href="https://www.facebook.com/sai4ull"><i class="fab fa-facebook-f"></i></a></li>
-                      <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                      <li> <a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="header-info-right d-flex align-items-center">
-                  <div class="select-this">
-                    <form action="#">
-                      <div class="select-itms">
-                        <select name="select" id="select1">
-                          <option value>English</option>
-                          <option value>Bangla</option>
-                          <option value>Arabic</option>
-                          <option value>Hindi</option>
-                        </select>
-                      </div>
-                    </form>
-                  </div>
-                  <ul class="contact-now">
-                    <li><a href="#">Subscribe Now</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="header-bottom  header-sticky">
-          <div class="container-fluid">
-            <div class="row align-items-center">
-
-              <div class="col-xl-2 col-lg-2">
-                <div class="logo">
-                  <a href="index.html"><img src="assets/img/logo/logo.png" alt></a>
-                </div>
-              </div>
-              <div class="col-xl-10 col-lg-10">
-                <div class="menu-wrapper  d-flex align-items-center justify-content-end">
-
-                  <div class="main-menu d-none d-lg-block">
-                    <nav>
-                      <ul id="navigation">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="program.html">latest causes</a></li>
-                        <li><a href="events.html">social events </a></li>
-                        <li><a href="blog.html">Blog</a>
-                          <ul class="submenu">
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="blog_details.html">Blog Details</a></li>
-                            <li><a href="elements.html">Element</a></li>
-                          </ul>
-                        </li>
-                        <li><a href="contact.html">Contact</a></li>
-                      </ul>
-                    </nav>
-                  </div>
-
-                  <div class="header-right-btn d-none d-lg-block ml-20">
-                    <a href="contact.html" class="btn header-btn">Donate</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-12">
-                <div class="mobile_menu d-block d-lg-none"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </header>
+  <?php include_once("layouts/header.php");?>
 
   <main>
 
-    <div class="slider-area2">
-      <div class="slider-height2 d-flex align-items-center">
-        <div class="container">
-          <div class="row">
-            <div class="col-xl-12">
-              <div class="hero-cap hero-cap2 pt-20 text-center">
-                <h2>About US</h2>
+    <div class="slider-area">
+      <div class="slider-active">
+
+        <div class="single-slider slider-height d-flex align-items-center">
+          <div class="container">
+            <div class="row">
+              <div class="col-xl-6 col-lg-6 col-md-8 col-sm-10">
+                <div class="hero__caption">
+                  <h1 data-animation="fadeInUp" data-delay=".6s">Our Helping to<br> the world.</h1>
+                  <P data-animation="fadeInUp" data-delay=".8s">Onsectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut bore et dolore magnt, sed do eiusmod.</P>
+
+                  <div class="hero__btn">
+                    <a href="industries.html" class="btn hero-btn mb-10" data-animation="fadeInLeft"
+                      data-delay=".8s">Donate</a>
+                    <a href="industries.html" class="cal-btn ml-15" data-animation="fadeInRight" data-delay="1.0s">
+                      <i class="flaticon-null"></i>
+                      <p>+12 1325 41</p>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="single-slider slider-height d-flex align-items-center">
+          <div class="container">
+            <div class="row">
+              <div class="col-xl-6 col-lg-6 col-md-8 col-sm-10">
+                <div class="hero__caption">
+                  <h1 data-animation="fadeInUp" data-delay=".6s">Our Helping to<br> the world.</h1>
+                  <P data-animation="fadeInUp" data-delay=".8s">Onsectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut bore et dolore magnt, sed do eiusmod.</P>
+
+                  <div class="hero__btn">
+                    <a href="industries.html" class="btn hero-btn mb-10" data-animation="fadeInLeft"
+                      data-delay=".8s">Donate</a>
+                    <a href="industries.html" class="cal-btn ml-15" data-animation="fadeInRight" data-delay="1.0s">
+                      <i class="flaticon-null"></i>
+                      <p>+12 1325 41</p>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -236,6 +155,264 @@
     </section>
 
 
+    <div class="our-cases-area section-padding30">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-xl-6 col-lg-7 col-md-10 col-sm-10">
+
+            <div class="section-tittle text-center mb-80">
+              <span>Our Cases you can see</span>
+              <h2>Explore our latest causes that we works </h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="single-cases mb-40">
+              <div class="cases-img">
+                <img src="assets/img/gallery/case1.png" alt>
+              </div>
+              <div class="cases-caption">
+                <h3><a href="#">Ensure Education For Every Poor Children</a></h3>
+
+                <div class="single-skill mb-15">
+                  <div class="bar-progress">
+                    <div id="bar1" class="barfiller">
+                      <div class="tipWrap">
+                        <span class="tip"></span>
+                      </div>
+                      <span class="fill" data-percentage="70"></span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="prices d-flex justify-content-between">
+                  <p>Raised:<span> $20,000</span></p>
+                  <p>Goal:<span> $35,000</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="single-cases mb-40">
+              <div class="cases-img">
+                <img src="assets/img/gallery/case2.png" alt>
+              </div>
+              <div class="cases-caption">
+                <h3><a href="#">Providing Healthy Food For The Children</a></h3>
+
+                <div class="single-skill mb-15">
+                  <div class="bar-progress">
+                    <div id="bar2" class="barfiller">
+                      <div class="tipWrap">
+                        <span class="tip"></span>
+                      </div>
+                      <span class="fill" data-percentage="25"></span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="prices d-flex justify-content-between">
+                  <p>Raised:<span> $20,000</span></p>
+                  <p>Goal:<span> $35,000</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="single-cases mb-40">
+              <div class="cases-img">
+                <img src="assets/img/gallery/case3.png" alt>
+              </div>
+              <div class="cases-caption">
+                <h3><a href="#">Supply Drinking Water For The People</a></h3>
+
+                <div class="single-skill mb-15">
+                  <div class="bar-progress">
+                    <div id="bar3" class="barfiller">
+                      <div class="tipWrap">
+                        <span class="tip"></span>
+                      </div>
+                      <span class="fill" data-percentage="50"></span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="prices d-flex justify-content-between">
+                  <p>Raised:<span> $20,000</span></p>
+                  <p>Goal:<span> $35,000</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <section class="featured-job-area section-padding30 section-bg2"
+      data-background="assets/img/gallery/section_bg03.png">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-xl-7 col-lg-9 col-md-10 col-sm-12">
+
+            <div class="section-tittle text-center mb-80">
+              <span>What we are boing</span>
+              <h2>We arrange many social events for charity donations</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-9 col-md-12">
+
+            <div class="single-job-items mb-30">
+              <div class="job-items">
+                <div class="company-img">
+                  <a href="#"><img src="assets/img/gallery/socialEvents1.png" alt></a>
+                </div>
+                <div class="job-tittle">
+                  <a href="#">
+                    <h4>Donation is Hope</h4>
+                  </a>
+                  <ul>
+                    <li><i class="far fa-clock"></i>8:30 - 9:30am</li>
+                    <li><i class="fas fa-sort-amount-down"></i>18.01.2021</li>
+                    <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-9 col-md-12">
+
+            <div class="single-job-items mb-30">
+              <div class="job-items">
+                <div class="company-img">
+                  <a href="#"><img src="assets/img/gallery/socialEvents2.png" alt></a>
+                </div>
+                <div class="job-tittle">
+                  <a href="#">
+                    <h4>A hand for Children</h4>
+                  </a>
+                  <ul>
+                    <li><i class="far fa-clock"></i>8:30 - 9:30am</li>
+                    <li><i class="fas fa-sort-amount-down"></i>18.01.2021</li>
+                    <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-9 col-md-12">
+
+            <div class="single-job-items mb-30">
+              <div class="job-items">
+                <div class="company-img">
+                  <a href="#"><img src="assets/img/gallery/socialEvents3.png" alt></a>
+                </div>
+                <div class="job-tittle">
+                  <a href="#">
+                    <h4>Help for Children</h4>
+                  </a>
+                  <ul>
+                    <li><i class="far fa-clock"></i>8:30 - 9:30am</li>
+                    <li><i class="fas fa-sort-amount-down"></i>18.01.2021</li>
+                    <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <div class="team-area pt-160 pb-160">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-xl-6 col-lg-7 col-md-10 col-sm-10">
+
+            <div class="section-tittle section-tittle2 text-center mb-70">
+              <span>What we are doing</span>
+              <h2>Our Expert Volunteer Alwyes ready</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="single-team mb-30">
+              <div class="team-img">
+                <img src="assets/img/gallery/team1.png" alt>
+
+                <ul class="team-social">
+                  <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                  <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                  <li><a href="#"><i class="fas fa-globe"></i></a></li>
+                </ul>
+              </div>
+              <div class="team-caption">
+                <h3><a href="instructor.html">Bruce Roberts</a></h3>
+                <p>Volunteer leader</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="single-team mb-30">
+              <div class="team-img">
+                <img src="assets/img/gallery/team2.png" alt>
+
+                <ul class="team-social">
+                  <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                  <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                  <li><a href="#"><i class="fas fa-globe"></i></a></li>
+                </ul>
+              </div>
+              <div class="team-caption">
+                <h3><a href="instructor.html">Robart Rechard</a></h3>
+                <p>Volunteer leader</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="single-team mb-30">
+              <div class="team-img">
+                <img src="assets/img/gallery/team3.png" alt>
+
+                <ul class="team-social">
+                  <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                  <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                  <li><a href="#"><i class="fas fa-globe"></i></a></li>
+                </ul>
+              </div>
+              <div class="team-caption">
+                <h3><a href="instructor.html">Brendon Tailor</a></h3>
+                <p>Volunteer leader</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="single-team mb-30">
+              <div class="team-img">
+                <img src="assets/img/gallery/team4.png" alt>
+
+                <ul class="team-social">
+                  <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                  <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                  <li><a href="#"><i class="fas fa-globe"></i></a></li>
+                </ul>
+              </div>
+              <div class="team-caption">
+                <h3><a href="instructor.html">Walshr Hasgt</a></h3>
+                <p>Volunteer leader</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
     <section class="wantToWork-area ">
       <div class="container">
         <div class="wants-wrapper w-padding2  section-bg" data-background="assets/img/gallery/section_bg01.png">
@@ -254,7 +431,7 @@
     </section>
 
 
-    <div class="testimonial-area testimonial-padding">
+    <div class="testimonial-area testimonial-padding" id="show-testimonials">
       <div class="container">
 
         <div class="row d-flex justify-content-center">
@@ -319,6 +496,59 @@
         </div>
       </div>
     </div>
+
+
+    <section class="home-blog-area section-padding30">
+      <div class="container">
+
+        <div class="row justify-content-center">
+          <div class="col-xl-5 col-lg-6 col-md-9 col-sm-10">
+            <div class="section-tittle text-center mb-90">
+              <span>Our recent blog</span>
+              <h2>Latest News from our recent blog</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xl-6 col-lg-6 col-md-6">
+            <div class="home-blog-single mb-30">
+              <div class="blog-img-cap">
+                <div class="blog-img">
+                  <img src="assets/img/gallery/home-blog1.png" alt>
+
+                  <div class="blog-date text-center">
+                    <span>24</span>
+                    <p>Now</p>
+                  </div>
+                </div>
+                <div class="blog-cap">
+                  <p>Creative derector</p>
+                  <h3><a href="blog_details.html">Footprints in Time is perfect House in Kurashiki</a></h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-6 col-lg-6 col-md-6">
+            <div class="home-blog-single mb-30">
+              <div class="blog-img-cap">
+                <div class="blog-img">
+                  <img src="assets/img/gallery/home-blog2.png" alt>
+
+                  <div class="blog-date text-center">
+                    <span>24</span>
+                    <p>Now</p>
+                  </div>
+                </div>
+                <div class="blog-cap">
+                  <p>Creative derector</p>
+                  <h3><a href="blog_details.html">Footprints in Time is perfect House in Kurashiki</a></h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
 
     <div class="count-down-area pt-25 section-bg" data-background="assets/img/gallery/section_bg02.png">
@@ -394,7 +624,7 @@
                     </li>
                     <li><a href="#">Phone : +8880 44338899</a></li>
                     <li><a href="#">Email : <span class="__cf_email__"
-                          data-cfemail="87eee9e1e8c7e4e8ebe8f5ebeee5a9e4e8ea">[email&#160;protected]</span></a></li>
+                          data-cfemail="345d5a525b74575b585b46585d561a575b59">[email&#160;protected]</span></a></li>
                   </ul>
                 </div>
               </div>
@@ -406,7 +636,7 @@
                   <ul>
                     <li><a href="#"> View Project</a></li>
                     <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Testimonial</a></li>
+                    <li><a href="#show-testimonials">Testimonial</a></li>
                     <li><a href="#">Proparties</a></li>
                     <li><a href="#">Support</a></li>
                   </ul>
@@ -526,7 +756,7 @@
   </script>
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8b253dfea2ab4077af8c6f58422dfbfd1689876627854"
     integrity="sha512-bjgnUKX4azu3dLTVtie9u6TKqgx29RBwfj3QXYt5EKfWM/9hPSAI/4qcV5NACjwAo8UtTeWefx6Zq5PHcMm7Tg=="
-    data-cf-beacon='{"rayId":"80703aa958804924","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2023.8.0","si":100}'
+    data-cf-beacon='{"rayId":"8066c8418a694720","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2023.8.0","si":100}'
     crossorigin="anonymous"></script>
 </body>
 
