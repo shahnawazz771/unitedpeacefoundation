@@ -5,6 +5,12 @@
         <meta charset="utf-8" />
         <title>City | United Peace Foundation</title>
         <?php include_once("layouts/header_links.php"); ?>
+
+        <style>
+            .text_center {
+                text-align: center;
+            }
+        </style>
     </head>
     <body data-sidebar="dark">
         <!-- Begin page -->
@@ -43,17 +49,17 @@
                             <div class="col-sm-12 col-xl-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="header-title"><button type="button" class="btn btn-primary btn-sm waves-effect waves-light" data-toggle="modal" data-target=".bs-example-modal-center">Add City</button></h4>        
+                                        <h4 class="header-title"><button type="button" class="btn btn-primary btn-sm waves-effect waves-light add-city-modal" data-toggle="modal" data-target=".bs-example-modal-center" style="font-size: 1rem; padding: 5px 8px";>Add City</button></h4>        
                                         <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                             <thead>
                                             <tr>
-                                                <th class="text-center">Slno</th>
-                                                <th class="text-center">City name</th>
-                                                <th class="text-center">Created by</th>
-                                                <th class="text-center">Created at</th>
-                                                <th class="text-center">Updated by</th>
-                                                <th class="text-center">Updated at</th>
-                                                <th class="text-center">Action</th>
+                                                <th class="text_center">Sl No.</th>
+                                                <th class="text_center">City Name</th>
+                                                <th class="text_center">Created by</th>
+                                                <th class="text_center">Created at</th>
+                                                <th class="text_center">Updated by</th>
+                                                <th class="text_center">Updated at</th>
+                                                <th class="text_center">Action</th>
                                             </tr>
                                             </thead>        
                                             <tbody class="upf-city-table-data">
@@ -124,14 +130,11 @@
                             $('.show-upf-alert-popup').click();
                             $(".errorMessage").html(message);
                         }
-
-                        // window.location.reload;
                     }
                   }); 
                 });
 
                 // Load city
-
                 load_city();
                 function load_city(){
                     $.ajax({
@@ -140,10 +143,69 @@
                       data      : {load_city:1},
                       dataType  : "JSON",
                       success   : function(city){
+                        // console.log(city);
                         $('.upf-city-table-data').html(city);
                       }
                     });
                 }
+
+                // delete for city
+                $('body').delegate('.upf-delet-city', 'click',  function(e){
+                  e.preventDefault();
+                  var city_id=$(this).attr('id');
+                  $.ajax({
+                    url         : "tva/hewhoremains_city.php",
+                    method      : "post",
+                    data        : {delete_city:1,city_id:city_id},
+                    dataType    : "JSON",
+                    success     : function (argument) {
+                      // console.log(argument);
+                        argument=argument.trim();
+                        var message="";
+                        if(argument=="success"){
+                            load_city();
+                            $('.addcitybtnclose').click();
+                            message="City deleted.";
+                            $('.show-upf-success-popup').click();
+                            $(".succMessage").html(message);
+                        }else if(argument=="error"){
+                            message="yeah empty";
+                            $('.show-upf-alert-popup').click();
+                        }else if(argument=="empty"){
+                            message="yeah empty";
+                            $('.show-upf-alert-popup').click();
+                            $(".errorMessage").html(message);
+                        }else if(argument=="logout"){
+                            message="Oh no logout";
+                            $('.show-upf-alert-popup').click();
+                            $(".errorMessage").html(message);
+                        }
+                    }
+                  }); 
+                });
+
+                $('body').delegate('.upf-edit-city', 'click', function(){
+                    var city_id=$(this).attr('id');
+                    $('.changecity-option').html("Edit City Name");
+                    $('.add-city-id-hidden').val(city_id);
+                    $('.add-city-btn').removeAttr('name');
+                    $('.add-city-btn').attr('name', 'edit-city-btn');
+                    $('.add-city').val("");
+                    $('.add-city').removeAttr('placeholder');
+                    $('.add-city').attr('placeholder', 'Rename city name');
+                });
+
+                $('body').delegate('.add-city-modal', 'click', function(){
+                    $('.changecity-option').html("Add City Name");
+                    $('.add-city-btn').removeAttr('name');
+                    $('.add-city-btn').attr('name', 'add-city-btn');
+                    $('.add-city').val("");
+                    $('.add-city').removeAttr('placeholder');
+                    $('.add-city').attr('placeholder', 'Enter city name');
+                });
+
+
+
             });
         </script>
     </body>
@@ -152,7 +214,7 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title mt-0">Add City</h5>
+                <h5 class="modal-title mt-0 changecity-option">Add City</h5>
                 <button type="button" class="addcitybtnclose" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -163,15 +225,16 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="form-group row">
-                                    <label for="example-text-input" class="col-md-2 col-form-label">City Name</label>
+                                    <label for="example-text-input" class="col-md-2 col-form-label">City</label>
                                     <div class="col-md-10">
                                         <form class="upf-add-city">
-                                        <input class="form-control" type="text" name="add-city" placeholder="Enter city name" id="example-text-input" spellcheck="false" data-ms-editor="true">
+                                        <input class="form-control add-city" type="text" name="add-city" placeholder="Enter city name" id="example-text-input" spellcheck="false" data-ms-editor="true">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-md-12">
-                                        <input type="hidden"  name="add-city-btn">
+                                        <input type="hidden"  name="add-city-id-hidden" class="add-city-id-hidden">
+                                        <input type="hidden"  name="add-city-btn" class="add-city-btn">
                                         <button type="submit" class="btn btn-primary mt-3 mt-sm-0">Submit</button>
                                     </div>
                                     </form>

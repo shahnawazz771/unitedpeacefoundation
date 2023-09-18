@@ -2,22 +2,22 @@
 include "../../MCU/obdb.php";
 session_start();
 /*------------------------------------------------------------------------------------------------*/
-/*------------------------------------------Class For city ---------------------------------------*/
+/*------------------------------------------Class For state ---------------------------------------*/
 /*------------------------------------------------------------------------------------------------*/
-class Earth616_city extends multiverse_con{	
-	public function add_city($city_name){
+class Earth616_state extends multiverse_con{	
+	public function add_state($state_name){
 		$xavier="";
 		$date=date("Y-m-d H:i:s");
 		$xavier_checkquery=mysqli_query($this->upf_dbs, "
-			SELECT id FROM city WHERE name='".mysqli_real_escape_string($this->upf_dbs, $city_name)."'
+			SELECT id FROM state WHERE name='".mysqli_real_escape_string($this->upf_dbs, $state_name)."'
 		");
 		if(mysqli_num_rows($xavier_checkquery)==0){
 			$xavier_savequery=mysqli_query($this->upf_dbs, "
-				INSERT INTO city(
+				INSERT INTO state(
 					name,
 					created_at
 				) VALUES (
-					'".mysqli_real_escape_string($this->upf_dbs, $city_name)."',
+					'".mysqli_real_escape_string($this->upf_dbs, $state_name)."',
 					'".$date."'
 				)
 			");
@@ -34,16 +34,16 @@ class Earth616_city extends multiverse_con{
 	}
 
 
-	public function show_city(){
+	public function show_state(){
 		$xavier="";
 		$xavier_getquery=mysqli_query($this->upf_dbs, "
 			SELECT 
-				C.id city_id,
-				C.name city_name,
+				C.id state_id,
+				C.name state_name,
 				U.name Uname,
 				C.created_at createdat,
 				C.updated_at updatedat
-			FROM city C 
+			FROM state C 
 			LEFT JOIN users U 
 			ON C.created_by=U.id 
 		");
@@ -54,14 +54,14 @@ class Earth616_city extends multiverse_con{
 				$xavier.='
 					<tr>
 						<td class="text-center">'.$slno.'</td>
-						<td>'.$row['city_name'].'</td>
+						<td>'.$row['state_name'].'</td>
 						<td>'.$row['Uname'].'</td>
 						<td>'.date('d M Y h:i:s a', strtotime($row['createdat'])).'</td>
 						<td>'.$row['Uname'].'</td>
 						<td>'.date('d M Y h:i:s a', strtotime($row['updatedat'])).'</td>
 						<td>
-							<a href="javascript:void(0)" class="btn btn-info waves-effect waves-light upf-edit-city" id="'.$row['city_id'].'" data-toggle="modal" data-target=".bs-example-modal-center"><i class="mdi mdi-pencil-outline"></i></a>
-							<a href="javascript:void(0)" class="btn btn-danger waves-effect waves-light upf-delet-city" id="'.$row['city_id'].'"><i class="mdi mdi-trash-can-outline"></i></a>
+							<a href="javascript:void(0)" class="btn btn-info waves-effect waves-light upf-edit-state" id="'.$row['state_id'].'" data-toggle="modal" data-target=".bs-example-modal-center"><i class="mdi mdi-pencil-outline"></i></a>
+							<a href="javascript:void(0)" class="btn btn-danger waves-effect waves-light upf-delet-state" id="'.$row['state_id'].'"><i class="mdi mdi-trash-can-outline"></i></a>
 						</td>
 					</tr>
 				';
@@ -76,11 +76,11 @@ class Earth616_city extends multiverse_con{
 		return $xavier;
 	}
 
-	// delete city	
-	public function delete_city($city_id){
+	// delete state	
+	public function delete_state($state_id){
 		$xavier="";
 		$xavier_deletequery=mysqli_query($this->upf_dbs, "
-			DELETE FROM city WHERE id='".mysqli_real_escape_string($this->upf_dbs, $city_id)."' 
+			DELETE FROM state WHERE id='".mysqli_real_escape_string($this->upf_dbs, $state_id)."' 
 		");
 		if($xavier_deletequery){
 			$xavier='success';
@@ -91,16 +91,16 @@ class Earth616_city extends multiverse_con{
 	}
 
 
-	public function edit_city($city_name, $city_id){
+	public function edit_state($state_name, $state_id){
 		$xavier="";
 		$xavier_checkquery=mysqli_query($this->upf_dbs, "
-			SELECT id FROM city WHERE name='".mysqli_real_escape_string($this->upf_dbs, $city_name)."' AND id<>'".mysqli_real_escape_string($this->upf_dbs, $city_id)."'
+			SELECT id FROM state WHERE name='".mysqli_real_escape_string($this->upf_dbs, $state_name)."' AND id<>'".mysqli_real_escape_string($this->upf_dbs, $state_id)."'
 		");
 		if(mysqli_num_rows($xavier_checkquery)==0){
 			$xavier_savequery=mysqli_query($this->upf_dbs, "
-				UPDATE city 
-				SET name='".mysqli_real_escape_string($this->upf_dbs, $city_name)."' 
-				WHERE id='".mysqli_real_escape_string($this->upf_dbs, $city_id)."'
+				UPDATE state 
+				SET name='".mysqli_real_escape_string($this->upf_dbs, $state_name)."' 
+				WHERE id='".mysqli_real_escape_string($this->upf_dbs, $state_id)."'
 			");
 			if($xavier_savequery){
 				$xavier="success";
@@ -115,61 +115,61 @@ class Earth616_city extends multiverse_con{
 	}
 }
 #<--------------------------------------------------------------------------------------------------------->
-#<--------------------------------------Object sections of city class-------------------------------------->
+#<--------------------------------------Object sections of state class-------------------------------------->
 #<--------------------------------------------------------------------------------------------------------->
-// Add city
-if(isset($_POST['add-city-btn'])){
+// Add state
+if(isset($_POST['add-state-btn'])){
 	$out='';
-	$city_name = $_POST['add-city'];
-	if(empty($city_name)){
+	$state_name = $_POST['add-state'];
+	if(empty($state_name)){
 		$out="empty";
 	// }else if (empty(@$_SESSION['upf_login_info'])){
 		// $out="logout";
 	}else{
-		$illuminati=new Earth616_city();
-		$out=$illuminati->add_city($city_name);
+		$illuminati=new Earth616_state();
+		$out=$illuminati->add_state($state_name);
 	}
 	echo $out;
 }
 
-// Load City
-if(isset($_POST['load_city'])){
+// Load state
+if(isset($_POST['load_state'])){
 	$out='';
 
 	// if (empty(@$_SESSION['upf_login_info'])){
 		// $out="logout";
 	// }else{
-		$illuminati=new Earth616_city();
-		$out=$illuminati->show_city();
+		$illuminati=new Earth616_state();
+		$out=$illuminati->show_state();
 	// }
 	echo json_encode($out);
 }
 
-// Load City
-if(isset($_POST['delete_city'])){
+// Load state
+if(isset($_POST['delete_state'])){
 	$out='';
-	$city_id = $_POST['city_id'];
+	$state_id = $_POST['state_id'];
 	// if (empty(@$_SESSION['upf_login_info'])){
 		// $out="logout";
 	// }else{
-		$illuminati=new Earth616_city();
-		$out=$illuminati->delete_city($city_id);
+		$illuminati=new Earth616_state();
+		$out=$illuminati->delete_state($state_id);
 	// }
 	echo json_encode($out);
 }
 
-// edit city
-if(isset($_POST['edit-city-btn'])){
+// edit state
+if(isset($_POST['edit-state-btn'])){
 	$out='';
-	$city_name = $_POST['add-city'];
-	$city_id = $_POST['add-city-id-hidden'];
-	// if(empty($city_name)){
+	$state_name = $_POST['add-state'];
+	$state_id = $_POST['add-state-id-hidden'];
+	// if(empty($state_name)){
 	// 	$out="empty";
 	// // }else if (empty(@$_SESSION['upf_login_info'])){
 	// 	// $out="logout";
 	// }else{
-		$illuminati=new Earth616_city();
-		$out=$illuminati->edit_city($city_name, $city_id);
+		$illuminati=new Earth616_state();
+		$out=$illuminati->edit_state($state_name, $state_id);
 	// }
 	echo $out;
 }
