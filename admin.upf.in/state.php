@@ -192,16 +192,16 @@
                     $('.add-state-btn').attr('name', 'edit-state-btn');
                     $('.add-state').val("");
                     $('.add-state').removeAttr('placeholder');
-                    $('.add-state').attr('placeholder', 'Rename state name');
+                    $('.add-state').attr('placeholder', 'Rename your state');
                 });
 
                 $('body').delegate('.add-state-modal', 'click', function(){
-                    $('.changestate-option').html("Add state Name");
+                    $('.changestate-option').html("Add State Name");
                     $('.add-state-btn').removeAttr('name');
                     $('.add-state-btn').attr('name', 'add-state-btn');
                     $('.add-state').val("");
                     $('.add-state').removeAttr('placeholder');
-                    $('.add-state').attr('placeholder', 'Enter state name');
+                    $('.add-state').attr('placeholder', 'Enter your state');
                 });
 
 
@@ -300,7 +300,7 @@
                                     <div class="mb-4">
                                         <i class="mdi mdi-alert-outline display-4 text-danger"></i>
                                     </div>
-                                    <h4 class="alert-heading font-18">Do not enter the repeated state name</h4>
+                                    <h4 class="alert-heading font-18">Don't input the same state name twice</h4>
                                     <p class="errorMessage"></p>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         Ok

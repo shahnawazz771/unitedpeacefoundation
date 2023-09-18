@@ -59,7 +59,7 @@ class Earth616_city extends multiverse_con{
 						<td>'.date('d M Y h:i:s a', strtotime($row['createdat'])).'</td>
 						<td>'.$row['Uname'].'</td>
 						<td>'.date('d M Y h:i:s a', strtotime($row['updatedat'])).'</td>
-						<td>
+						<td class="text-center">
 							<a href="javascript:void(0)" class="btn btn-info waves-effect waves-light upf-edit-city" id="'.$row['city_id'].'" data-toggle="modal" data-target=".bs-example-modal-center"><i class="mdi mdi-pencil-outline"></i></a>
 							<a href="javascript:void(0)" class="btn btn-danger waves-effect waves-light upf-delet-city" id="'.$row['city_id'].'"><i class="mdi mdi-trash-can-outline"></i></a>
 						</td>

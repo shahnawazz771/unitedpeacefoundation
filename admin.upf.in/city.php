@@ -186,22 +186,22 @@
 
                 $('body').delegate('.upf-edit-city', 'click', function(){
                     var city_id=$(this).attr('id');
-                    $('.changecity-option').html("Edit City Name");
+                    $('.changecity-option').html("Edit City");
                     $('.add-city-id-hidden').val(city_id);
                     $('.add-city-btn').removeAttr('name');
                     $('.add-city-btn').attr('name', 'edit-city-btn');
                     $('.add-city').val("");
                     $('.add-city').removeAttr('placeholder');
-                    $('.add-city').attr('placeholder', 'Rename city name');
+                    $('.add-city').attr('placeholder', 'Rename your city');
                 });
 
                 $('body').delegate('.add-city-modal', 'click', function(){
-                    $('.changecity-option').html("Add City Name");
+                    $('.changecity-option').html("Add City");
                     $('.add-city-btn').removeAttr('name');
                     $('.add-city-btn').attr('name', 'add-city-btn');
                     $('.add-city').val("");
                     $('.add-city').removeAttr('placeholder');
-                    $('.add-city').attr('placeholder', 'Enter city name');
+                    $('.add-city').attr('placeholder', 'Enter your city');
                 });
 
 
@@ -228,7 +228,7 @@
                                     <label for="example-text-input" class="col-md-2 col-form-label">City</label>
                                     <div class="col-md-10">
                                         <form class="upf-add-city">
-                                        <input class="form-control add-city" type="text" name="add-city" placeholder="Enter city name" id="example-text-input" spellcheck="false" data-ms-editor="true">
+                                        <input class="form-control add-city" type="text" spellcheck="true" name="add-city" placeholder="Enter city name" id="example-text-input" spellcheck="false" data-ms-editor="true">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -300,7 +300,7 @@
                                     <div class="mb-4">
                                         <i class="mdi mdi-alert-outline display-4 text-danger"></i>
                                     </div>
-                                    <h4 class="alert-heading font-18">Something went wrong</h4>
+                                    <h4 class="alert-heading font-18">Don't input the same city name twice</h4>
                                     <p class="errorMessage"></p>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         Ok
