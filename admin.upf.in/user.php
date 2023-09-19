@@ -55,8 +55,13 @@
                                             <tr>
                                                 <th class="text_center">Sl No.</th>
                                                 <th class="text_center">Name</th>
-                                                <th class="text_center">Domain Name</th>
+                                                <th class="text_center">Email</th>
                                                 <th class="text_center">Phone Number</th>
+                                                <th class="text_center">Address</th>
+                                                <th class="text_center">City</th>
+                                                <th class="text_center">State</th>
+                                                <th class="text_center">Pincode</th>
+                                                <th class="text_center">Role</th>
                                                 <th class="text_center">Created by</th>
                                                 <th class="text_center">Created at</th>
                                                 <th class="text_center">Updated by</th>
