@@ -150,6 +150,29 @@ class Earth616_user extends multiverse_con{
 
 		return $xavier;
 	}
+
+	public function call_user($user_id){
+		$xavier="";
+		$xavier_getquery=mysqli_query($this->upf_dbs, "
+			SELECT
+				id,
+				name,
+				email,
+				contact,
+				address,
+				city_id,
+				state_id,
+				pincode,
+				password,
+				role
+			FROM
+			    users
+			WHERE
+			    id='".mysqli_real_escape_string($this->upf_dbs, $user_id)."'
+		");
+		$xavier=mysqli_fetch_assoc($xavier_getquery);
+		return $xavier;
+	}
 }
 #<--------------------------------------------------------------------------------------------------------->
 #<--------------------------------------Object sections of user class-------------------------------------->
@@ -206,7 +229,7 @@ if(isset($_POST['delete_user'])){
 // edit user
 if(isset($_POST['edit-user-btn'])){
 	$out='';
-	$user_name = $_POST['add-user'];
+	$user_name = $_POST['add-name'];
 	$user_id = $_POST['add-user-id-hidden'];
 	// if(empty($user_name)){
 	// 	$out="empty";
@@ -217,5 +240,18 @@ if(isset($_POST['edit-user-btn'])){
 		$out=$illuminati->edit_user($user_name, $user_id);
 	// }
 	echo $out;
+}
+
+// Call user
+if(isset($_POST['call_user'])){
+	$out='';
+	$user_id=$_POST['user_id'];
+	// if (empty(@$_SESSION['upf_login_user'])){
+		// $out="logout";
+	// }else{
+		$illuminati=new Earth616_user();
+		$out=$illuminati->call_user($user_id);
+	// }
+	echo json_encode($out);
 }
 ?>

@@ -162,6 +162,27 @@
                     });
                 }
 
+                // call user
+                function call_user(user_id){
+                    $.ajax({
+                      url       : "tva/hewhoremains_user.php",
+                      method    : "POST",
+                      data      : {call_user:1,user_id:user_id},
+                      dataType  : "JSON",
+                      success   : function(user){
+                        // console.log(user);
+                        $('.add-name').val(user.name);
+                        $('.add-email').val(user.email);
+                        $('.add-phonenumber').val(user.contact);
+                        $('.add-address').val(user.address);
+                        $('.add-pincode').val(user.pincode);
+                        $('.add-city').val(user.city_id);
+                        $('.add-state').val(user.state_id);
+
+                      }
+                    });
+                }
+
                 // delete for user
                 $('body').delegate('.upf-delet-user', 'click',  function(e){
                   e.preventDefault();
@@ -199,6 +220,7 @@
 
                 $('body').delegate('.upf-edit-user', 'click', function(){
                     var user_id=$(this).attr('id');
+                    call_user(user_id)
                     $('.changeuser-option').html("Edit user");
                     $('.add-user-id-hidden').val(user_id);
                     $('.add-user-btn').removeAttr('name');
