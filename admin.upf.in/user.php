@@ -268,9 +268,9 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="add-domainname" class="col-md-2 col-form-label">Email</label>
+                                    <label for="add-email" class="col-md-2 col-form-label">Email</label>
                                     <div class="col-md-10">
-                                        <input class="form-control add-domainname" type="text" spellcheck="true" name="add-email" placeholder="Enter user name" id="add-domainname" spellcheck="false" data-ms-editor="true">
+                                        <input class="form-control add-email" type="text" spellcheck="true" name="add-email" placeholder="Enter user name" id="add-email" spellcheck="false" data-ms-editor="true">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -282,7 +282,7 @@
                                 <div class="form-group row">
                                     <label for="add-address" class="col-md-2 col-form-label">Address</label>
                                     <div class="col-md-10">
-                                        <textarea class="form-control add-address" spellcheck="true" name="add-address" placeholder="Enter user address" id="add-add-address" spellcheck="false" data-ms-editor="true"></textarea>
+                                        <textarea class="form-control add-address" spellcheck="true" name="add-address" placeholder="Enter user address" id="add-address" spellcheck="false" data-ms-editor="true"></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -292,10 +292,9 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="add-phonenumber" class="col-md-2 col-form-label">City</label>
+                                    <label for="add-city" class="col-md-2 col-form-label">City</label>
                                     <div class="col-md-4">
-                                        <!-- <input class="form-control add-phonenumber" type="text" spellcheck="true" name="add-phonenumber" placeholder="Enter user name" id="add-phonenumber" spellcheck="false" data-ms-editor="true"> -->
-                                        <select class="form-control">
+                                        <select class="form-control add-city" id="add-city" name="add-city">
                                             <?php 
                                                 include_once("../MCU/db.php");
                                                 $city_qry=mysqli_query($con, "SELECT id, name FROM city");
@@ -310,9 +309,9 @@
                                             ?>
                                         </select>
                                     </div>
-                                    <label for="add-phonenumber" class="col-md-2 col-form-label">State</label>
+                                    <label for="add-state" class="col-md-2 col-form-label">State</label>
                                     <div class="col-md-4">
-                                        <select class="form-control">
+                                        <select class="form-control add-state" id="add-state" name="add-state">
                                             <?php 
 
                                                 $state_qry=mysqli_query($con, "SELECT id, name FROM state");
@@ -333,9 +332,9 @@
                                     <div class="col-md-4">
                                         <input class="form-control add-password" type="password" spellcheck="true" name="add-password" placeholder="Enter user password" id="add-password" spellcheck="false" data-ms-editor="true">
                                     </div>
-                                    <label for="add-phonenumber" class="col-md-2 col-form-label">Role</label>
+                                    <label for="add-role" class="col-md-2 col-form-label">Role</label>
                                     <div class="col-md-4">
-                                        <select class="form-control">
+                                        <select class="form-control add-role" id="add-role" name="add-role">
                                             <option>Administrator</option>
                                             <option>Employee</option>
                                             <option>User</option>

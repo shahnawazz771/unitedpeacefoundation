@@ -9,7 +9,9 @@ class Earth616_user extends multiverse_con{
 		$xavier="";
 		$date=date("Y-m-d H:i:s");
 		$xavier_checkquery=mysqli_query($this->upf_dbs, "
-			SELECT id FROM user
+			SELECT id FROM users WHERE 
+			contact='".mysqli_real_escape_string($this->upf_dbs, $name_name)."' OR 
+			email='".mysqli_real_escape_string($this->upf_dbs, $email)."'
 		");
 		if(mysqli_num_rows($xavier_checkquery)==0){
 			$xavier_savequery=mysqli_query($this->upf_dbs, "
@@ -22,14 +24,14 @@ class Earth616_user extends multiverse_con{
 					state_id,
 					pincode,
 					password,
-					role
+					role,
 					created_by,
 					created_at
 				) VALUES (
 					'".mysqli_real_escape_string($this->upf_dbs, $name_name)."',
-					'".mysqli_real_escape_string($this->upf_dbs, $domainname_name)."',
-					'".mysqli_real_escape_string($this->upf_dbs, $phonenumber_name)."',
-					'".mysqli_real_escape_string($this->upf_dbs, $name_name)."',
+					'".mysqli_real_escape_string($this->upf_dbs, $email)."',
+					'".mysqli_real_escape_string($this->upf_dbs, $phonenumber)."',
+					'".mysqli_real_escape_string($this->upf_dbs, $address)."',
 					'".mysqli_real_escape_string($this->upf_dbs, $city)."',
 					'".mysqli_real_escape_string($this->upf_dbs, $state)."',
 					'".mysqli_real_escape_string($this->upf_dbs, $pincode)."',
