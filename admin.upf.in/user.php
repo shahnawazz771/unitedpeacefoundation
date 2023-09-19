@@ -103,8 +103,49 @@
                     var message="";
                     var validated=1;
                     var username=$(".add-name").val();
+                    var email=$(".add-email").val();
+                    var phonenumber=$(".add-phonenumber").val();
+                    var address=$(".add-address").val();
+                    var pincode=$(".add-pincode").val();
+                    var password=$(".add-password").val();
+                    $('.validation-tag').remove();
                     if(username==""){
                         $(".add-name").after("<span class='text-danger validation-tag'>Please enter username</span>");
+                        validated=0;
+                    }else{
+                        $('.validation-tag').remove();
+                        validated=1;
+                    }
+                    if(email==""){
+                        $(".add-email").after("<span class='text-danger validation-tag'>Please enter email</span>");
+                        validated=0;
+                    }else{
+                        $('.validation-tag').remove();
+                        validated=1;
+                    }
+                    if(phonenumber==""){
+                        $(".add-phonenumber").after("<span class='text-danger validation-tag'>Please enter phone number</span>");
+                        validated=0;
+                    }else{
+                        $('.validation-tag').remove();
+                        validated=1;
+                    }
+                    if(address==""){
+                        $(".add-address").after("<span class='text-danger validation-tag'>Please enter address</span>");
+                        validated=0;
+                    }else{
+                        $('.validation-tag').remove();
+                        validated=1;
+                    }
+                    if(pincode==""){
+                        $(".add-pincode").after("<span class='text-danger validation-tag'>Please enter pincode</span>");
+                        validated=0;
+                    }else{
+                        $('.validation-tag').remove();
+                        validated=1;
+                    }
+                    if(password==""){
+                        $(".add-password").after("<span class='text-danger validation-tag'>Please enter password</span>");
                         validated=0;
                     }else{
                         $('.validation-tag').remove();
