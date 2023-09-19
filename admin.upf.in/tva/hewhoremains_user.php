@@ -2,27 +2,39 @@
 include "../../MCU/obdb.php";
 session_start();
 /*------------------------------------------------------------------------------------------------*/
-/*------------------------------------------Class For info ---------------------------------------*/
+/*------------------------------------------Class For user ---------------------------------------*/
 /*------------------------------------------------------------------------------------------------*/
-class Earth616_info extends multiverse_con{	
-	public function add_info($name_name, $domainname_name, $phonenumber_name){
+class Earth616_user extends multiverse_con{	
+	public function add_user($name_name, $email, $phonenumber, $address, $city, $state, $pincode, $password, $role){
 		$xavier="";
 		$date=date("Y-m-d H:i:s");
 		$xavier_checkquery=mysqli_query($this->upf_dbs, "
-			SELECT id FROM info
+			SELECT id FROM user
 		");
 		if(mysqli_num_rows($xavier_checkquery)==0){
 			$xavier_savequery=mysqli_query($this->upf_dbs, "
-				INSERT INTO info(
+				INSERT INTO users(
 					name,
-					domain_name,
-					phone_number,
+					email,
+					contact,
+					address,
+					city_id,
+					state_id,
+					pincode,
+					password,
+					role
 					created_by,
 					created_at
 				) VALUES (
 					'".mysqli_real_escape_string($this->upf_dbs, $name_name)."',
 					'".mysqli_real_escape_string($this->upf_dbs, $domainname_name)."',
 					'".mysqli_real_escape_string($this->upf_dbs, $phonenumber_name)."',
+					'".mysqli_real_escape_string($this->upf_dbs, $name_name)."',
+					'".mysqli_real_escape_string($this->upf_dbs, $city)."',
+					'".mysqli_real_escape_string($this->upf_dbs, $state)."',
+					'".mysqli_real_escape_string($this->upf_dbs, $pincode)."',
+					'".mysqli_real_escape_string($this->upf_dbs, $password)."',
+					'".mysqli_real_escape_string($this->upf_dbs, $role)."',
 					'".mysqli_real_escape_string($this->upf_dbs, "1")."',
 					'".$date."'
 				)
@@ -39,21 +51,29 @@ class Earth616_info extends multiverse_con{
 		return $xavier;
 	}
 
-
-	public function show_info(){
+	public function show_user(){
 		$xavier="";
 		$xavier_getquery=mysqli_query($this->upf_dbs, "
 			SELECT 
-				C.id info_id,
-				C.name info_name,
-				C.domain_name domain_name,
-				C.phone_number phone_number,
-				U.name Uname,
-				C.created_at createdat,
-				C.updated_at updatedat
-			FROM info C 
-			LEFT JOIN users U 
-			ON C.created_by=U.id 
+				U.id user_id,
+				U.name user_name,
+				U.email email,
+				U.contact phone_number,
+				U.address address,
+				U.pincode pincode,
+				S.name statename,
+				C.name cityname,
+				US.name Uname,
+				U.role role,
+				U.created_at createdat,
+				U.updated_at updatedat
+			FROM users U 
+			LEFT JOIN state S 
+			ON U.state_id=S.id 
+			LEFT JOIN city C
+			ON U.city_id=C.id 
+			LEFT JOIN users US 
+			ON U.created_by=US.id 
 		");
 		if(mysqli_num_rows($xavier_getquery)>0){
 			$slno=0;
@@ -62,16 +82,21 @@ class Earth616_info extends multiverse_con{
 				$xavier.='
 					<tr>
 						<td class="text-center">'.$slno.'</td>
-						<td>'.$row['info_name'].'</td>
-						<td>'.$row['domain_name'].'</td>
+						<td>'.$row['user_name'].'</td>
+						<td>'.$row['email'].'</td>
 						<td>'.$row['phone_number'].'</td>
+						<td>'.$row['address'].'</td>
+						<td>'.$row['statename'].'</td>
+						<td>'.$row['cityname'].'</td>
+						<td>'.$row['pincode'].'</td>
+						<td>'.$row['role'].'</td>
 						<td>'.$row['Uname'].'</td>
 						<td>'.date('d M Y h:i:s a', strtotime($row['createdat'])).'</td>
 						<td>'.$row['Uname'].'</td>
 						<td>'.date('d M Y h:i:s a', strtotime($row['updatedat'])).'</td>
 						<td>
-							<a href="javascript:void(0)" class="btn btn-info waves-effect waves-light upf-edit-info" id="'.$row['info_id'].'" data-toggle="modal" data-target=".bs-example-modal-center"><i class="mdi mdi-pencil-outline"></i></a>
-							<a href="javascript:void(0)" class="btn btn-danger waves-effect waves-light upf-delet-info" id="'.$row['info_id'].'"><i class="mdi mdi-trash-can-outline"></i></a>
+							<a href="javascript:void(0)" class="btn btn-user waves-effect waves-light upf-edit-user" id="'.$row['user_id'].'" data-toggle="modal" data-target=".bs-example-modal-center"><i class="mdi mdi-pencil-outline"></i></a>
+							<a href="javascript:void(0)" class="btn btn-danger waves-effect waves-light upf-delet-user" id="'.$row['user_id'].'"><i class="mdi mdi-trash-can-outline"></i></a>
 						</td>
 					</tr>
 				';
@@ -86,11 +111,11 @@ class Earth616_info extends multiverse_con{
 		return $xavier;
 	}
 
-	// delete info	
-	public function delete_info($info_id){
+	// delete user	
+	public function delete_user($user_id){
 		$xavier="";
 		$xavier_deletequery=mysqli_query($this->upf_dbs, "
-			DELETE FROM info WHERE id='".mysqli_real_escape_string($this->upf_dbs, $info_id)."' 
+			DELETE FROM users WHERE id='".mysqli_real_escape_string($this->upf_dbs, $user_id)."' 
 		");
 		if($xavier_deletequery){
 			$xavier='success';
@@ -101,16 +126,16 @@ class Earth616_info extends multiverse_con{
 	}
 
 
-	public function edit_info($info_name, $info_id){
+	public function edit_user($user_name, $user_id){
 		$xavier="";
 		$xavier_checkquery=mysqli_query($this->upf_dbs, "
-			SELECT id FROM info WHERE name='".mysqli_real_escape_string($this->upf_dbs, $info_name)."' AND id<>'".mysqli_real_escape_string($this->upf_dbs, $info_id)."'
+			SELECT id FROM users WHERE name='".mysqli_real_escape_string($this->upf_dbs, $user_name)."' AND id<>'".mysqli_real_escape_string($this->upf_dbs, $user_id)."'
 		");
 		if(mysqli_num_rows($xavier_checkquery)==0){
 			$xavier_savequery=mysqli_query($this->upf_dbs, "
-				UPDATE info 
-				SET name='".mysqli_real_escape_string($this->upf_dbs, $info_name)."' 
-				WHERE id='".mysqli_real_escape_string($this->upf_dbs, $info_id)."'
+				UPDATE users 
+				SET name='".mysqli_real_escape_string($this->upf_dbs, $user_name)."' 
+				WHERE id='".mysqli_real_escape_string($this->upf_dbs, $user_id)."'
 			");
 			if($xavier_savequery){
 				$xavier="success";
@@ -125,63 +150,69 @@ class Earth616_info extends multiverse_con{
 	}
 }
 #<--------------------------------------------------------------------------------------------------------->
-#<--------------------------------------Object sections of info class-------------------------------------->
+#<--------------------------------------Object sections of user class-------------------------------------->
 #<--------------------------------------------------------------------------------------------------------->
-// Add info
-if(isset($_POST['add-info-btn'])){
+// Add user
+if(isset($_POST['add-user-btn'])){
 	$out='';
 	$name_name = $_POST['add-name'];
-	$domainname_name = $_POST['add-domainname'];
-	$phonenumber_name = $_POST['add-phonenumber'];
-	if(empty($name_name) || empty($domainname_name) || empty($phonenumber_name)){
+	$email = $_POST['add-email'];
+	$phonenumber = $_POST['add-phonenumber'];
+	$address = $_POST['add-address'];
+	$city = $_POST['add-city'];
+	$state = $_POST['add-state'];
+	$pincode = $_POST['add-pincode'];
+	$password = $_POST['add-password'];
+	$role = $_POST['add-role'];
+	if(empty($name_name) || empty($email) || empty($phonenumber) || empty($address) || empty($password)){
 		$out="empty";
-	// }else if (empty(@$_SESSION['upf_login_info'])){
+	// }else if (empty(@$_SESSION['upf_login_user'])){
 		// $out="logout";
 	}else{
-		$illuminati=new Earth616_info();
-		$out=$illuminati->add_info($name_name, $domainname_name, $phonenumber_name);
+		$illuminati=new Earth616_user();
+		$out=$illuminati->add_user($name_name, $email, $phonenumber, $address, $city, $state, $pincode, $password, $role);
 	}
 	echo $out;
 }
 
-// Load info
-if(isset($_POST['load_info'])){
+// Load user
+if(isset($_POST['load_user'])){
 	$out='';
 
-	// if (empty(@$_SESSION['upf_login_info'])){
+	// if (empty(@$_SESSION['upf_login_user'])){
 		// $out="logout";
 	// }else{
-		$illuminati=new Earth616_info();
-		$out=$illuminati->show_info();
+		$illuminati=new Earth616_user();
+		$out=$illuminati->show_user();
 	// }
 	echo json_encode($out);
 }
 
-// Load info
-if(isset($_POST['delete_info'])){
+// Load user
+if(isset($_POST['delete_user'])){
 	$out='';
-	$info_id = $_POST['info_id'];
-	// if (empty(@$_SESSION['upf_login_info'])){
+	$user_id = $_POST['user_id'];
+	// if (empty(@$_SESSION['upf_login_user'])){
 		// $out="logout";
 	// }else{
-		$illuminati=new Earth616_info();
-		$out=$illuminati->delete_info($info_id);
+		$illuminati=new Earth616_user();
+		$out=$illuminati->delete_user($user_id);
 	// }
 	echo json_encode($out);
 }
 
-// edit info
-if(isset($_POST['edit-info-btn'])){
+// edit user
+if(isset($_POST['edit-user-btn'])){
 	$out='';
-	$info_name = $_POST['add-info'];
-	$info_id = $_POST['add-info-id-hidden'];
-	// if(empty($info_name)){
+	$user_name = $_POST['add-user'];
+	$user_id = $_POST['add-user-id-hidden'];
+	// if(empty($user_name)){
 	// 	$out="empty";
-	// // }else if (empty(@$_SESSION['upf_login_info'])){
+	// // }else if (empty(@$_SESSION['upf_login_user'])){
 	// 	// $out="logout";
 	// }else{
-		$illuminati=new Earth616_info();
-		$out=$illuminati->edit_info($info_name, $info_id);
+		$illuminati=new Earth616_user();
+		$out=$illuminati->edit_user($user_name, $user_id);
 	// }
 	echo $out;
 }
