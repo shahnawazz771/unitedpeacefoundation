@@ -193,29 +193,51 @@
                     $('.add-user-btn').removeAttr('name');
                     $('.add-user-btn').attr('name', 'edit-user-btn');
                     $('.add-name').val("");
-                    $('.add-domainname').val("");
+                    $('.add-email').val("");
                     $('.add-phonenumber').val("");
+                    $('.add-address').val("");
+                    $('.add-pincode').val("");
+                    $('.add-city').val("NA");
+                    $('.add-state').val("NA");
+                    $('.add-password').val("");
                     $('.add-name').removeAttr('placeholder');
-                    $('.add-name').attr('placeholder', 'Rename your name');
-                    $('.add-domainname').removeAttr('placeholder');
-                    $('.add-domainname').attr('placeholder', 'Rename domain name');
+                    $('.add-name').attr('placeholder', 'Rename user full name');
+                    $('.add-email').removeAttr('placeholder');
+                    $('.add-email').attr('placeholder', 'Rename user email ');
                     $('.add-phonenumber').removeAttr('placeholder');
-                    $('.add-phonenumber').attr('placeholder', 'Rename phone number');
+                    $('.add-phonenumber').attr('placeholder', 'Rename user phone number');
+                    $('.add-address').removeAttr('placeholder');
+                    $('.add-address').attr('placeholder', 'Rename user address');
+                    $('.add-pincode').removeAttr('placeholder');
+                    $('.add-pincode').attr('placeholder', 'Rename user pincode');
+                    $('.add-password').removeAttr('placeholder');
+                    $('.add-password').attr('placeholder', 'Rename user password');
                 });
 
                 $('body').delegate('.add-user-modal', 'click', function(){
-                    $('.changeuser-option').html("Add user");
+                    $('.changeuser-option').html("Add User");
                     $('.add-user-btn').removeAttr('name');
                     $('.add-user-btn').attr('name', 'add-user-btn');
                     $('.add-name').val("");
-                    $('.add-domainname').val("");
+                    $('.add-email').val("");
                     $('.add-phonenumber').val("");
+                    $('.add-address').val("");
+                    $('.add-pincode').val("");
+                    $('.add-city').val("NA");
+                    $('.add-state').val("NA");
+                    $('.add-password').val("");
                     $('.add-name').removeAttr('placeholder');
-                    $('.add-name').attr('placeholder', 'Enter your name');
-                    $('.add-domainname').removeAttr('placeholder');
-                    $('.add-domainname').attr('placeholder', 'Enter your domain name');
+                    $('.add-name').attr('placeholder', 'Enter user full name');
+                    $('.add-email').removeAttr('placeholder');
+                    $('.add-email').attr('placeholder', 'Enter user email ');
                     $('.add-phonenumber').removeAttr('placeholder');
-                    $('.add-phonenumber').attr('placeholder', 'Enter your phone number');
+                    $('.add-phonenumber').attr('placeholder', 'Enter user phone number');
+                    $('.add-address').removeAttr('placeholder');
+                    $('.add-address').attr('placeholder', 'Enter user address');
+                    $('.add-pincode').removeAttr('placeholder');
+                    $('.add-pincode').attr('placeholder', 'Enter user pincode');
+                    $('.add-password').removeAttr('placeholder');
+                    $('.add-password').attr('placeholder', 'Enter user password');
                 });
 
 
@@ -254,13 +276,19 @@
                                 <div class="form-group row">
                                     <label for="add-phonenumber" class="col-md-2 col-form-label">Phone Number</label>
                                     <div class="col-md-10">
-                                        <input class="form-control add-phonenumber" type="text" spellcheck="true" name="add-phonenumber" placeholder="Enter user name" id="add-phonenumber" spellcheck="false" data-ms-editor="true">
+                                        <input class="form-control add-phonenumber" type="number" spellcheck="true" name="add-phonenumber" placeholder="Enter user name" id="add-phonenumber" spellcheck="false" data-ms-editor="true">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="add-phonenumber" class="col-md-2 col-form-label">Address</label>
+                                    <label for="add-address" class="col-md-2 col-form-label">Address</label>
                                     <div class="col-md-10">
-                                        <input class="form-control add-phonenumber" type="text" spellcheck="true" name="add-phonenumber" placeholder="Enter user name" id="add-phonenumber" spellcheck="false" data-ms-editor="true">
+                                        <textarea class="form-control add-address" spellcheck="true" name="add-address" placeholder="Enter user address" id="add-add-address" spellcheck="false" data-ms-editor="true"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="add-pincode" class="col-md-2 col-form-label">Pincode</label>
+                                    <div class="col-md-10">
+                                        <input class="form-control add-pincode" type="number" spellcheck="true" name="add-pincode" placeholder="Enter user pincode" id="add-pincode" spellcheck="false" data-ms-editor="true">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -301,9 +329,9 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="add-phonenumber" class="col-md-2 col-form-label">Password</label>
+                                    <label for="add-password" class="col-md-2 col-form-label">Password</label>
                                     <div class="col-md-4">
-                                        <input class="form-control add-phonenumber" type="password" spellcheck="true" name="add-phonenumber" placeholder="Enter user name" id="add-phonenumber" spellcheck="false" data-ms-editor="true">
+                                        <input class="form-control add-password" type="password" spellcheck="true" name="add-password" placeholder="Enter user password" id="add-password" spellcheck="false" data-ms-editor="true">
                                     </div>
                                     <label for="add-phonenumber" class="col-md-2 col-form-label">Role</label>
                                     <div class="col-md-4">

@@ -196,7 +196,7 @@
                 });
 
                 $('body').delegate('.add-state-modal', 'click', function(){
-                    $('.changestate-option').html("Add State Name");
+                    $('.changestate-option').html("Add State");
                     $('.add-state-btn').removeAttr('name');
                     $('.add-state-btn').attr('name', 'add-state-btn');
                     $('.add-state').val("");
