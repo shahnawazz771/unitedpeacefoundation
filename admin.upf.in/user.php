@@ -100,40 +100,51 @@
                 // add user form
                 $('.upf-add-user').on('submit', function(e){
                   e.preventDefault();
-                  $.ajax({
-                    url         : "tva/hewhoremains_user.php",
-                    method      : "post",
-                    data        : new FormData(this),
-                    contentType : false,
-                    processData : false,
-                    // dataType : 'JSON',
-                    success     : function (argument) {
-                      // console.log(argument);
-                        argument=argument.trim();
-                        var message="";
-                        if(argument=="success"){
-                            load_user();
-                            $('.adduserbtnclose').click();
-                            message="user saved.";
-                            $('.show-upf-success-popup').click();
-                            $(".succMessage").html(message);
-                        }else if(argument=="duplicate"){
-                            message="yeah empty";
-                            $('.show-upf-alert-popup').click();
-                        }else if(argument=="error"){
-                            message="yeah empty";
-                            $('.show-upf-alert-popup').click();
-                        }else if(argument=="empty"){
-                            message="yeah empty";
-                            $('.show-upf-alert-popup').click();
-                            $(".errorMessage").html(message);
-                        }else if(argument=="logout"){
-                            message="Oh no logout";
-                            $('.show-upf-alert-popup').click();
-                            $(".errorMessage").html(message);
-                        }
+                    var message="";
+                    var validated=1;
+                    var username=$(".add-name").val();
+                    if(username==""){
+                        $(".add-name").after("<span class='text-danger validation-tag'>Please enter username</span>");
+                        validated=0;
+                    }else{
+                        $('.validation-tag').remove();
+                        validated=1;
                     }
-                  }); 
+                    if(validated==1){
+                        $.ajax({
+                            url         : "tva/hewhoremains_user.php",
+                            method      : "post",
+                            data        : new FormData(this),
+                            contentType : false,
+                            processData : false,
+                            // dataType : 'JSON',
+                            success     : function (argument) {
+                              // console.log(argument);
+                                argument=argument.trim();
+                                if(argument=="success"){
+                                    load_user();
+                                    $('.adduserbtnclose').click();
+                                    message="user saved.";
+                                    $('.show-upf-success-popup').click();
+                                    $(".succMessage").html(message);
+                                }else if(argument=="duplicate"){
+                                    message="yeah empty";
+                                    $('.show-upf-alert-popup').click();
+                                }else if(argument=="error"){
+                                    message="yeah empty";
+                                    $('.show-upf-alert-popup').click();
+                                }else if(argument=="empty"){
+                                    message="yeah empty";
+                                    $('.show-upf-alert-popup').click();
+                                    $(".errorMessage").html(message);
+                                }else if(argument=="logout"){
+                                    message="Oh no logout";
+                                    $('.show-upf-alert-popup').click();
+                                    $(".errorMessage").html(message);
+                                }
+                            }
+                        });                         
+                    }
                 });
 
                 // Load user
