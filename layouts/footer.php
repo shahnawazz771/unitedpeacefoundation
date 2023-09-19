@@ -21,11 +21,11 @@
                   <h4>Contact Info</h4>
                   <ul>
                     <li>
-                      <p>Address :Your address goes here, your demo address.</p>
+                      <p>Address :Mango Jamshedpur, Jharkhand 832110 INDIA.</p>
                     </li>
-                    <li><a href="#">Phone : +8880 44338899</a></li>
+                    <li><a href="#">Phone : +91 7463026868</a></li>
                     <li><a href="#">Email : <span class="__cf_email__"
-                          data-cfemail="345d5a525b74575b585b46585d561a575b59">[email&#160;protected]</span></a></li>
+                          data-cfemail="345d5a525b74575b585b46585d561a575b59">unitedpeacefoundation.in@gmail.com</span></a></li>
                   </ul>
                 </div>
               </div>
@@ -86,9 +86,7 @@
                     Copyright &copy;
                     <script data-cfasync="false"
                       src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-                    <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is
-                    made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com"
-                      target="_blank">Colorlib</a>
+                    <script>document.write(new Date().getFullYear());</script> All rights reserved 
                   </p>
                 </div>
               </div>

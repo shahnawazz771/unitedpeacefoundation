@@ -529,22 +529,21 @@
                     <div class="media contact-info">
                         <span class="contact-info__icon"><i class="ti-home"></i></span>
                         <div class="media-body">
-                            <h3>Buttonwood, California.</h3>
-                            <p>Rosemead, CA 91770</p>
+                            <h3>Mango, Jamshedpur</h3>
+                            <p>Jharkhand 832110 INDIA</p>
                         </div>
                     </div>
                     <div class="media contact-info">
                         <span class="contact-info__icon"><i class="ti-tablet"></i></span>
                         <div class="media-body">
-                            <h3>+1 253 565 2365</h3>
+                            <h3>+91 7463026868</h3>
                             <p>Mon to Fri 9am to 6pm</p>
                         </div>
                     </div>
                     <div class="media contact-info">
                         <span class="contact-info__icon"><i class="ti-email"></i></span>
                         <div class="media-body">
-                            <h3><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
-                                    data-cfemail="0c7f797c7c637e784c6f6360637e60656e226f6361">[email&#160;protected]</a>
+                            <h3><a href="mailto:" class="__cf_email__" style="color: #000000">unitedpeacefoundation.in@gmail.com</a>
                             </h3>
                             <p>Send us your query anytime!</p>
                         </div>

@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title> Charity | Teamplate</title>
+  <title> United Peace Foundation</title>
   <meta name="description" content>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <?php include_once("layouts/link-header.php");?>
@@ -444,8 +444,8 @@
                   <div class="testimonial-founder">
                     <div class="founder-img mb-40">
                       <img src="assets/img/gallery/testimonial.png" alt>
-                      <span>Margaret Lawson</span>
-                      <p>Creative Director</p>
+                      <span>Zia Ahmad</span>
+                      <p>President</p>
                     </div>
                   </div>
                   <div class="testimonial-top-cap">
