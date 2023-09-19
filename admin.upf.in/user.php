@@ -201,17 +201,17 @@
                     $('.add-state').val("NA");
                     $('.add-password').val("");
                     $('.add-name').removeAttr('placeholder');
-                    $('.add-name').attr('placeholder', 'Rename user full name');
+                    $('.add-name').attr('placeholder', 'Re-enter user full name');
                     $('.add-email').removeAttr('placeholder');
-                    $('.add-email').attr('placeholder', 'Rename user email ');
+                    $('.add-email').attr('placeholder', 'Re-enter user email ');
                     $('.add-phonenumber').removeAttr('placeholder');
-                    $('.add-phonenumber').attr('placeholder', 'Rename user phone number');
+                    $('.add-phonenumber').attr('placeholder', 'Re-enter user phone number');
                     $('.add-address').removeAttr('placeholder');
-                    $('.add-address').attr('placeholder', 'Rename user address');
+                    $('.add-address').attr('placeholder', 'Re-enter user address');
                     $('.add-pincode').removeAttr('placeholder');
-                    $('.add-pincode').attr('placeholder', 'Rename user pincode');
+                    $('.add-pincode').attr('placeholder', 'Re-enter user pincode');
                     $('.add-password').removeAttr('placeholder');
-                    $('.add-password').attr('placeholder', 'Rename user password');
+                    $('.add-password').attr('placeholder', 'Re-enter user password');
                 });
 
                 $('body').delegate('.add-user-modal', 'click', function(){
