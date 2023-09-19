@@ -88,8 +88,8 @@ class Earth616_user extends multiverse_con{
 						<td>'.$row['email'].'</td>
 						<td>'.$row['phone_number'].'</td>
 						<td>'.$row['address'].'</td>
-						<td>'.$row['statename'].'</td>
 						<td>'.$row['cityname'].'</td>
+						<td>'.$row['statename'].'</td>
 						<td>'.$row['pincode'].'</td>
 						<td>'.$row['role'].'</td>
 						<td>'.$row['Uname'].'</td>
@@ -128,16 +128,29 @@ class Earth616_user extends multiverse_con{
 	}
 
 
-	public function edit_user($user_name, $user_id){
+	public function edit_user($user_id, $name_name, $email, $phonenumber, $address, $city, $state, $pincode, $password, $role){
 		$xavier="";
 		$xavier_checkquery=mysqli_query($this->upf_dbs, "
-			SELECT id FROM users WHERE name='".mysqli_real_escape_string($this->upf_dbs, $user_name)."' AND id<>'".mysqli_real_escape_string($this->upf_dbs, $user_id)."'
+			SELECT id FROM users WHERE (
+				email='".mysqli_real_escape_string($this->upf_dbs, $email)."' OR 
+				contact='".mysqli_real_escape_string($this->upf_dbs, $phonenumber)."'
+			) AND id<>'".mysqli_real_escape_string($this->upf_dbs, $user_id)."'
 		");
 		if(mysqli_num_rows($xavier_checkquery)==0){
 			$xavier_savequery=mysqli_query($this->upf_dbs, "
 				UPDATE users 
-				SET name='".mysqli_real_escape_string($this->upf_dbs, $user_name)."' 
-				WHERE id='".mysqli_real_escape_string($this->upf_dbs, $user_id)."'
+				SET 
+					name='".mysqli_real_escape_string($this->upf_dbs, $name_name)."',
+					email='".mysqli_real_escape_string($this->upf_dbs, $email)."',
+					contact='".mysqli_real_escape_string($this->upf_dbs, $phonenumber)."',
+					address='".mysqli_real_escape_string($this->upf_dbs, $address)."',
+					city_id='".mysqli_real_escape_string($this->upf_dbs, $city)."',
+					state_id='".mysqli_real_escape_string($this->upf_dbs, $state)."',
+					pincode='".mysqli_real_escape_string($this->upf_dbs, $pincode)."',
+					password='".mysqli_real_escape_string($this->upf_dbs, $password)."',
+					role='".mysqli_real_escape_string($this->upf_dbs, $role)."'
+				WHERE 
+					id='".mysqli_real_escape_string($this->upf_dbs, $user_id)."'
 			");
 			if($xavier_savequery){
 				$xavier="success";
@@ -229,15 +242,23 @@ if(isset($_POST['delete_user'])){
 // edit user
 if(isset($_POST['edit-user-btn'])){
 	$out='';
-	$user_name = $_POST['add-name'];
 	$user_id = $_POST['add-user-id-hidden'];
+	$name_name = $_POST['add-name'];
+	$email = $_POST['add-email'];
+	$phonenumber = $_POST['add-phonenumber'];
+	$address = $_POST['add-address'];
+	$city = $_POST['add-city'];
+	$state = $_POST['add-state'];
+	$pincode = $_POST['add-pincode'];
+	$password = $_POST['add-password'];
+	$role = $_POST['add-role'];
 	// if(empty($user_name)){
 	// 	$out="empty";
 	// // }else if (empty(@$_SESSION['upf_login_user'])){
 	// 	// $out="logout";
 	// }else{
 		$illuminati=new Earth616_user();
-		$out=$illuminati->edit_user($user_name, $user_id);
+		$out=$illuminati->edit_user($user_id, $name_name, $email, $phonenumber, $address, $city, $state, $pincode, $password, $role);
 	// }
 	echo $out;
 }
