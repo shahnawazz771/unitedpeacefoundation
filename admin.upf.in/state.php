@@ -49,7 +49,7 @@
                             <div class="col-sm-12 col-xl-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="header-title"><button type="button" class="btn btn-primary btn-sm waves-effect waves-light add-state-modal" data-toggle="modal" data-target=".bs-example-modal-center" style="font-size: 1rem; padding: 5px 8px";>Add state</button></h4>        
+                                        <h4 class="header-title"><button type="button" class="btn btn-primary btn-sm waves-effect waves-light add-state-modal" data-toggle="modal" data-target=".bs-example-modal-center" style="font-size: 1rem; padding: 5px 8px";>Add State</button></h4>        
                                         <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                             <thead>
                                             <tr>

@@ -26,15 +26,14 @@
               <div class="col-xl-6 col-lg-6 col-md-8 col-sm-10">
                 <div class="hero__caption">
                   <h1 data-animation="fadeInUp" data-delay=".6s">Our Helping to<br> the world.</h1>
-                  <P data-animation="fadeInUp" data-delay=".8s">Onsectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut bore et dolore magnt, sed do eiusmod.</P>
+                  <P data-animation="fadeInUp" data-delay=".8s">Our commitment to 'Helping the World' is our driving force and our reason for being. At the United Peace Foundation, we dedicate ourselves every day to making a meaningful impact on the lives of those who need it most. Whether it's providing shelter to the homeless, education to orphaned children, or support to widows and destitute individuals, we are on a relentless mission to uplift communities and promote peace and unity among all people. Together, we believe that our collective efforts can bring about positive change, creating a brighter and more compassionate world for everyone.</P>
 
                   <div class="hero__btn">
                     <a href="industries.html" class="btn hero-btn mb-10" data-animation="fadeInLeft"
                       data-delay=".8s">Donate</a>
                     <a href="industries.html" class="cal-btn ml-15" data-animation="fadeInRight" data-delay="1.0s">
                       <i class="flaticon-null"></i>
-                      <p>+12 1325 41</p>
+                      <p>+91 7463026868</p>
                     </a>
                   </div>
                 </div>
@@ -43,14 +42,13 @@
           </div>
         </div>
 
-        <div class="single-slider slider-height d-flex align-items-center">
+        <!-- <div class="single-slider slider-height d-flex align-items-center">
           <div class="container">
             <div class="row">
               <div class="col-xl-6 col-lg-6 col-md-8 col-sm-10">
                 <div class="hero__caption">
                   <h1 data-animation="fadeInUp" data-delay=".6s">Our Helping to<br> the world.</h1>
-                  <P data-animation="fadeInUp" data-delay=".8s">Onsectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut bore et dolore magnt, sed do eiusmod.</P>
+                  <P data-animation="fadeInUp" data-delay=".8s">Our commitment to 'Helping the World' is our driving force and our reason for being. At the United Peace Foundation, we dedicate ourselves every day to making a meaningful impact on the lives of those who need it most. Whether it's providing shelter to the homeless, education to orphaned children, or support to widows and destitute individuals, we are on a relentless mission to uplift communities and promote peace and unity among all people. Together, we believe that our collective efforts can bring about positive change, creating a brighter and more compassionate world for everyone.</P>
 
                   <div class="hero__btn">
                     <a href="industries.html" class="btn hero-btn mb-10" data-animation="fadeInLeft"
@@ -64,7 +62,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
 
@@ -87,9 +85,8 @@
                 <span class="flaticon-null-1"></span>
               </div>
               <div class="cat-cap">
-                <h5><a href="services.html">Clean Water</a></h5>
-                <p>The sea freight service has grown conside rably in recent years. We spend timetting to know your
-                  processes to.</p>
+                <h5><a href="services.html">Orphan Sponsorship Programme</a></h5>
+                <p>The Orphan Sponsorship Programme is at the heart of our mission at the United Peace Foundation. Through this initiative, we offer a lifeline to vulnerable orphaned children who have experienced the profound loss of their parents. Our program provides these children with more than just financial support; it offers hope, education, a sense of belonging, and a path to a brighter future. By becoming a part of our Orphan Sponsorship Programme, you are not merely changing a child's life; you are empowering them with the tools they need to break the cycle of poverty and despair, ensuring a promising tomorrow for our world's most deserving youngsters. Together, we can make a lasting impact, one child at a time. Join us in nurturing hope, one sponsorship at a time..</p>
               </div>
             </div>
           </div>
@@ -99,9 +96,9 @@
                 <span class="flaticon-think"></span>
               </div>
               <div class="cat-cap">
-                <h5><a href="services.html">Clean Water</a></h5>
-                <p>The sea freight service has grown conside rably in recent years. We spend timetting to know your
-                  processes to.</p>
+                <h5><a href="services.html">Educational Programme</a></h5>
+                <p>To uplift the deprived section of the society and make those children capable to live as respected and responsible human being.</p>
+                <p>By your kind support we provide education to the children of poor section of society by establishing small education institutes or tuitions and supply books, stationaries and basic necessities to them. Taking Care of all kind of schooling expenses of the orphans living with their mother / caretaker / guardian.</p>
               </div>
             </div>
           </div>
@@ -111,9 +108,9 @@
                 <span class="flaticon-gear"></span>
               </div>
               <div class="cat-cap">
-                <h5><a href="services.html">Clean Water</a></h5>
-                <p>The sea freight service has grown conside rably in recent years. We spend timetting to know your
-                  processes to.</p>
+                <h5><a href="services.html">Food Programme</a></h5>
+                <p>Dietary assistance or food parcel is a lifeline for the families who have no bread earner and old age destitute who are not able to work or earn money to get foods.</p>
+                <p>United Peace Foundation provides necessary food parcels to widow headed family, destitute and orphans which is not possible without your generosity and kindness.</p>
               </div>
             </div>
           </div>
@@ -132,8 +129,7 @@
                 <span>About our foundetion</span>
                 <h2>We Are In A Mission To Help Helpless</h2>
               </div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,mod tempor incididunt ut labore et dolore
-                magna aliqua. Utnixm, quis nostrud exercitation ullamc.</p>
+              <p> Our unwavering commitment is best summed up in a simple yet profound mission: to help the helpless. We are driven by an unshakeable belief in the power of compassion, unity, and collective action to transform lives and uplift communities. With a focus on orphans, widows, destitute individuals, and homeless children, we operate tirelessly across rural India and among the underprivileged sections of society. Our core values center on fostering brotherhood, peace, and unity among people of diverse backgrounds, religions, castes, and creeds. Every day, we work tirelessly to turn our mission into reality, striving to create a world where no one is left behind, where hope and opportunity flourish, and where the bonds of humanity bind us all. Join us on this remarkable journey as we extend our helping hand to those who need it most. Together, we can illuminate the path toward a brighter, more harmonious world.</p>
               <p>Lorem ipvsum dolor sit amext, consectetur adipisicing elit, smod tempor incididunt ut labore et dolore.
               </p>
             </div>
@@ -445,13 +441,11 @@
                     <div class="founder-img mb-40">
                       <img src="assets/img/gallery/testimonial.png" alt>
                       <span>Zia Ahmad</span>
-                      <p>President</p>
+                      <p>The President</p>
                     </div>
                   </div>
                   <div class="testimonial-top-cap">
-                    <p>“I am at an age where I just want to be fit and healthy our bodies are our responsibility! So
-                      start caring for your body and it will care for you. Eat clean it will care for you and workout
-                      hard.”</p>
+                    <p>“As the President of the United Peace Foundation, my objective is to provide visionary leadership and strategic direction to our organization. I am committed to advancing our mission of helping the helpless and promoting unity, peace, and brotherhood among diverse communities. Through effective advocacy, partnership cultivation, resource mobilization, and program innovation, my goal is to expand our reach and impact, making a lasting difference in the lives of orphans, widows, destitute individuals, and homeless children across the World.”</p>
                   </div>
                 </div>
               </div>

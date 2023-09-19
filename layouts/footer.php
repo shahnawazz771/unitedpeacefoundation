@@ -21,7 +21,7 @@
                   <h4>Contact Info</h4>
                   <ul>
                     <li>
-                      <p>Address :Mango Jamshedpur, Jharkhand 832110 INDIA.</p>
+                      <p>Address : Mango Jamshedpur, Jharkhand 832110 INDIA.</p>
                     </li>
                     <li><a href="#">Phone : +91 7463026868</a></li>
                     <li><a href="#">Email : <span class="__cf_email__"
