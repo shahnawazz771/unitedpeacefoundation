@@ -196,7 +196,7 @@
 
   </main>
   <?php include_once("layouts/footer.php");?>
-  <?php include_once("link-footer.php");?>
+  <?php include_once("layouts/link-footer.php");?>
 
 </body>
 
