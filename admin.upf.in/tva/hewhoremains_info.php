@@ -5,7 +5,7 @@ session_start();
 /*------------------------------------------Class For info ---------------------------------------*/
 /*------------------------------------------------------------------------------------------------*/
 class Earth616_info extends multiverse_con{	
-	public function add_info($name_name, $domainname_name, $phonenumber_name){
+	public function add_info($name_name, $domainname_name, $phonenumber_name,$email){
 		$xavier="";
 		$date=date("Y-m-d H:i:s");
 		$xavier_checkquery=mysqli_query($this->upf_dbs, "
@@ -17,12 +17,14 @@ class Earth616_info extends multiverse_con{
 					name,
 					domain_name,
 					phone_number,
+					email,
 					created_by,
 					created_at
 				) VALUES (
 					'".mysqli_real_escape_string($this->upf_dbs, $name_name)."',
 					'".mysqli_real_escape_string($this->upf_dbs, $domainname_name)."',
 					'".mysqli_real_escape_string($this->upf_dbs, $phonenumber_name)."',
+					'".mysqli_real_escape_string($this->upf_dbs, $email)."',
 					'".mysqli_real_escape_string($this->upf_dbs, "1")."',
 					'".$date."'
 				)
@@ -48,6 +50,7 @@ class Earth616_info extends multiverse_con{
 				C.name info_name,
 				C.domain_name domain_name,
 				C.phone_number phone_number,
+				C.email email,
 				U.name Uname,
 				C.created_at createdat,
 				C.updated_at updatedat
@@ -65,6 +68,7 @@ class Earth616_info extends multiverse_con{
 						<td>'.$row['info_name'].'</td>
 						<td>'.$row['domain_name'].'</td>
 						<td>'.$row['phone_number'].'</td>
+						<td>'.$row['email'].'</td>
 						<td>'.$row['Uname'].'</td>
 						<td>'.date('d M Y h:i:s a', strtotime($row['createdat'])).'</td>
 						<td>'.$row['Uname'].'</td>
@@ -101,26 +105,40 @@ class Earth616_info extends multiverse_con{
 	}
 
 
-	public function edit_info($info_name, $info_id){
+	public function edit_info($info_id, $name_name, $domainname_name, $phonenumber_name, $email){
 		$xavier="";
-		$xavier_checkquery=mysqli_query($this->upf_dbs, "
-			SELECT id FROM info WHERE name='".mysqli_real_escape_string($this->upf_dbs, $info_name)."' AND id<>'".mysqli_real_escape_string($this->upf_dbs, $info_id)."'
+		$xavier_savequery=mysqli_query($this->upf_dbs, "
+			UPDATE info 
+			SET 
+				name='".mysqli_real_escape_string($this->upf_dbs, $name_name)."',
+				domain_name='".mysqli_real_escape_string($this->upf_dbs, $domainname_name)."',
+				phone_number='".mysqli_real_escape_string($this->upf_dbs, $phonenumber_name)."',
+				email='".mysqli_real_escape_string($this->upf_dbs, $email)."'  
+			WHERE id='".mysqli_real_escape_string($this->upf_dbs, $info_id)."'
 		");
-		if(mysqli_num_rows($xavier_checkquery)==0){
-			$xavier_savequery=mysqli_query($this->upf_dbs, "
-				UPDATE info 
-				SET name='".mysqli_real_escape_string($this->upf_dbs, $info_name)."' 
-				WHERE id='".mysqli_real_escape_string($this->upf_dbs, $info_id)."'
-			");
-			if($xavier_savequery){
-				$xavier="success";
-			}else{
-				$xavier="error";
-			}
+		if($xavier_savequery){
+			$xavier="success";
 		}else{
-			$xavier="duplicate";
+			$xavier="error";
 		}
 
+		return $xavier;
+	}
+
+	public function call_info($info_id){
+		$xavier="";
+		$xavier_getquery=mysqli_query($this->upf_dbs, "
+			SELECT
+				name,
+				domain_name,
+				email,
+				phone_number
+			FROM
+			    info
+			WHERE
+			    id='".mysqli_real_escape_string($this->upf_dbs, $info_id)."'
+		");
+		$xavier=mysqli_fetch_assoc($xavier_getquery);
 		return $xavier;
 	}
 }
@@ -133,13 +151,12 @@ if(isset($_POST['add-info-btn'])){
 	$name_name = $_POST['add-name'];
 	$domainname_name = $_POST['add-domainname'];
 	$phonenumber_name = $_POST['add-phonenumber'];
-	if(empty($name_name) || empty($domainname_name) || empty($phonenumber_name)){
-		$out="empty";
-	// }else if (empty(@$_SESSION['upf_login_info'])){
-		// $out="logout";
+	$email = $_POST['add-email'];
+	if (empty(@$_SESSION['upf_admin_info_id'])){
+		$out="logout";
 	}else{
 		$illuminati=new Earth616_info();
-		$out=$illuminati->add_info($name_name, $domainname_name, $phonenumber_name);
+		$out=$illuminati->add_info($name_name, $domainname_name, $phonenumber_name, $email);
 	}
 	echo $out;
 }
@@ -148,12 +165,12 @@ if(isset($_POST['add-info-btn'])){
 if(isset($_POST['load_info'])){
 	$out='';
 
-	// if (empty(@$_SESSION['upf_login_info'])){
-		// $out="logout";
-	// }else{
+	if (empty(@$_SESSION['upf_admin_info_id'])){
+		$out="logout";
+	}else{
 		$illuminati=new Earth616_info();
 		$out=$illuminati->show_info();
-	// }
+	}
 	echo json_encode($out);
 }
 
@@ -161,28 +178,42 @@ if(isset($_POST['load_info'])){
 if(isset($_POST['delete_info'])){
 	$out='';
 	$info_id = $_POST['info_id'];
-	// if (empty(@$_SESSION['upf_login_info'])){
-		// $out="logout";
-	// }else{
+	if (empty(@$_SESSION['upf_admin_info_id'])){
+		$out="logout";
+	}else{
 		$illuminati=new Earth616_info();
 		$out=$illuminati->delete_info($info_id);
-	// }
+	}
 	echo json_encode($out);
 }
 
 // edit info
 if(isset($_POST['edit-info-btn'])){
 	$out='';
-	$info_name = $_POST['add-info'];
 	$info_id = $_POST['add-info-id-hidden'];
-	// if(empty($info_name)){
-	// 	$out="empty";
-	// // }else if (empty(@$_SESSION['upf_login_info'])){
-	// 	// $out="logout";
-	// }else{
+	$name_name = $_POST['add-name'];
+	$domainname_name = $_POST['add-domainname'];
+	$phonenumber_name = $_POST['add-phonenumber'];
+	$email = $_POST['add-email'];
+	if (empty(@$_SESSION['upf_admin_info_id'])){
+		$out="logout";
+	}else{
 		$illuminati=new Earth616_info();
-		$out=$illuminati->edit_info($info_name, $info_id);
-	// }
+		$out=$illuminati->edit_info($info_id, $name_name, $domainname_name, $phonenumber_name, $email);
+	}
 	echo $out;
+}
+
+// Call info
+if(isset($_POST['call_info'])){
+	$out='';
+	$info_id=$_POST['info_id'];
+	if (empty(@$_SESSION['upf_admin_info_id'])){
+		$out="logout";
+	}else{
+		$illuminati=new Earth616_info();
+		$out=$illuminati->call_info($info_id);
+	}
+	echo json_encode($out);
 }
 ?>

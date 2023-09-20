@@ -150,7 +150,6 @@
                                     <div class="mb-4">
                                         <i class="mdi mdi-alert-outline display-4 text-danger"></i>
                                     </div>
-                                    <h4 class="alert-heading font-18">Don't input the same user name twice</h4>
                                     <p class="errorMessage"></p>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         Ok

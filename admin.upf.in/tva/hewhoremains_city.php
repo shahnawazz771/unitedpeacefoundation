@@ -113,6 +113,20 @@ class Earth616_city extends multiverse_con{
 
 		return $xavier;
 	}
+
+	public function call_city($city_id){
+		$xavier="";
+		$xavier_getquery=mysqli_query($this->upf_dbs, "
+			SELECT
+				name
+			FROM
+			    city
+			WHERE
+			    id='".mysqli_real_escape_string($this->upf_dbs, $city_id)."'
+		");
+		$xavier=mysqli_fetch_assoc($xavier_getquery);
+		return $xavier;
+	}
 }
 #<--------------------------------------------------------------------------------------------------------->
 #<--------------------------------------Object sections of city class-------------------------------------->
@@ -123,7 +137,7 @@ if(isset($_POST['add-city-btn'])){
 	$city_name = $_POST['add-city'];
 	if(empty($city_name)){
 		$out="empty";
-	// }else if (empty(@$_SESSION['upf_login_info'])){
+	// }else if (empty(@$_SESSION['upf_admin_info_id'])){
 		// $out="logout";
 	}else{
 		$illuminati=new Earth616_city();
@@ -136,7 +150,7 @@ if(isset($_POST['add-city-btn'])){
 if(isset($_POST['load_city'])){
 	$out='';
 
-	// if (empty(@$_SESSION['upf_login_info'])){
+	// if (empty(@$_SESSION['upf_admin_info_id'])){
 		// $out="logout";
 	// }else{
 		$illuminati=new Earth616_city();
@@ -149,7 +163,7 @@ if(isset($_POST['load_city'])){
 if(isset($_POST['delete_city'])){
 	$out='';
 	$city_id = $_POST['city_id'];
-	// if (empty(@$_SESSION['upf_login_info'])){
+	// if (empty(@$_SESSION['upf_admin_info_id'])){
 		// $out="logout";
 	// }else{
 		$illuminati=new Earth616_city();
@@ -163,14 +177,25 @@ if(isset($_POST['edit-city-btn'])){
 	$out='';
 	$city_name = $_POST['add-city'];
 	$city_id = $_POST['add-city-id-hidden'];
-	// if(empty($city_name)){
-	// 	$out="empty";
-	// // }else if (empty(@$_SESSION['upf_login_info'])){
-	// 	// $out="logout";
-	// }else{
+	if (empty(@$_SESSION['upf_admin_info_id'])){
+		$out="logout";
+	}else{
 		$illuminati=new Earth616_city();
 		$out=$illuminati->edit_city($city_name, $city_id);
-	// }
+	}
 	echo $out;
+}
+
+// Call city
+if(isset($_POST['call_city'])){
+	$out='';
+	$city_id=$_POST['city_id'];
+	if (empty(@$_SESSION['upf_admin_info_id'])){
+		$out="logout";
+	}else{
+		$illuminati=new Earth616_city();
+		$out=$illuminati->call_city($city_id);
+	}
+	echo json_encode($out);
 }
 ?>

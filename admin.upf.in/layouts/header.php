@@ -8,13 +8,13 @@
                                     <img src="assets/images/logo-sm-dark.png" alt="" height="22">
                                 </span>
                                 <span class="logo-lg">
-                                    <img src="assets/images/logo-dark.png" alt="" height="20">
+                                    <img src="assets/images/logo-upf.png" alt="" height="20">
                                 </span>
                             </a>
 
                             <a href="index.html" class="logo logo-light">
                                 <span class="logo-sm">
-                                    <img src="assets/images/logo-sm-light.png" alt="" height="22">
+                                    <img src="assets/images/logo/logo-upf.png" alt="" height="22">
                                 </span>
                                 <span class="logo-lg">
                                     United Peace Foundation

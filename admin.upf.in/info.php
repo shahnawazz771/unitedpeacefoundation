@@ -55,7 +55,7 @@
                             <div class="col-sm-12 col-xl-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="header-title"><button type="button" class="btn btn-primary btn-sm waves-effect waves-light add-info-modal" data-toggle="modal" data-target=".bs-example-modal-center" style="font-size: 1rem; padding: 5px 8px";>Add Info</button></h4>        
+                                        <h4 class="header-title add-btn-add-modal"><button type="button" class="btn btn-primary btn-sm waves-effect waves-light add-info-modal" data-toggle="modal" data-target=".bs-example-modal-center" style="font-size: 1rem; padding: 5px 8px";>Add Info</button></h4>        
                                         <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                             <thead>
                                             <tr>
@@ -63,6 +63,7 @@
                                                 <th class="text_center">Name</th>
                                                 <th class="text_center">Domain Name</th>
                                                 <th class="text_center">Phone Number</th>
+                                                <th class="text_center">Email</th>
                                                 <th class="text_center">Created by</th>
                                                 <th class="text_center">Created at</th>
                                                 <th class="text_center">Updated by</th>
@@ -106,40 +107,59 @@
                 // add info form
                 $('.upf-add-info').on('submit', function(e){
                   e.preventDefault();
-                  $.ajax({
-                    url         : "tva/hewhoremains_info.php",
-                    method      : "post",
-                    data        : new FormData(this),
-                    contentType : false,
-                    processData : false,
-                    // dataType : 'JSON',
-                    success     : function (argument) {
-                      // console.log(argument);
-                        argument=argument.trim();
-                        var message="";
-                        if(argument=="success"){
-                            load_info();
-                            $('.addinfobtnclose').click();
-                            message="info saved.";
-                            $('.show-upf-success-popup').click();
-                            $(".succMessage").html(message);
-                        }else if(argument=="duplicate"){
-                            message="yeah empty";
-                            $('.show-upf-alert-popup').click();
-                        }else if(argument=="error"){
-                            message="yeah empty";
-                            $('.show-upf-alert-popup').click();
-                        }else if(argument=="empty"){
-                            message="yeah empty";
-                            $('.show-upf-alert-popup').click();
-                            $(".errorMessage").html(message);
-                        }else if(argument=="logout"){
-                            message="Oh no logout";
-                            $('.show-upf-alert-popup').click();
-                            $(".errorMessage").html(message);
-                        }
+                    var message="";
+                    var validated=0;
+                    var name=$('.add-name').val();
+                    var email=$('.add-email').val();
+                    var phonenumber=$('.add-phonenumber').val();
+                    $('.validation-tag').remove();
+                    if(name==""){
+                        $(".add-name").after("<span class='text-danger validation-tag'>Please enter name</span>");
+                        validated=0;
+                    }else{
+                        $('.validation-tag').remove();
+                        validated=1;
                     }
-                  }); 
+                    if(email==""){
+                        $(".add-email").after("<span class='text-danger validation-tag'>Please enter email</span>");
+                        validated=0;
+                    }else{
+                        $('.validation-tag').remove();
+                        validated=1;
+                    }
+                    if(phonenumber==""){
+                        $(".add-phonenumber").after("<span class='text-danger validation-tag'>Please enter phone number</span>");
+                        validated=0;
+                    }else{
+                        $('.validation-tag').remove();
+                        validated=1;
+                    }
+                    if(validated==1){
+                        $.ajax({
+                          url         : "tva/hewhoremains_info.php",
+                          method      : "post",
+                          data        : new FormData(this),
+                          contentType : false,
+                          processData : false,
+                          // dataType : 'JSON',
+                          success     : function (argument) {
+                            // console.log(argument);
+                              argument=argument.trim();
+                              var message="";
+                              if(argument=="success"){
+                                  load_info();
+                                  $('.addinfobtnclose').click();
+                                  message="info saved.";
+                                  $('.show-upf-success-popup').click();
+                                  $(".succMessage").html(message);
+                              }else if(argument=="logout"){
+                                  message="Oh no logout";
+                                  $('.show-upf-alert-popup').click();
+                                  $(".errorMessage").html(message);
+                              }
+                          }
+                        }); 
+                    }
                 });
 
                 // Load info
@@ -152,7 +172,29 @@
                       dataType  : "JSON",
                       success   : function(info){
                         // console.log(info);
+                        if(info!="\r\n\t\t\t\t<tr>\r\n\t\t\t\t\t<td>No record found!!!<\/td>\r\n\t\t\t\t<\/tr>\r\n\t\t\t"){
+                            $(".add-info-modal").remove();
+                        }else{
+                            $('.add-btn-add-modal').html('<button type="button" class="btn btn-primary btn-sm waves-effect waves-light add-info-modal" data-toggle="modal" data-target=".bs-example-modal-center" style="font-size: 1rem; padding: 5px 8px";>Add Info</button>');
+                        }
                         $('.upf-info-table-data').html(info);
+                      }
+                    });
+                }
+
+                // call info
+                function call_info(info_id){
+                    $.ajax({
+                      url       : "tva/hewhoremains_info.php",
+                      method    : "POST",
+                      data      : {call_info:1,info_id:info_id},
+                      dataType  : "JSON",
+                      success   : function(info){
+                        // console.log(info);
+                        $('.add-name').val(info.name);
+                        $('.add-email').val(info.email);
+                        $('.add-domainname').val(info.domain_name);
+                        $('.add-phonenumber').val(info.phone_number);
                       }
                     });
                 }
@@ -194,32 +236,33 @@
 
                 $('body').delegate('.upf-edit-info', 'click', function(){
                     var info_id=$(this).attr('id');
+                    call_info(info_id);
                     $('.changeinfo-option').html("Edit info");
                     $('.add-info-id-hidden').val(info_id);
                     $('.add-info-btn').removeAttr('name');
                     $('.add-info-btn').attr('name', 'edit-info-btn');
                     $('.add-name').val("");
-                    $('.add-domainname').val("");
+                    $('.add-emailname').val("");
                     $('.add-phonenumber').val("");
                     $('.add-name').removeAttr('placeholder');
                     $('.add-name').attr('placeholder', 'Rename your name');
-                    $('.add-domainname').removeAttr('placeholder');
-                    $('.add-domainname').attr('placeholder', 'Rename domain name');
+                    $('.add-emailname').removeAttr('placeholder');
+                    $('.add-emailname').attr('placeholder', 'Rename email name');
                     $('.add-phonenumber').removeAttr('placeholder');
                     $('.add-phonenumber').attr('placeholder', 'Rename phone number');
                 });
 
                 $('body').delegate('.add-info-modal', 'click', function(){
-                    $('.changeinfo-option').html("Add info");
+                    $('.changeinfo-option').html("Add Info");
                     $('.add-info-btn').removeAttr('name');
                     $('.add-info-btn').attr('name', 'add-info-btn');
                     $('.add-name').val("");
-                    $('.add-domainname').val("");
+                    $('.add-emailname').val("");
                     $('.add-phonenumber').val("");
                     $('.add-name').removeAttr('placeholder');
                     $('.add-name').attr('placeholder', 'Enter your name');
-                    $('.add-domainname').removeAttr('placeholder');
-                    $('.add-domainname').attr('placeholder', 'Enter your domain name');
+                    $('.add-emailname').removeAttr('placeholder');
+                    $('.add-email').attr('placeholder', 'Enter your email');
                     $('.add-phonenumber').removeAttr('placeholder');
                     $('.add-phonenumber').attr('placeholder', 'Enter your phone number');
                 });
@@ -234,7 +277,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title mt-0 changeinfo-option">Add info</h5>
+                <h5 class="modal-title mt-0 changeinfo-option">Add Info</h5>
                 <button type="button" class="addinfobtnclose" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -248,19 +291,25 @@
                                     <label for="add-name" class="col-md-2 col-form-label">Name</label>
                                     <div class="col-md-6">
                                         <form class="upf-add-info">
-                                        <input class="form-control add-name" type="text" spellcheck="true" name="add-name" placeholder="Enter info name" id="add-name" spellcheck="false" data-ms-editor="true">
+                                        <input class="form-control add-name" type="text" spellcheck="true" name="add-name" placeholder="Enter info" id="add-name" spellcheck="false" data-ms-editor="true">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="add-domainname" class="col-md-2 col-form-label">Domain Name</label>
                                     <div class="col-md-6">
-                                        <input class="form-control add-domainname" type="text" spellcheck="true" name="add-domainname" placeholder="Enter info name" id="add-domainname" spellcheck="false" data-ms-editor="true">
+                                        <input class="form-control add-domainname" type="text" spellcheck="true" name="add-domainname" placeholder="Enter domain name" id="add-domainname" spellcheck="false" data-ms-editor="true">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="add-phonenumber" class="col-md-2 col-form-label">Phone Number</label>
                                     <div class="col-md-6">
-                                        <input class="form-control add-phonenumber" type="text" spellcheck="true" name="add-phonenumber" placeholder="Enter info name" id="add-phonenumber" spellcheck="false" data-ms-editor="true">
+                                        <input class="form-control add-phonenumber" type="number" spellcheck="true" name="add-phonenumber" placeholder="Enter info" id="add-phonenumber" spellcheck="false" data-ms-editor="true">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="add-email" class="col-md-2 col-form-label">Email</label>
+                                    <div class="col-md-6">
+                                        <input class="form-control add-email" type="text" spellcheck="true" name="add-email" placeholder="Enter email" id="add-email" spellcheck="false" data-ms-editor="true">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -332,7 +381,6 @@
                                     <div class="mb-4">
                                         <i class="mdi mdi-alert-outline display-4 text-danger"></i>
                                     </div>
-                                    <h4 class="alert-heading font-18">Don't input the same info name twice</h4>
                                     <p class="errorMessage"></p>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         Ok

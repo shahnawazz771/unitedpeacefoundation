@@ -49,8 +49,6 @@ if(isset($_POST['user-login-access'])){
 	$userpassword = $_POST['userpassword'];
 	if(empty($username) || empty($userpassword)){
 		$out="empty";
-	// }else if (empty(@$_SESSION['upf_login_user'])){
-		// $out="logout";
 	}else{
 		$illuminati=new Earth616_user();
 		$out=$illuminati->check_user($username, $userpassword);

@@ -113,6 +113,20 @@ class Earth616_state extends multiverse_con{
 
 		return $xavier;
 	}
+
+	public function call_state($state_id){
+		$xavier="";
+		$xavier_getquery=mysqli_query($this->upf_dbs, "
+			SELECT
+				name
+			FROM
+			    state
+			WHERE
+			    id='".mysqli_real_escape_string($this->upf_dbs, $state_id)."'
+		");
+		$xavier=mysqli_fetch_assoc($xavier_getquery);
+		return $xavier;
+	}
 }
 #<--------------------------------------------------------------------------------------------------------->
 #<--------------------------------------Object sections of state class-------------------------------------->
@@ -172,5 +186,18 @@ if(isset($_POST['edit-state-btn'])){
 		$out=$illuminati->edit_state($state_name, $state_id);
 	// }
 	echo $out;
+}
+
+// Call state
+if(isset($_POST['call_state'])){
+	$out='';
+	$state_id=$_POST['state_id'];
+	if (empty(@$_SESSION['upf_admin_info_id'])){
+		$out="logout";
+	}else{
+		$illuminati=new Earth616_state();
+		$out=$illuminati->call_state($state_id);
+	}
+	echo json_encode($out);
 }
 ?>

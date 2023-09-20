@@ -204,8 +204,8 @@ if(isset($_POST['add-user-btn'])){
 	$role = $_POST['add-role'];
 	if(empty($name_name) || empty($email) || empty($phonenumber) || empty($address) || empty($password)){
 		$out="empty";
-	// }else if (empty(@$_SESSION['upf_login_user'])){
-		// $out="logout";
+	}else if (empty(@$_SESSION['upf_admin_info_id'])){
+		$out="logout";
 	}else{
 		$illuminati=new Earth616_user();
 		$out=$illuminati->add_user($name_name, $email, $phonenumber, $address, $city, $state, $pincode, $password, $role);
@@ -217,12 +217,12 @@ if(isset($_POST['add-user-btn'])){
 if(isset($_POST['load_user'])){
 	$out='';
 
-	// if (empty(@$_SESSION['upf_login_user'])){
-		// $out="logout";
-	// }else{
+	if (empty(@$_SESSION['upf_admin_info_id'])){
+		$out="logout";
+	}else{
 		$illuminati=new Earth616_user();
 		$out=$illuminati->show_user();
-	// }
+	}
 	echo json_encode($out);
 }
 
@@ -230,12 +230,12 @@ if(isset($_POST['load_user'])){
 if(isset($_POST['delete_user'])){
 	$out='';
 	$user_id = $_POST['user_id'];
-	// if (empty(@$_SESSION['upf_login_user'])){
-		// $out="logout";
-	// }else{
+	if (empty(@$_SESSION['upf_admin_info_id'])){
+		$out="logout";
+	}else{
 		$illuminati=new Earth616_user();
 		$out=$illuminati->delete_user($user_id);
-	// }
+	}
 	echo json_encode($out);
 }
 
@@ -252,14 +252,12 @@ if(isset($_POST['edit-user-btn'])){
 	$pincode = $_POST['add-pincode'];
 	$password = $_POST['add-password'];
 	$role = $_POST['add-role'];
-	// if(empty($user_name)){
-	// 	$out="empty";
-	// // }else if (empty(@$_SESSION['upf_login_user'])){
-	// 	// $out="logout";
-	// }else{
+	if (empty(@$_SESSION['upf_admin_info_id'])){
+		$out="logout";
+	}else{
 		$illuminati=new Earth616_user();
 		$out=$illuminati->edit_user($user_id, $name_name, $email, $phonenumber, $address, $city, $state, $pincode, $password, $role);
-	// }
+	}
 	echo $out;
 }
 
@@ -267,12 +265,12 @@ if(isset($_POST['edit-user-btn'])){
 if(isset($_POST['call_user'])){
 	$out='';
 	$user_id=$_POST['user_id'];
-	// if (empty(@$_SESSION['upf_login_user'])){
-		// $out="logout";
-	// }else{
+	if (empty(@$_SESSION['upf_admin_info_id'])){
+		$out="logout";
+	}else{
 		$illuminati=new Earth616_user();
 		$out=$illuminati->call_user($user_id);
-	// }
+	}
 	echo json_encode($out);
 }
 ?>

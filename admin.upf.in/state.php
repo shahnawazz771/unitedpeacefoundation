@@ -103,41 +103,53 @@
 
                 // add state form
                 $('.upf-add-state').on('submit', function(e){
-                  e.preventDefault();
-                  $.ajax({
-                    url         : "tva/hewhoremains_state.php",
-                    method      : "post",
-                    data        : new FormData(this),
-                    contentType : false,
-                    processData : false,
-                    // dataType : 'JSON',
-                    success     : function (argument) {
-                      // console.log(argument);
-                        argument=argument.trim();
-                        var message="";
-                        if(argument=="success"){
-                            load_state();
-                            $('.addstatebtnclose').click();
-                            message="state saved.";
-                            $('.show-upf-success-popup').click();
-                            $(".succMessage").html(message);
-                        }else if(argument=="duplicate"){
-                            message="yeah empty";
-                            $('.show-upf-alert-popup').click();
-                        }else if(argument=="error"){
-                            message="yeah empty";
-                            $('.show-upf-alert-popup').click();
-                        }else if(argument=="empty"){
-                            message="yeah empty";
-                            $('.show-upf-alert-popup').click();
-                            $(".errorMessage").html(message);
-                        }else if(argument=="logout"){
-                            message="Oh no logout";
-                            $('.show-upf-alert-popup').click();
-                            $(".errorMessage").html(message);
-                        }
+                    e.preventDefault();
+                    var message="";
+                    var validated=0;
+                    var state=$('.add-state').val();
+                    $('.validation-tag').remove();
+                    if(state==""){
+                        $(".add-state").after("<span class='text-danger validation-tag'>Please enter state</span>");
+                        validated=0;
+                    }else{
+                        $('.validation-tag').remove();
+                        validated=1;
                     }
-                  }); 
+                    if(validated==1){
+                        $.ajax({
+                          url         : "tva/hewhoremains_state.php",
+                          method      : "post",
+                          data        : new FormData(this),
+                          contentType : false,
+                          processData : false,
+                          // dataType : 'JSON',
+                          success     : function (argument) {
+                            // console.log(argument);
+                              argument=argument.trim();
+                              if(argument=="success"){
+                                  load_state();
+                                  $('.addstatebtnclose').click();
+                                  message="state saved.";
+                                  $('.show-upf-success-popup').click();
+                                  $(".succMessage").html(message);
+                              }else if(argument=="duplicate"){
+                                  message="yeah empty";
+                                  $('.show-upf-alert-popup').click();
+                              }else if(argument=="error"){
+                                  message="yeah empty";
+                                  $('.show-upf-alert-popup').click();
+                              }else if(argument=="empty"){
+                                  message="yeah empty";
+                                  $('.show-upf-alert-popup').click();
+                                  $(".errorMessage").html(message);
+                              }else if(argument=="logout"){
+                                  message="Oh no logout";
+                                  $('.show-upf-alert-popup').click();
+                                  $(".errorMessage").html(message);
+                              }
+                          }
+                        });
+                    } 
                 });
 
                 // Load state
@@ -151,6 +163,23 @@
                       success   : function(state){
                         // console.log(state);
                         $('.upf-state-table-data').html(state);
+                      }
+                    });
+                }
+
+
+
+                // call state
+                function call_state(state_id){
+                    $.ajax({
+                      url       : "tva/hewhoremains_state.php",
+                      method    : "POST",
+                      data      : {call_state:1,state_id:state_id},
+                      dataType  : "JSON",
+                      success   : function(state){
+                        // console.log(state);
+                        $('.add-state').val(state.name);
+
                       }
                     });
                 }
@@ -192,6 +221,7 @@
 
                 $('body').delegate('.upf-edit-state', 'click', function(){
                     var state_id=$(this).attr('id');
+                    call_state(state_id);
                     $('.changestate-option').html("Edit State Name");
                     $('.add-state-id-hidden').val(state_id);
                     $('.add-state-btn').removeAttr('name');
@@ -306,7 +336,6 @@
                                     <div class="mb-4">
                                         <i class="mdi mdi-alert-outline display-4 text-danger"></i>
                                     </div>
-                                    <h4 class="alert-heading font-18">Don't input the same state name twice</h4>
                                     <p class="errorMessage"></p>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         Ok

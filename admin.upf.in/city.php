@@ -97,41 +97,47 @@
 
                 // add city form
                 $('.upf-add-city').on('submit', function(e){
-                  e.preventDefault();
-                  $.ajax({
-                    url         : "tva/hewhoremains_city.php",
-                    method      : "post",
-                    data        : new FormData(this),
-                    contentType : false,
-                    processData : false,
-                    // dataType : 'JSON',
-                    success     : function (argument) {
-                      // console.log(argument);
-                        argument=argument.trim();
-                        var message="";
-                        if(argument=="success"){
-                            load_city();
-                            $('.addcitybtnclose').click();
-                            message="City saved.";
-                            $('.show-upf-success-popup').click();
-                            $(".succMessage").html(message);
-                        }else if(argument=="duplicate"){
-                            message="yeah empty";
-                            $('.show-upf-alert-popup').click();
-                        }else if(argument=="error"){
-                            message="yeah empty";
-                            $('.show-upf-alert-popup').click();
-                        }else if(argument=="empty"){
-                            message="yeah empty";
-                            $('.show-upf-alert-popup').click();
-                            $(".errorMessage").html(message);
-                        }else if(argument=="logout"){
-                            message="Oh no logout";
-                            $('.show-upf-alert-popup').click();
-                            $(".errorMessage").html(message);
-                        }
+                    e.preventDefault();
+                    var message="";
+                    var validated=0;
+                    var city=$('.add-city').val();
+                    $('.validation-tag').remove();
+                    if(city==""){
+                      $(".add-city").after("<span class='text-danger validation-tag'>Please enter city</span>");
+                          validated=0;
+                    }else{
+                        $('.validation-tag').remove();
+                            validated=1;
                     }
-                  }); 
+                    if(validated==1){
+                      $.ajax({
+                        url         : "tva/hewhoremains_city.php",
+                        method      : "post",
+                        data        : new FormData(this),
+                        contentType : false,
+                        processData : false,
+                        // dataType : 'JSON',
+                        success     : function (argument) {
+                          // console.log(argument);
+                            argument=argument.trim();
+                            if(argument=="success"){
+                                load_city();
+                                $('.addcitybtnclose').click();
+                                message="City saved.";
+                                $('.show-upf-success-popup').click();
+                                $(".succMessage").html(message);
+                            }else if(argument=="duplicate"){
+                                message="Don't enter same city twice";
+                                $('.show-upf-alert-popup').click();
+                                $(".errorMessage").html(message);
+                            }else if(argument=="logout"){
+                                message="Logged out";
+                                $('.show-upf-alert-popup').click();
+                                $(".errorMessage").html(message);
+                            }
+                        }
+                      }); 
+                    }
                 });
 
                 // Load city
@@ -145,6 +151,21 @@
                       success   : function(city){
                         // console.log(city);
                         $('.upf-city-table-data').html(city);
+                      }
+                    });
+                }
+
+                // call city
+                function call_city(city_id){
+                    $.ajax({
+                      url       : "tva/hewhoremains_city.php",
+                      method    : "POST",
+                      data      : {call_city:1,city_id:city_id},
+                      dataType  : "JSON",
+                      success   : function(city){
+                        // console.log(city);
+                        $('.add-city').val(city.name);
+
                       }
                     });
                 }
@@ -186,6 +207,7 @@
 
                 $('body').delegate('.upf-edit-city', 'click', function(){
                     var city_id=$(this).attr('id');
+                    call_city(city_id);
                     $('.changecity-option').html("Edit City");
                     $('.add-city-id-hidden').val(city_id);
                     $('.add-city-btn').removeAttr('name');
@@ -300,7 +322,6 @@
                                     <div class="mb-4">
                                         <i class="mdi mdi-alert-outline display-4 text-danger"></i>
                                     </div>
-                                    <h4 class="alert-heading font-18">Don't input the same city name twice</h4>
                                     <p class="errorMessage"></p>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         Ok

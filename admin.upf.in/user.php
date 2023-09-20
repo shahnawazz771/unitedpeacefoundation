@@ -54,7 +54,7 @@
                         <div class="row">
                             <div class="col-sm-12 col-xl-12">
                                 <div class="card">
-                                    <div class="card-body">
+                                    <div class="card-body" style="width: auto;overflow-x: auto;white-space: nowrap;">
                                         <h4 class="header-title"><button type="button" class="btn btn-primary btn-sm waves-effect waves-light add-user-modal" data-toggle="modal" data-target=".bs-example-modal-center" style="font-size: 1rem; padding: 5px 8px";>Add User</button></h4>        
                                         <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                             <thead>
@@ -251,7 +251,7 @@
                         if(argument=="success"){
                             load_user();
                             $('.adduserbtnclose').click();
-                            message="user deleted.";
+                            message="User Deleted.";
                             $('.show-upf-success-popup').click();
                             $(".succMessage").html(message);
                         }else if(argument=="error"){
@@ -262,7 +262,7 @@
                             $('.show-upf-alert-popup').click();
                             $(".errorMessage").html(message);
                         }else if(argument=="logout"){
-                            message="Oh no logout";
+                            message="Logged out";
                             $('.show-upf-alert-popup').click();
                             $(".errorMessage").html(message);
                         }
@@ -495,7 +495,6 @@
                                     <div class="mb-4">
                                         <i class="mdi mdi-alert-outline display-4 text-danger"></i>
                                     </div>
-                                    <h4 class="alert-heading font-18">Don't input the same user name twice</h4>
                                     <p class="errorMessage"></p>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         Ok
