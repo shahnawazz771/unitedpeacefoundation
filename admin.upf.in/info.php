@@ -1,3 +1,9 @@
+<?php 
+    session_start();
+    if(empty($_SESSION['upf_admin_info_name'])){
+        header('location:login.php');
+    }
+?>
 <!doctype html>
 <html lang="en">
 
