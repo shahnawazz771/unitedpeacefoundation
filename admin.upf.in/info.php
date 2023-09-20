@@ -112,6 +112,7 @@
                     var name=$('.add-name').val();
                     var email=$('.add-email').val();
                     var phonenumber=$('.add-phonenumber').val();
+                    var domainname=$('.add-domainname').val();
                     $('.validation-tag').remove();
                     if(name==""){
                         $(".add-name").after("<span class='text-danger validation-tag'>Please enter name</span>");
@@ -129,6 +130,13 @@
                     }
                     if(phonenumber==""){
                         $(".add-phonenumber").after("<span class='text-danger validation-tag'>Please enter phone number</span>");
+                        validated=0;
+                    }else{
+                        $('.validation-tag').remove();
+                        validated=1;
+                    }
+                    if(domainname==""){
+                        $(".add-domainname").after("<span class='text-danger validation-tag'>Please enter domain name</span>");
                         validated=0;
                     }else{
                         $('.validation-tag').remove();
@@ -218,13 +226,6 @@
                             message="info deleted.";
                             $('.show-upf-success-popup').click();
                             $(".succMessage").html(message);
-                        }else if(argument=="error"){
-                            message="yeah empty";
-                            $('.show-upf-alert-popup').click();
-                        }else if(argument=="empty"){
-                            message="yeah empty";
-                            $('.show-upf-alert-popup').click();
-                            $(".errorMessage").html(message);
                         }else if(argument=="logout"){
                             message="Oh no logout";
                             $('.show-upf-alert-popup').click();
@@ -237,34 +238,42 @@
                 $('body').delegate('.upf-edit-info', 'click', function(){
                     var info_id=$(this).attr('id');
                     call_info(info_id);
+                    $('.validation-tag').remove();
                     $('.changeinfo-option').html("Edit info");
                     $('.add-info-id-hidden').val(info_id);
                     $('.add-info-btn').removeAttr('name');
                     $('.add-info-btn').attr('name', 'edit-info-btn');
                     $('.add-name').val("");
-                    $('.add-emailname').val("");
+                    $('.add-email').val("");
+                    $('.add-domainname').val("");
                     $('.add-phonenumber').val("");
                     $('.add-name').removeAttr('placeholder');
-                    $('.add-name').attr('placeholder', 'Rename your name');
-                    $('.add-emailname').removeAttr('placeholder');
-                    $('.add-emailname').attr('placeholder', 'Rename email name');
+                    $('.add-name').attr('placeholder', 'Re-enter company name');
+                    $('.add-email').removeAttr('placeholder');
+                    $('.add-email').attr('placeholder', 'Re-enter company email');
+                    $('.add-domainname').removeAttr('placeholder');
+                    $('.add-domainname').attr('placeholder', 'Re-enter company domain name');
                     $('.add-phonenumber').removeAttr('placeholder');
-                    $('.add-phonenumber').attr('placeholder', 'Rename phone number');
+                    $('.add-phonenumber').attr('placeholder', 'Re-enter company phone number');
                 });
 
                 $('body').delegate('.add-info-modal', 'click', function(){
+                    $('.validation-tag').remove();
                     $('.changeinfo-option').html("Add Info");
                     $('.add-info-btn').removeAttr('name');
                     $('.add-info-btn').attr('name', 'add-info-btn');
                     $('.add-name').val("");
-                    $('.add-emailname').val("");
+                    $('.add-email').val("");
+                    $('.add-domainname').val("");
                     $('.add-phonenumber').val("");
                     $('.add-name').removeAttr('placeholder');
-                    $('.add-name').attr('placeholder', 'Enter your name');
-                    $('.add-emailname').removeAttr('placeholder');
-                    $('.add-email').attr('placeholder', 'Enter your email');
+                    $('.add-name').attr('placeholder', 'Enter company name');
+                    $('.add-email').removeAttr('placeholder');
+                    $('.add-email').attr('placeholder', 'Enter company email');
+                    $('.add-domainname').removeAttr('placeholder');
+                    $('.add-domainname').attr('placeholder', 'Enter company domain name');
                     $('.add-phonenumber').removeAttr('placeholder');
-                    $('.add-phonenumber').attr('placeholder', 'Enter your phone number');
+                    $('.add-phonenumber').attr('placeholder', 'Enter company phone number');
                 });
 
 
