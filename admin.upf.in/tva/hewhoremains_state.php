@@ -69,7 +69,7 @@ class Earth616_state extends multiverse_con{
 		}else{
 			$xavier='
 				<tr>
-					<td>No record found!!!</td>
+					<td>No record found!</td>
 				</tr>
 			';
 		}

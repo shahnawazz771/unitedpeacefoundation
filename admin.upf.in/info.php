@@ -227,7 +227,7 @@
                             $('.show-upf-success-popup').click();
                             $(".succMessage").html(message);
                         }else if(argument=="logout"){
-                            message="Oh no logout";
+                            message="Logged out";
                             $('.show-upf-alert-popup').click();
                             $(".errorMessage").html(message);
                         }
