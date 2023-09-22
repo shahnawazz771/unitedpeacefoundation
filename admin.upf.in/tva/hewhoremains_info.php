@@ -25,7 +25,7 @@ class Earth616_info extends multiverse_con{
 					'".mysqli_real_escape_string($this->upf_dbs, $domainname_name)."',
 					'".mysqli_real_escape_string($this->upf_dbs, $phonenumber_name)."',
 					'".mysqli_real_escape_string($this->upf_dbs, $email)."',
-					'".mysqli_real_escape_string($this->upf_dbs, "1")."',
+					'".mysqli_real_escape_string($this->upf_dbs, $_SESSION['upf_admin_info_id'])."',
 					'".$date."'
 				)
 			");
@@ -53,6 +53,7 @@ class Earth616_info extends multiverse_con{
 				C.email email,
 				U.name Uname,
 				C.created_at createdat,
+				C.updated_by updatedby,
 				C.updated_at updatedat
 			FROM info C 
 			LEFT JOIN users U 
@@ -62,6 +63,12 @@ class Earth616_info extends multiverse_con{
 			$slno=0;
 			foreach($xavier_getquery as $row){
 				$slno++;
+				$user_id=$row['updatedby'];
+				$xavier_getupdaterqry=mysqli_query($this->upf_dbs, "
+					SELECT name FROM users WHERE id='".$user_id."'
+				");
+				$result=mysqli_fetch_assoc($xavier_getupdaterqry);
+				$updated_by=mysqli_num_rows($xavier_getupdaterqry)>0 ? $result['name'] : "";
 				$xavier.='
 					<tr>
 						<td class="text-center">'.$slno.'</td>
@@ -71,7 +78,7 @@ class Earth616_info extends multiverse_con{
 						<td>'.$row['email'].'</td>
 						<td>'.$row['Uname'].'</td>
 						<td>'.date('d M Y h:i:s a', strtotime($row['createdat'])).'</td>
-						<td>'.$row['Uname'].'</td>
+						<td>'.$updated_by.'</td>
 						<td>'.date('d M Y h:i:s a', strtotime($row['updatedat'])).'</td>
 						<td>
 							<a href="javascript:void(0)" class="btn btn-info waves-effect waves-light upf-edit-info" id="'.$row['info_id'].'" data-toggle="modal" data-target=".bs-example-modal-center"><i class="mdi mdi-pencil-outline"></i></a>
@@ -113,7 +120,8 @@ class Earth616_info extends multiverse_con{
 				name='".mysqli_real_escape_string($this->upf_dbs, $name_name)."',
 				domain_name='".mysqli_real_escape_string($this->upf_dbs, $domainname_name)."',
 				phone_number='".mysqli_real_escape_string($this->upf_dbs, $phonenumber_name)."',
-				email='".mysqli_real_escape_string($this->upf_dbs, $email)."'  
+				email='".mysqli_real_escape_string($this->upf_dbs, $email)."',
+				updated_by='".mysqli_real_escape_string($this->upf_dbs, $_SESSION['upf_admin_info_id'])."'  
 			WHERE id='".mysqli_real_escape_string($this->upf_dbs, $info_id)."'
 		");
 		if($xavier_savequery){

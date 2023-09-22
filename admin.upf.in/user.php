@@ -273,7 +273,7 @@
                 $('body').delegate('.upf-edit-user', 'click', function(){
                     var user_id=$(this).attr('id');
                     call_user(user_id)
-                    $('.changeuser-option').html("Edit user");
+                    $('.changeuser-option').html("Edit User");
                     $('.add-user-id-hidden').val(user_id);
                     $('.add-user-btn').removeAttr('name');
                     $('.add-user-btn').attr('name', 'edit-user-btn');
@@ -296,7 +296,7 @@
                     $('.add-pincode').removeAttr('placeholder');
                     $('.add-pincode').attr('placeholder', 'Re-enter user pincode');
                     $('.add-password').removeAttr('placeholder');
-                    $('.add-password').attr('placeholder', 'Re-enter user password');
+                    $('.add-password').attr('placeholder', 'Enter user password');
                 });
 
                 $('body').delegate('.add-user-modal', 'click', function(){

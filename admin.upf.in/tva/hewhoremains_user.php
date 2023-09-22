@@ -37,7 +37,7 @@ class Earth616_user extends multiverse_con{
 					'".mysqli_real_escape_string($this->upf_dbs, $pincode)."',
 					'".mysqli_real_escape_string($this->upf_dbs, $password)."',
 					'".mysqli_real_escape_string($this->upf_dbs, $role)."',
-					'".mysqli_real_escape_string($this->upf_dbs, "1")."',
+					'".mysqli_real_escape_string($this->upf_dbs, $_SESSION['upf_admin_info_id'])."',
 					'".$date."'
 				)
 			");
@@ -68,6 +68,7 @@ class Earth616_user extends multiverse_con{
 				US.name Uname,
 				U.role role,
 				U.created_at createdat,
+				U.updated_by updatedby,
 				U.updated_at updatedat
 			FROM users U 
 			LEFT JOIN state S 
@@ -81,6 +82,12 @@ class Earth616_user extends multiverse_con{
 			$slno=0;
 			foreach($xavier_getquery as $row){
 				$slno++;
+				$user_id=$row['updatedby'];
+				$xavier_getupdaterqry=mysqli_query($this->upf_dbs, "
+					SELECT name FROM users WHERE id='".$user_id."'
+				");
+				$result=mysqli_fetch_assoc($xavier_getupdaterqry);
+				$updated_by=mysqli_num_rows($xavier_getupdaterqry)>0 ? $result['name'] : "";
 				$xavier.='
 					<tr>
 						<td class="text-center">'.$slno.'</td>
@@ -94,7 +101,7 @@ class Earth616_user extends multiverse_con{
 						<td>'.$row['role'].'</td>
 						<td>'.$row['Uname'].'</td>
 						<td>'.date('d M Y h:i:s a', strtotime($row['createdat'])).'</td>
-						<td>'.$row['Uname'].'</td>
+						<td>'.$updated_by.'</td>
 						<td>'.date('d M Y h:i:s a', strtotime($row['updatedat'])).'</td>
 						<td>
 							<a href="javascript:void(0)" class="btn btn-user waves-effect waves-light upf-edit-user" id="'.$row['user_id'].'" data-toggle="modal" data-target=".bs-example-modal-center"><i class="mdi mdi-pencil-outline"></i></a>
@@ -148,7 +155,8 @@ class Earth616_user extends multiverse_con{
 					state_id='".mysqli_real_escape_string($this->upf_dbs, $state)."',
 					pincode='".mysqli_real_escape_string($this->upf_dbs, $pincode)."',
 					password='".mysqli_real_escape_string($this->upf_dbs, $password)."',
-					role='".mysqli_real_escape_string($this->upf_dbs, $role)."'
+					role='".mysqli_real_escape_string($this->upf_dbs, $role)."',
+					updated_by='".mysqli_real_escape_string($this->upf_dbs, $_SESSION['upf_admin_info_id'])."'
 				WHERE 
 					id='".mysqli_real_escape_string($this->upf_dbs, $user_id)."'
 			");

@@ -15,9 +15,11 @@ class Earth616_city extends multiverse_con{
 			$xavier_savequery=mysqli_query($this->upf_dbs, "
 				INSERT INTO city(
 					name,
+					created_by,
 					created_at
 				) VALUES (
 					'".mysqli_real_escape_string($this->upf_dbs, $city_name)."',
+					'".mysqli_real_escape_string($this->upf_dbs, $_SESSION['upf_admin_info_id'])."',
 					'".$date."'
 				)
 			");
@@ -42,6 +44,7 @@ class Earth616_city extends multiverse_con{
 				C.name city_name,
 				U.name Uname,
 				C.created_at createdat,
+				C.updated_by updateby,
 				C.updated_at updatedat
 			FROM city C 
 			LEFT JOIN users U 
@@ -51,13 +54,19 @@ class Earth616_city extends multiverse_con{
 			$slno=0;
 			foreach($xavier_getquery as $row){
 				$slno++;
+				$user_id=$row['updateby'];
+				$xavier_getupdaterqry=mysqli_query($this->upf_dbs, "
+					SELECT name FROM users WHERE id='".$user_id."'
+				");
+				$result=mysqli_fetch_assoc($xavier_getupdaterqry);
+				$updated_by=mysqli_num_rows($xavier_getupdaterqry)>0 ? $result['name'] : "";
 				$xavier.='
 					<tr>
 						<td class="text-center">'.$slno.'</td>
 						<td>'.$row['city_name'].'</td>
 						<td>'.$row['Uname'].'</td>
 						<td>'.date('d M Y h:i:s a', strtotime($row['createdat'])).'</td>
-						<td>'.$row['Uname'].'</td>
+						<td>'.$updated_by.'</td>
 						<td>'.date('d M Y h:i:s a', strtotime($row['updatedat'])).'</td>
 						<td class="text-center">
 							<a href="javascript:void(0)" class="btn btn-info waves-effect waves-light upf-edit-city" id="'.$row['city_id'].'" data-toggle="modal" data-target=".bs-example-modal-center"><i class="mdi mdi-pencil-outline"></i></a>
@@ -99,7 +108,8 @@ class Earth616_city extends multiverse_con{
 		if(mysqli_num_rows($xavier_checkquery)==0){
 			$xavier_savequery=mysqli_query($this->upf_dbs, "
 				UPDATE city 
-				SET name='".mysqli_real_escape_string($this->upf_dbs, $city_name)."' 
+				SET name='".mysqli_real_escape_string($this->upf_dbs, $city_name)."',
+					updated_by='".mysqli_real_escape_string($this->upf_dbs, $_SESSION['upf_admin_info_id'])."' 
 				WHERE id='".mysqli_real_escape_string($this->upf_dbs, $city_id)."'
 			");
 			if($xavier_savequery){
