@@ -1982,7 +1982,7 @@ li {
 .main-header .main-menu ul li a {
     color: #072366;
     font-weight: 400;
-    padding: 39px 19px;
+    padding: 39px 16px;
     display: block;
     font-size: 16px;
     -webkit-transition: 0.3s;
@@ -2003,6 +2003,7 @@ li {
 /* line 174, C:/Users/HP/Desktop/jun-2020/277.Charity _Non-profit/assets/scss/_headerMenu.scss */
 .main-header .main-menu ul li:hover>a {
     color: #09cc7f;
+    border-bottom: 3px solid black;
 }
 
 /* line 179, C:/Users/HP/Desktop/jun-2020/277.Charity _Non-profit/assets/scss/_headerMenu.scss */

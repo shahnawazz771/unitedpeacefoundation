@@ -15,13 +15,14 @@
 
     </head>
 
-    <body class="bg-primary bg-pattern">
-        <div class="account-pages my-5 pt-5">
+    <body style="background-color: #67c18c">
+        <!-- bg-primary bg-pattern // this is for primary bootstrap background inside class -->
+        <div class="account-pages my-5 pt-2">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="text-center mb-5">
-                            <a href="index.html" class="logo"><img src="assets/images/logo-light.png" height="24" alt="logo"></a>
+                            <a href="index.php" class="logo"><img src="assets/images/logo-upf.png" height="150px" width="148px" alt="logo"></a>
                         </div>
                     </div>
                 </div>
@@ -32,7 +33,7 @@
                         <div class="card">
                             <div class="card-body p-4">
                                 <div class="p-2">
-                                    <h5 class="mb-5 text-center">Sign in to continue to United Peace Foundation.</h5>
+                                    <h5 class="mb-5 text-center">Sign in to United Peace Foundation.</h5>
                                     <form class="form-horizontal user-login-form" action="#">
 
                                         <div class="row">

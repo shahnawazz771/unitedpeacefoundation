@@ -8,7 +8,7 @@
                             <li class="menu-title">Menu</li>
                             <li>
                                 <a href="index.php" class="waves-effect">
-                                    <i class="mdi mdi-view-dashboard"></i><span class="badge badge-pill badge-success float-right">3</span>
+                                    <i class="mdi mdi-view-dashboard"></i><span class="badge badge-pill badge-success float-right">.</span>
                                     <span>Dashboard</span>
                                 </a>
                             </li>

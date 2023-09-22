@@ -41,14 +41,13 @@
           <div class="container-fluid">
             <div class="row align-items-center">
 
-              <div class="col-xl-2 col-lg-2">
+              <div class="col-xl-5 col-lg-5">
                 <div class="logo">
-                  <a href="index.php"><img src="assets/img/logo/logo.png" alt></a>
+                  <a href="index.php"><img style="height: 7em;" src="assets/img/logo/logo1.png" alt></a> <span style="font-size: ;">United Peace Foundation</span>
                 </div>
               </div>
-              <div class="col-xl-10 col-lg-10">
+              <div class="col-xl-7 col-lg-7">
                 <div class="menu-wrapper  d-flex align-items-center justify-content-end">
-
                   <div class="main-menu d-none d-lg-block">
                     <nav>
                       <ul id="navigation">
