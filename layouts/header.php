@@ -5,7 +5,7 @@
       <div class="preloader-inner position-relative">
         <div class="preloader-circle"></div>
         <div class="preloader-img pere-text">
-          <img src="assets/img/logo/loder.png" alt>
+          <img src="assets/img/logo/logo1.png" alt>
         </div>
       </div>
     </div>
@@ -42,8 +42,16 @@
             <div class="row align-items-center">
 
               <div class="col-xl-5 col-lg-5">
-                <div class="logo">
-                  <a href="index.php"><img style="height: 7em;" src="assets/img/logo/logo1.png" alt></a> <span style="font-size: ;">United Peace Foundation</span>
+                <div class="row">
+                  <div class="col-xl-3 col-lg-3">
+                    <div class="logo">
+                      <a href="index.php"><img style="height: 7em;" src="assets/img/logo/logo1.png" alt></a>
+                    </div>
+                  </div>
+                  <div class="col-xl-9 col-lg-9">
+                        <h3 class="oraganization">United Peace Foundation</h3>
+                        <span class="caption">A small step towards Orphans</span>
+                  </div>
                 </div>
               </div>
               <div class="col-xl-7 col-lg-7">
@@ -51,18 +59,18 @@
                   <div class="main-menu d-none d-lg-block">
                     <nav>
                       <ul id="navigation">
-                        <li><a href="index.php">Home</a></li>
-                        <li><a href="about.php">About</a></li>
-                        <li><a href="program.php">latest causes</a></li>
-                        <li><a href="events.php">social events </a></li>
-                        <li><a href="blog.php">Blog</a>
+                        <li class="home"><a href="index.php?page=home" >Home</a></li>
+                        <li class="about"><a href="about.php?page=about">About</a></li>
+                        <li class="latestcauses"><a href="program.php?page=latestcauses">latest causes</a></li>
+                        <li class="socialevents"><a href="events.php?page=socialevents">social events </a></li>
+                        <li class="blog"><a href="blog.php?page=blog">Blog</a>
                           <ul class="submenu">
-                            <li><a href="blog.php">Blog</a></li>
-                            <li><a href="blog_details.php">Blog Details</a></li>
-                            <li><a href="elements.php">Element</a></li>
+                            <li class="blog"><a href="blog.php?page=blog">Blog</a></li>
+                            <li class="blog"><a href="blog_details.php?page=blog">Blog Details</a></li>
+                            <li class="blog"><a href="elements.php?page=blog">Element</a></li>
                           </ul>
                         </li>
-                        <li><a href="contact.php">Contact</a></li>
+                        <li class="contact"><a href="contact.php?page=contact">Contact</a></li>
                       </ul>
                     </nav>
                   </div>

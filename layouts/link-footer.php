@@ -38,3 +38,16 @@
     integrity="sha512-bjgnUKX4azu3dLTVtie9u6TKqgx29RBwfj3QXYt5EKfWM/9hPSAI/4qcV5NACjwAo8UtTeWefx6Zq5PHcMm7Tg=="
     data-cf-beacon='{"rayId":"8066c8418a694720","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2023.8.0","si":100}'
     crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function(){
+      const urlParams = new URLSearchParams(window.location.search);
+      const page = urlParams.get('page');
+      if(page==null){
+        $('.home').addClass("nav-active");
+      }else{
+        $('.'+page).addClass("nav-active");
+      }
+    });
+
+  </script>
+

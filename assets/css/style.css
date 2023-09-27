@@ -387,7 +387,7 @@ li {
 
 /* line 307, C:/Users/HP/Desktop/jun-2020/277.Charity _Non-profit/assets/scss/_common.scss */
 .header-btn {
-    padding: 30px 57px;
+    padding: 30px 52px;
 }
 
 /* line 310, C:/Users/HP/Desktop/jun-2020/277.Charity _Non-profit/assets/scss/_common.scss */
@@ -1319,7 +1319,9 @@ li {
 
 /* line 670, C:/Users/HP/Desktop/jun-2020/277.Charity _Non-profit/assets/scss/_common.scss */
 .preloader .preloader-img img {
-    max-width: 55px;
+    max-width: 75px;
+    position: relative;
+    bottom: 2px;
 }
 
 /* line 673, C:/Users/HP/Desktop/jun-2020/277.Charity _Non-profit/assets/scss/_common.scss */
@@ -1980,7 +1982,7 @@ li {
 
 /* line 161, C:/Users/HP/Desktop/jun-2020/277.Charity _Non-profit/assets/scss/_headerMenu.scss */
 .main-header .main-menu ul li a {
-    color: #072366;
+    color: black;
     font-weight: 400;
     padding: 39px 16px;
     display: block;
@@ -2003,7 +2005,7 @@ li {
 /* line 174, C:/Users/HP/Desktop/jun-2020/277.Charity _Non-profit/assets/scss/_headerMenu.scss */
 .main-header .main-menu ul li:hover>a {
     color: #09cc7f;
-    border-bottom: 3px solid black;
+    border-bottom: 3px solid #67c18c;
 }
 
 /* line 179, C:/Users/HP/Desktop/jun-2020/277.Charity _Non-profit/assets/scss/_headerMenu.scss */
@@ -6365,3 +6367,28 @@ del {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+/*Here started styling from united peace foundation developer*/
+
+.oraganization{
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #67c18c;
+    font-family: sans-serif;
+}
+
+.caption{
+    position: relative;
+    top: 3.6em;
+    left: 1em;
+    color: black;
+}
+
+.nav-active{
+    color: #09cc7f;
+    border-bottom: 3px solid #67c18c;
+/*    font-weight: bold;*/
+}

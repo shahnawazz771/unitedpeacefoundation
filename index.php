@@ -126,7 +126,7 @@
             <div class="about-caption mb-50">
 
               <div class="section-tittle mb-35">
-                <span>About our foundetion</span>
+                <span>About our foundation</span>
                 <h2>We Are In A Mission To Help Helpless</h2>
               </div>
               <p> Our unwavering commitment is best summed up in a simple yet profound mission: to help the helpless. We are driven by an unshakeable belief in the power of compassion, unity, and collective action to transform lives and uplift communities. With a focus on orphans, widows, destitute individuals, and homeless children, we operate tirelessly across rural India and among the underprivileged sections of society. Our core values center on fostering brotherhood, peace, and unity among people of diverse backgrounds, religions, castes, and creeds. Every day, we work tirelessly to turn our mission into reality, striving to create a world where no one is left behind, where hope and opportunity flourish, and where the bonds of humanity bind us all. Join us on this remarkable journey as we extend our helping hand to those who need it most. Together, we can illuminate the path toward a brighter, more harmonious world.</p>
