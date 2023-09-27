@@ -1982,7 +1982,7 @@ li {
 
 /* line 161, C:/Users/HP/Desktop/jun-2020/277.Charity _Non-profit/assets/scss/_headerMenu.scss */
 .main-header .main-menu ul li a {
-    color: black;
+    color: #072366;
     font-weight: 400;
     padding: 39px 16px;
     display: block;
@@ -2004,7 +2004,7 @@ li {
 
 /* line 174, C:/Users/HP/Desktop/jun-2020/277.Charity _Non-profit/assets/scss/_headerMenu.scss */
 .main-header .main-menu ul li:hover>a {
-    color: #09cc7f;
+    color: #67c18c;
     border-bottom: 3px solid #67c18c;
 }
 
@@ -6368,7 +6368,12 @@ del {
 
 /*# sourceMappingURL=style.css.map */
 
+
 /*Here started styling from united peace foundation developer*/
+/*Here started styling from united peace foundation developer*/
+/*Here started styling from united peace foundation developer*/
+/*Here started styling from united peace foundation developer*/
+
 
 .oraganization{
     position: absolute;

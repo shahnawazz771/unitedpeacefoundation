@@ -25,6 +25,12 @@
                                 </ul>
 
                             </li>
+                            <li>
+                                <a href="gallery.php" class="waves-effect">
+                                    <i class="mdi mdi-message-image-outline"></i><span class="badge badge-pill badge-success float-right"></span>
+                                    <span>Gallery</span>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
