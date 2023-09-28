@@ -361,7 +361,7 @@
                                 <div class="form-group row">
                                     <label for="add-phonenumber" class="col-md-2 col-form-label">Phone Number</label>
                                     <div class="col-md-10">
-                                        <input class="form-control add-phonenumber" type="number" spellcheck="true" name="add-phonenumber" placeholder="Enter user name" id="add-phonenumber" spellcheck="false" data-ms-editor="true">
+                                        <input class="form-control add-phonenumber" type="tel" maxlength="10" spellcheck="true" name="add-phonenumber" placeholder="Enter user name" id="add-phonenumber" spellcheck="false" data-ms-editor="true">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -373,7 +373,7 @@
                                 <div class="form-group row">
                                     <label for="add-pincode" class="col-md-2 col-form-label">Pincode</label>
                                     <div class="col-md-10">
-                                        <input class="form-control add-pincode" type="number" spellcheck="true" name="add-pincode" placeholder="Enter user pincode" id="add-pincode" spellcheck="false" data-ms-editor="true">
+                                        <input class="form-control add-pincode" type="tel" maxlength="6" spellcheck="true" name="add-pincode" placeholder="Enter user pincode" id="add-pincode" spellcheck="false" data-ms-editor="true">
                                     </div>
                                 </div>
                                 <div class="form-group row">

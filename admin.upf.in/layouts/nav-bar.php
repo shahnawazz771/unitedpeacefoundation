@@ -31,6 +31,12 @@
                                     <span>Gallery</span>
                                 </a>
                             </li>
+                            <li>
+                                <a href="profile.php" class="waves-effect">
+                                    <i class="fas fa-user-plus"></i><span class="badge badge-pill badge-success float-right"></span>
+                                    <span>Profile</span>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>

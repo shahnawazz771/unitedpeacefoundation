@@ -312,7 +312,7 @@
                                 <div class="form-group row">
                                     <label for="add-phonenumber" class="col-md-2 col-form-label">Phone Number</label>
                                     <div class="col-md-6">
-                                        <input class="form-control add-phonenumber" type="number" spellcheck="true" name="add-phonenumber" placeholder="Enter info" id="add-phonenumber" spellcheck="false" data-ms-editor="true">
+                                        <input class="form-control add-phonenumber" type="tel" maxlength="10" spellcheck="true" name="add-phonenumber" placeholder="Enter info" id="add-phonenumber" spellcheck="false" data-ms-editor="true">
                                     </div>
                                 </div>
                                 <div class="form-group row">

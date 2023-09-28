@@ -389,7 +389,7 @@
                                 <div class="form-group row">
                                     <label for="add-pincode" class="col-md-4 col-form-label">Pincode</label>
                                     <div class="col-md-8">
-                                        <input class="form-control add-pincode" type="number" maxlength="6" spellcheck="true" name="add-gallery" placeholder="Enter pincode" id="add-pincode" spellcheck="false" data-ms-editor="true">
+                                        <input class="form-control add-pincode" type="tel" maxlength="6" spellcheck="true" name="add-gallery" placeholder="Enter pincode" id="add-pincode" spellcheck="false" data-ms-editor="true">
                                     </div>
                                 </div>
                                 <div class="form-group row">
