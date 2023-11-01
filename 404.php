@@ -183,7 +183,7 @@ body {
 			</div>
 			<h1>oops!</h1>
 			<h2>Error 404 : Page Not Found</h2>
-			<a href="index.html">go back</a>
+			<a href="index.php">go back</a>
 			<div class="notfound-social">
 				<a href="#"><i class="fa fa-facebook"></i></a>
 				<a href="#"><i class="fa fa-twitter"></i></a>
