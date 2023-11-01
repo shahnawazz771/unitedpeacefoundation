@@ -7,9 +7,12 @@
 <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<div class="popup-container">
+
+  <!-- pop-up content -->
+
+<!-- <div class="popup-container">
   <div class="popup" style="top: "> <a href="corona-crisis-donate.php"><img src="images/popup.jpeg" /></a> </div>
-</div>
+</div> -->
 <div class="top-10 hidden-xs"></div>
 <div class="top-bar hidden-xs">
   <div class="bg-top-bar padding-tb-10">
@@ -21,7 +24,11 @@
     </div>
   </div>
 </div>
+
 <?php include "layouts/header.php" ?>
+
+ <!-- This relates to corousel effect material. -->
+
 <div id="myslide" class="carousel slide" data-ride="carousel" data-interval="3000" data-pause="false">
   <div class="carousel-inner">
     <div class="item active" style="background-image:url(images/slider-1.jpg)">
@@ -40,7 +47,9 @@
       </div>
     </div>
   </div>
+
   <!-- Controls --> 
+  
   <a class="left carousel-control" href="#myslide" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a class="right carousel-control" href="#myslide" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <span class="sr-only">Next</span> </a> </div>
 <div class="container margin-100">
   <div class="row">
