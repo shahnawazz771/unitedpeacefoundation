@@ -51,6 +51,9 @@ $(document).ready(function(){
 	        result[qs[i][0]] = decodeURIComponent(qs[i][1]);
 	    }
 		$("."+result.page).addClass("active");
+		if(result.page==undefined){
+			$(".home").addClass("active");
+		}
 	});
 </script>
 </html>

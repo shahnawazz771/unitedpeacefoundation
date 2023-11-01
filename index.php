@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="popup-container">
-  <div class="popup"> <a href="corona-crisis-donate.php"><img src="images/popup.jpeg" /></a> </div>
+  <div class="popup" style="top: "> <a href="corona-crisis-donate.php"><img src="images/popup.jpeg" /></a> </div>
 </div>
 <div class="top-10 hidden-xs"></div>
 <div class="top-bar hidden-xs">

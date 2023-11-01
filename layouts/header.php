@@ -13,21 +13,21 @@
             <div class="col-md-8">
               <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                  <li><a href="index.php">Home</a></li>
-                  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">About Us <span class="caret"></span></a>
+                  <li class="home"><a href="index.php?page=home">Home</a></li>
+                  <li class="dropdown aboutus"><a class="dropdown-toggle" data-toggle="dropdown" href="#">About Us <span class="caret"></span></a>
                     <ul class="dropdown-menu dropdown-menu-left">
-                      <li><a href="our-trust.php">About our trust</a></li>
-                      <li><a href="vision.php">Vision, Mission</a></li>
+                      <li><a href="our-trust.php?page=aboutus">About our trust</a></li>
+                      <li><a href="vision.php?page=aboutus">Vision, Mission</a></li>
                     </ul>
                   </li>
-                  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Get Involved <span class="caret"></span></a>
+                  <li class="dropdown getinvolved"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Get Involved <span class="caret"></span></a>
                     <ul class="dropdown-menu dropdown-menu-left">
-                      <li><a href="donate.php">How to Donate</a></li>
-                      <li><a href="sponser-an-orphen.php">Sponsor, Orphan, Sponsorship</a></li>
-                      <li><a href="volunteer.php">Volunteer With Us</a></li>
+                      <li><a href="donate.php?page=getinvolved">How to Donate</a></li>
+                      <li><a href="sponser-an-orphen.php?page=getinvolved">Sponsor, Orphan, Sponsorship</a></li>
+                      <li><a href="volunteer.php?page=getinvolved">Volunteer With Us</a></li>
                     </ul>
                   </li>
-                  <li class="dropdown programme"><a class="dropdown-toggle" data-toggle="dropdown" href="programme.php?page=programme">programme<span class="caret"></span></a>
+                  <li class="dropdown programme"><a class="dropdown-toggle" data-toggle="dropdown" href="#">programme <span class="caret"></span></a>
                     <ul class="dropdown-menu dropdown-menu-left">
                       <li><a href="orphan-sponsorship-program.php?page=programme">Orphan Sponsorship programme</a></li>
                       <li><a href="educational-program.php?page=programme">Educational programme</a></li>

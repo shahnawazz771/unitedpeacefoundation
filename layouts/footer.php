@@ -14,12 +14,12 @@
           <h2><strong>Quick Links</strong></h2>
           <div class="links margin-30">
             <ul>
-              <li><a href="index.php">Home</a></li>
-              <li><a href="our-trust.php">About our trust</a></li>
-              <li><a href="orphan-Sponsorship-program.php">Orphan Sponsorship programme</a></li>
-              <li><a href="food-program.php">Food programme</a></li>
-              <li><a href="gallery.php">Gallery</a></li>
-              <li><a href="contact.php">Contact</a></li>
+              <li class="home"><a href="index.php?page=home">Home</a></li>
+              <li class="aboutus"><a href="our-trust.php?page=aboutus">About our trust</a></li>
+              <li class="programme"><a href="orphan-Sponsorship-program.php?page=programme">Orphan Sponsorship programme</a></li>
+              <li class="programme"><a href="food-program.php?page=programme">Food programme</a></li>
+              <li class="gallery"><a href="gallery.php?page=gallery">Gallery</a></li>
+              <li class="contact"><a href="contact.php?page=contact">Contact</a></li>
             </ul>
           </div>
         </div>
@@ -27,9 +27,9 @@
           <h2><strong>Get Involved</strong></h2>
           <div class="links margin-30">
             <ul>
-              <li><a href="donate.php">How to Donate</a></li>
-              <li><a href="sponser-an-orphen.php">Sponsor, Orphan, sponsorship</a></li>
-              <li><a href="volunteer.php">Volunteer With Us</a></li>
+              <li class="getinvolved"><a href="donate.php?page=getinvolved">How to Donate</a></li>
+              <li class="getinvolved"><a href="sponser-an-orphen.php?page=getinvolved">Sponsor, Orphan, sponsorship</a></li>
+              <li class="getinvolved"><a href="volunteer.php?page=getinvolved">Volunteer With Us</a></li>
             </ul>
           </div>
         </div>

@@ -425,6 +425,7 @@ ul.gallery li{
 }
 .popup{
 	position: absolute;
+	top: -85px;
 	width: 70%;
 	max-width: 700px;
 	margin-left: auto;
