@@ -16,7 +16,7 @@
             <ul>
               <li class="home"><a href="index.php?page=home">Home</a></li>
               <li class="aboutus"><a href="our-trust.php?page=aboutus">About our trust</a></li>
-              <li class="programme"><a href="orphan-Sponsorship-program.php?page=programme">Orphan Sponsorship programme</a></li>
+              <li class="programme"><a href="orphan-Sponsorship-program.php?page=programme">Orphan sponsorship programme</a></li>
               <li class="programme"><a href="food-program.php?page=programme">Food programme</a></li>
               <li class="gallery"><a href="gallery.php?page=gallery">Gallery</a></li>
               <li class="contact"><a href="contact.php?page=contact">Contact</a></li>
@@ -28,7 +28,7 @@
           <div class="links margin-30">
             <ul>
               <li class="getinvolved"><a href="donate.php?page=getinvolved">How to Donate</a></li>
-              <li class="getinvolved"><a href="sponser-an-orphen.php?page=getinvolved">Sponsor, Orphan, sponsorship</a></li>
+              <li class="getinvolved"><a href="sponser-an-orphen.php?page=getinvolved">Sponsor, Orphan, Sponsorship</a></li>
               <li class="getinvolved"><a href="volunteer.php?page=getinvolved">Volunteer With Us</a></li>
             </ul>
           </div>
@@ -56,7 +56,7 @@
               <p><i class="fa fa-envelope"></i></p>
             </div>
             <div class="col-md-10">
-              <p><strong>Email:</strong> unitedpeacefoundation@gmail.com</p>
+              <p><strong>Email:</strong> <a href="mailto:unitedpeacefoundation.in@gmail.com">unitedpeacefoundation.in@gmail.com</a></p>
             </div>
           </div>
         </div>
