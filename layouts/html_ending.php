@@ -19,6 +19,21 @@
 		        $('.popup-container').fadeOut();
 		    }
 		});
+
+		$(window).scroll(function(){
+			var sticky = $('.bg-offiwhite'), scroll = $(window).scrollTop();
+
+			if (scroll >= 100) {
+				sticky.addClass('fixed');
+				$(".menu .nav li a").css({"color": "black"});
+				$(".menu .nav li a > .active").css({"border-top": "2px solid white"});
+			}
+			else {
+				sticky.removeClass('fixed');
+				$(".menu .nav li a").css({"color": "#67c18c;"});
+				$(".menu .nav li a > .active").css({"border-top": "2px solid #67c18c"});
+			}
+		});
 	});
 </script>
 <script src="js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>

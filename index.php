@@ -12,17 +12,7 @@
 
 <!-- <div class="popup-container">
   <div class="popup" style="top: "> <a href="corona-crisis-donate.php"><img src="images/popup.jpeg" /></a> </div>
-</div> -->
-<div class="top-10 hidden-xs"></div>
-<div class="top-bar hidden-xs">
-  <div class="bg-top-bar padding-tb-10">
-    <div class="container">
-      <div class="row white">
-        <div class="col-md-6"> </div>
-        <div class="col-md-6 text-right"> </div>
-      </div>
-    </div>
-  </div>
+
 </div>
 
 <?php include "layouts/header.php" ?>

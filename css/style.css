@@ -38,7 +38,14 @@ p{
 	width: 100%;
 	background-image: url("../images/shape.png");
 	background-repeat: no-repeat;
+	height: 96px;
 	z-index: 15;
+}
+.fixed {
+  position: fixed;
+  top:0; left:0;
+  width: 100%; 
+  background-color: #65c18e;
 }
 .top-bar {
 	position: absolute;
@@ -201,7 +208,7 @@ h3 {
 	transition: all ease 0.5s;
 }
 .menu .nav > li.active > a {
-	color: #67c18c;
+	color: #ffffff;
 	background: none;
 	box-shadow: none;
 	border-top: 2px solid #67c18c;
