@@ -9,10 +9,9 @@
 <body>
 
   <!-- pop-up content -->
-<div class="popup-container">
+<!-- <div class="popup-container">
   <div class="popup" style="top: "> <a href="corona-crisis-donate.php"><img src="images/popup.jpeg" /></a> </div>
-
-</div>
+</div> -->
 
 <?php include "layouts/header.php"; ?>
 

@@ -25,7 +25,7 @@
 
 			if (scroll >= 100) {
 				sticky.addClass('fixed');
-				$(".menu .nav li a").css({"color": "black"});
+				$(".menu .nav li a").css({"color": "#67c18c;"});
 				$(".menu .nav li a > .active").css({"border-top": "2px solid white"});
 			}
 			else {

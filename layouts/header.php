@@ -6,11 +6,17 @@
         <div class="col-md-12">
           <nav role="navigation" class="navbar navbar-default"> 
             <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header col-md-4">
+            <div class="navbar-header col-md-2">
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-              <a class="navbar-brand" href="index.php"><img src="images/logo-white.png" width="100%" class="img-responsive"></a>
+              <a class="navbar-brand" href="index.php"><img src="images/logo1.png" width="100%" class="img-responsive"></a>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-3">
+              <div class="oraganization">
+                <h3 style="text-transform: capitalize;">United Peace Foundation®</h3>
+                <span style="text-transform: capitalize;" class="caption">A Small Step Towards Orphans</span>
+              </div>
+            </div>
+            <div class="col-md-7">
               <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                   <li class="home"><a href="index.php?page=home">Home</a></li>

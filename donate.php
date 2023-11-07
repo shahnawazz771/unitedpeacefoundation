@@ -7,18 +7,9 @@
 <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<div class="top-10 hidden-xs"></div>
-<div class="top-bar hidden-xs">
-  <div class="bg-top-bar padding-tb-10">
-    <div class="container">
-      <div class="row white">
-        <div class="col-md-6"> </div>
-        <div class="col-md-6 text-right"> </div>
-      </div>
-    </div>
-  </div>
-</div>
+
 <?php include "layouts/header.php" ?>
+
 <div class="background-image-3" style="background-image:url(images/about-us.jpg);">
   <div class="container padding-top-bottom">
     <div class="row white">

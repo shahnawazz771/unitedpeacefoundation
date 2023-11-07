@@ -36,9 +36,9 @@ p{
 	background-color: rgba(0,0,0,0.5);
 	position: absolute;
 	width: 100%;
-	background-image: url("../images/shape.png");
+	background-image: url("");
 	background-repeat: no-repeat;
-	height: 96px;
+	height: 100px;
 	z-index: 15;
 }
 .fixed {
@@ -46,6 +46,16 @@ p{
   top:0; left:0;
   width: 100%; 
   background-color: #65c18e;
+  animation: slideDown 1s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(-10%);
+  }
 }
 .top-bar {
 	position: absolute;
@@ -175,7 +185,7 @@ h3 {
 	box-shadow: none;
 }
 .menu .navbar .navbar-collapse {
-	padding-top:20px;
+	padding-top:10px;
 }
 .navbar-collapse.collapse {
 	margin-left: -16px;
@@ -192,11 +202,21 @@ h3 {
 	padding: 0px;
 	height:80%;
 }
+
+.menu .oraganization{
+	position: absolute;
+	top:23px;
+}
+
+.menu .oraganization h3{
+	font-size: 28px;
+}
 .menu .navbar-brand>img {
-	height: 80%;
+	position: absolute;
+	left:50px;
+	height: 100px;
 	width:auto;
 	padding: 7px 10px;
-	margin-top:14px;
 }
 .menu .nav > li > a {
 	text-decoration: none;
@@ -217,7 +237,7 @@ h3 {
 	border: none;
 	background: none;
 	box-shadow: none;
-	color: #67c18c;
+	color: white;
 	border-top: 2px solid #67c18c;
 	transition: all 0.5s ease;
 	transition: all ease 0.5s;
@@ -506,4 +526,10 @@ ul.gallery li{
 	padding-left: 10px;
 	padding-right: 10px;
 }
+}
+
+/*Styling by us from here*/
+
+.col-md-3 {
+	color: whitesmoke;
 }
