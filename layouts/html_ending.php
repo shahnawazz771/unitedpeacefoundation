@@ -32,6 +32,8 @@
 				// 	$(this).css({"border-top": "2px solid red"});
 				// 	console.log("yeah");
 				// });
+				$(".bg-offiwhite").css({"opacity": "1"});
+					$(".dropdown-menu li a").css({"background-color": "white", "color": "black"});
 			}
 			else {
 				sticky.removeClass('fixed');
@@ -39,6 +41,11 @@
 				$(".menu .nav li a > .active").css({"border-top": "2px solid white"});
 				// $(".menu .nav li a > .active").css({"border-top": "2px solid #67c18c"});
 				$(".bg-offiwhite").css({"opacity": "0.8"});
+
+				$(".menu .nav li a").hover(function(){
+					$(".bg-offiwhite").css({"opacity": "1"});
+					$(".dropdown-menu li a").css({"background-color": "white", "color": "black"});
+				});
 			}
 		});
 	});
