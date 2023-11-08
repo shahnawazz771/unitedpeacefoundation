@@ -12,8 +12,8 @@
             </div>
             <div class="col-md-3">
               <div class="oraganization">
-                <h3 style="text-transform: capitalize;color: white;font-size: 35px; position:relative; left:-130px">United Peace Foundation®</h3>
-                <span style="text-transform: capitalize;color: white; position:relative; left:-130px;" class="caption">A Small Step Towards Orphans</span>
+                <h3 style="" class="logo-head">United Peace Foundation®</h3>
+                <span style="" class="caption logo-caption">A Small Step Towards Orphans</span>
               </div>
             </div>
             <div class="col-md-7">
