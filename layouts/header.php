@@ -8,12 +8,12 @@
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header col-md-2">
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-              <a class="navbar-brand" href="index.php"><img src="images/logo1.png" width="100%" class="img-responsive"></a>
+              <a class="navbar-brand" href="index.php"><img src="images/logo1.gif" width="100%" class="img-responsive"></a>
             </div>
             <div class="col-md-3">
               <div class="oraganization">
-                <h3 style="text-transform: capitalize;">United Peace Foundation®</h3>
-                <span style="text-transform: capitalize;" class="caption">A Small Step Towards Orphans</span>
+                <h3 style="text-transform: capitalize;color: white;font-size: 35px; position:relative; left:-130px">United Peace Foundation®</h3>
+                <span style="text-transform: capitalize;color: white; position:relative; left:-130px;" class="caption">A Small Step Towards Orphans</span>
               </div>
             </div>
             <div class="col-md-7">
@@ -41,6 +41,7 @@
                     </ul>
                   </li>
                   <li class="gallery"><a href="gallery.php?page=gallery">Gallery</a></li>
+                  <li class="blog"><a href="blog.php?page=blog">Blog</a></li>
                   <li class="contact"><a href="contact.php?page=contact">Contact</a></li>
                 </ul>
               </div>

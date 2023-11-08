@@ -3,9 +3,11 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
+@font-face { font-family: EKplain; src: url('../fonts/EKPLB.ttf'); } 
 body {
 	margin: 0;
 	padding: 0;
+/*	font-family: 'EKplain';*/
 	font-family: 'Open Sans', sans-serif;
 }
 html, body {
@@ -33,7 +35,7 @@ p{
 	padding-right: 10px;
 }
 .bg-offiwhite {
-	background-color: rgba(0,0,0,0.5);
+	background-color: rgb(99 192 144);
 	position: absolute;
 	width: 100%;
 	background-image: url("");
@@ -213,9 +215,10 @@ h3 {
 }
 .menu .navbar-brand>img {
 	position: absolute;
-	left:50px;
-	height: 100px;
-	width:auto;
+	top: -45px;
+	left: 50px;
+	height: 200px;
+	width: auto;
 	padding: 7px 10px;
 }
 .menu .nav > li > a {
@@ -226,25 +229,27 @@ h3 {
 	margin-top:5px;
 	border-top: 2px solid rgba(255,255,255,0);
 	transition: all ease 0.5s;
+	font-size : 17px;
+	font-weight: bold;
 }
 .menu .nav > li.active > a {
 	color: #ffffff;
 	background: none;
 	box-shadow: none;
-	border-top: 2px solid #67c18c;
+	border-top: 2px solid white;
 }
 .menu .nav li.active a:hover {
 	border: none;
 	background: none;
 	box-shadow: none;
 	color: white;
-	border-top: 2px solid #67c18c;
+	border-top: 2px solid white;
 	transition: all 0.5s ease;
 	transition: all ease 0.5s;
 }
 .menu .nav > li > a:hover {
 	color: #67c18c;
-	border-top: 2px solid #67c18c;
+	border-top: 2px solid white;
 	transition: all ease 0.5s;
 }
 .menu .nav > li > a:focus {
@@ -492,44 +497,60 @@ ul.gallery li{
 }
 }
 @media only screen and (min-width:481px) and (max-width: 767px) {
-.bg-offiwhite {
-	top: 0;
-	background-image: url("../images/shape-mobile.png");
-	background-repeat: repeat;
-}
-.popup{
-	width: 50%;
-}
-}
-/*mobile portrate size to mobile landscape size (devices and browser)*/
-@media (max-width: 480px) {
-.bg-offiwhite {
-	top: 0;
-	background-image: url("../images/shape-mobile.png");
-	background-repeat: repeat;
-}
-.footer-bg-2 p{
-	text-align:center;
-}
-.menu .navbar-brand>img {
-	height:auto;
-	width: 80%;
-}
-.menu .navbar-toggle{
-	margin-top:20px;
-}
-#myslide .carousel-caption h1 {
-	font-size:36px;
-}
-#myslide .carousel-caption {
-	top:200px;
-	padding-left: 10px;
-	padding-right: 10px;
-}
+	.bg-offiwhite {
+		top: 0;
+		background-image: url("../images/shape-mobile.png");
+		background-repeat: repeat;
+	}
+	.popup{
+		width: 50%;
+	}
+	}
+	/*mobile portrate size to mobile landscape size (devices and browser)*/
+	@media (max-width: 480px) {
+	.bg-offiwhite {
+		top: 0;
+		background-image: url("../images/shape-mobile.png");
+		background-repeat: repeat;
+	}
+	.footer-bg-2 p{
+		text-align:center;
+	}
+	.menu .navbar-brand>img {
+		height:auto;
+		width: 80%;
+	}
+	.menu .navbar-toggle{
+		margin-top:20px;
+	}
+	#myslide .carousel-caption h1 {
+		font-size:36px;
+	}
+	#myslide .carousel-caption {
+		top:200px;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
 }
 
 /*Styling by us from here*/
 
-.col-md-3 {
-	color: whitesmoke;
+.menu .oraganization h3{
+	font-family: 'EKPLAIN';
+}
+
+.email-to{
+	color: white;
+	text-decoration: none;
+}
+
+.email-to:hover{
+	color: white;
+	text-decoration: none;
+}
+
+
+.nav {
+	position: relative;
+	right: 50px;
 }

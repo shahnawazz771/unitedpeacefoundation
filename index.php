@@ -29,9 +29,14 @@
         <h1>To educate poor and deprived children.</h1>
       </div>
     </div>
-    <div class="item" style="background-image:url(images/slider-3.jpg)">
+    <!-- <div class="item" style="background-image:url(images/slider-3.jpg)">
       <div class="carousel-caption">
         <h1>To feed the hungry and destitute.</h1>
+      </div>
+    </div> -->
+    <div class="item" style="background-image:url(images/slider-4.jpg)">
+      <div class="carousel-caption">
+        <h1>To educate poor and deprived children.</h1>
       </div>
     </div>
   </div>
@@ -39,7 +44,7 @@
   <!-- Controls --> 
   
   <a class="left carousel-control" href="#myslide" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a class="right carousel-control" href="#myslide" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <span class="sr-only">Next</span> </a> </div>
-<div class="container margin-100">
+<div class="container-fluid margin-100">
   <div class="row">
     <div class="col-md-12 text-center">
       <h2><strong>WHO WE</strong> <span style="color:#67c18c"><strong>ARE</strong></span></h2>
@@ -65,14 +70,17 @@
 	  <h3><strong><span style="color:#67c18c">OUR</span> PROGRAMME</strong></h3>
     <img src="images/line.png" width="200" height="25"> </div>
   <div class="row margin-50 text-center">
-    <div class="col-md-4 margin-20"> <img src="images/index-image-1.jpg" width="100%">
+    <div class="col-md-3 margin-20"> <img src="images/index-image-1.jpg" width="100%">
       <h3 class="margin-20">Orphan Sponsorship programme</h3>
     </div>
-    <div class="col-md-4 margin-20"> <img src="images/index-image-2.jpg" width="100%">
+    <div class="col-md-3 margin-20"> <img src="images/index-image-2.jpg" width="100%">
       <h3 class="margin-20">Educational programme</h3>
     </div>
-    <div class="col-md-4 margin-20"> <img src="images/index-image-3.jpg" width="100%">
+    <div class="col-md-3 margin-20"> <img src="images/index-image-3.jpg" width="100%">
       <h3 class="margin-20">Food programme</h3>
+    </div>
+    <div class="col-md-3 margin-20"> <img src="images/index-image-3.jpg" width="100%">
+      <h3 class="margin-20">Emergency Relief</h3>
     </div>
   </div>
   <div class="row margin-50 text-center">

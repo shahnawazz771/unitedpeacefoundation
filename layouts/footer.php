@@ -2,11 +2,12 @@
   <div class="footer">
     <div class="container  padding-top-bottom">
       <div class="row white">
-        <div class="col-md-3 margin-20"><a href="index.php"> <img src="images/logo.png" width="70%"></a>
+        <div class="col-md-3 margin-20">
+          <!-- <a href="index.php"> <img src="images/logo.png" width="70%"></a> -->
           <div class="margin-20">
             <p>United Peace Foundation is a non-profit organization established to help and uplift the most vulnerable, orphans, destitute and widows regardless of faith race or creed.</p>
             <div class="social margin-20">
-              <p><a href="#"><i class="fa fa-facebook"></i></a>&nbsp;&nbsp;&nbsp;<a href="#"><i class="fa fa-twitter"></i></a>&nbsp;&nbsp;&nbsp;<a href="#"><i class="fa fa-linkedin"></i></a></p>
+              <p><a href="#"><i class="fa fa-facebook"></i></a>&nbsp;&nbsp;&nbsp;<a href="#"><i class="fa fa-twitter"></i></a>&nbsp;&nbsp;&nbsp;<a href="#"><i class="fa fa-instagram"></i></a></p>
             </div>
           </div>
         </div>
@@ -40,7 +41,7 @@
               <p><i class="fa fa-location-arrow"></i></p>
             </div>
             <div class="col-md-10">
-              <p><strong>Address:</strong> Zakir Nagar, Mango, Jamshedpur</p>
+              <p> Zakir Nagar, Mango, Jamshedpur</p>
             </div>
           </div>
           <div class="row margin-30">
@@ -48,7 +49,7 @@
               <p><i class="fa fa-phone"></i></p>
             </div>
             <div class="col-md-10">
-              <p><strong>Phone</strong>: +91 7463062868</p>
+              <p> +91 7463062868</p>
             </div>
           </div>
           <div class="row margin-30">
@@ -56,7 +57,7 @@
               <p><i class="fa fa-envelope"></i></p>
             </div>
             <div class="col-md-10">
-              <p><strong>Email:</strong> <a href="mailto:unitedpeacefoundation.in@gmail.com">unitedpeacefoundation.in@gmail.com</a></p>
+              <p><a href="mailto:unitedpeacefoundation.in@gmail.com" class="email-to">unitedpeacefoundation.in@gmail.com</a></p>
             </div>
           </div>
         </div>
