@@ -480,6 +480,9 @@ ul.gallery li{
 .budget-box h2{
 	font-weight: bold;
 }
+.menu .header-bar-icon{
+		display: none;
+}
 @media only screen and (min-width:992px) and (max-width: 1350px) {
 .bg-offiwhite {
 	background-image: url("../images/shape-mobile.png");
@@ -509,15 +512,162 @@ ul.gallery li{
 	}
 }
 @media only screen and (min-width:992px) and (max-width: 1200px) {
-.bg-offiwhite {
-	background-image: url("../images/shape-mobile.png");
+	.bg-offiwhite {
+		background-image: url("../images/shape-mobile.png");
+	}
+
+	.logo-caption{
+		text-transform: capitalize;
+		color: white; 
+		position:relative; 
+		left:-40px;
+	}
+
+	.logo-head{
+		text-transform: capitalize;color: white;font-size: 25px; position:relative; left:-40px
+	}
+	
+	.menu .nav {
+		position: relative;
+		right: 10px;
+	}
+
+	.menu .oraganization h3{
+		font-size: 20px;
+	}
+
+	.menu .nav > li > a {
+		font-size: 12px;
+	}
+	.menu .navbar-brand>img {
+	    position: absolute;
+	    top: -45px;
+	    left: 0px;
+	    height: 200px;
+	    width: auto;
+	    padding: 7px 10px;
+	}
+	.menu .oraganization {
+	    position: absolute;
+	    top: 23px;
+	    left: 0px;
+	}
+
+
+	.menu .nav{
+		display: none;
+	}
+
+	.menu .header-bar-icon{
+		display: block;
+		font-size: 60px;
+		font-weight: bold;
+		float: right;
+		position: absolute;
+		top :5px;
+		right: 40px;
+		color : black;
+	}
+
+	.menu .header-bar-icon:active > .menu .nav{
+		display :block;
+	}
+
+	.hideshow-resnav{
+		display: grid;
+		position: absolute;
+		right: 70px;
+		top: 60px;
+	}
 }
+@media only screen and (min-width:1350px) and (max-width: 1900px) {
+	.bg-offiwhite {
+		background-image: url("../images/shape-mobile.png");
+	}
+
+	.logo-caption{
+		text-transform: capitalize;
+		color: white; 
+		position:relative; 
+		left:-40px;
+	}
+
+	.logo-head{
+		text-transform: capitalize;color: white;font-size: 25px; position:relative; left:-40px
+	}
+	
+	.menu .nav {
+		position: relative;
+		right: 10px;
+	}
+
+	.menu .oraganization h3{
+		font-size: 20px;
+	}
+
+	.menu .nav > li > a {
+		font-size: 12px;
+	}
 }
 /*tablet layout 760px*/
 @media only screen and (min-width:768px) and (max-width: 991px) {
-.bg-offiwhite {
-	background-image: url("../images/shape-mobile.png");
-}
+	.bg-offiwhite {
+		background-image: url("../images/shape-mobile.png");
+	}
+	.logo-caption{
+		text-transform: capitalize;
+		color: white; 
+		position:relative; 
+		left:-40px;
+	}
+
+	.logo-head{
+		text-transform: capitalize;color: white;font-size: 25px; position:relative; left:-40px
+	}
+	
+	.menu .nav {
+		position: relative;
+		right: 10px;
+	}
+
+	.menu .oraganization h3{
+		font-size: 20px;
+	}
+
+	.menu .nav > li > a {
+		font-size: 12px;
+	}
+
+	.menu .nav{
+		display: none;
+	}
+
+	.menu .oraganization {
+    position: absolute;
+    top: 23px;
+    left: 184px;
+   }
+
+   .menu .navbar-brand>img {
+	    position: absolute;
+	    top: -45px;
+	    left: 15px;
+	    height: 200px;
+	    width: auto;
+	    padding: 7px 10px;
+	}
+
+	.menu .header-bar-icon{
+		display: block;
+		font-size: 60px;
+		font-weight: bold;
+		float: right;
+		position: absolute;
+		top :5px;
+		right: 40px;
+		color : black;
+	}
+
 }
 @media only screen and (min-width:481px) and (max-width: 767px) {
 	.bg-offiwhite {
@@ -528,9 +678,39 @@ ul.gallery li{
 	.popup{
 		width: 50%;
 	}
+
+	.menu .header-bar-icon{
+		display: block;
+		font-size: 60px;
+		font-weight: bold;
+		float: right;
+		position: absolute;
+		top :5px;
+		right: 40px;
+		color : black;
 	}
+
+	#myslide, .carousel-inner{
+		height: 500px;
+	}
+	#myslide .item {
+		height: 500px;
+	}
+	#myslide .carousel-caption {
+		top: 200px;
+		height: 150px;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	.menu .nav {
+		position: relative;
+		right: 10px;
+		top: 40px;
+	}
+}
 	/*mobile portrate size to mobile landscape size (devices and browser)*/
-	@media (max-width: 480px) {
+@media (max-width: 480px) {
 	.bg-offiwhite {
 		top: 0;
 		background-image: url("../images/shape-mobile.png");
@@ -553,6 +733,40 @@ ul.gallery li{
 		top:200px;
 		padding-left: 10px;
 		padding-right: 10px;
+	}
+
+	.menu .nav{
+		display: none;
+	}
+
+	.menu .header-bar-icon{
+		display: block;
+		font-size: 60px;
+		font-weight: bold;
+		float: right;
+		position: absolute;
+		top :5px;
+		right: 40px;
+		color : black;
+	}
+
+	#myslide, .carousel-inner{
+		height: 500px;
+	}
+	#myslide .item {
+		height: 500px;
+	}
+	#myslide .carousel-caption {
+		top: 200px;
+		height: 150px;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	.menu .nav {
+		position: relative;
+		right: 10px;
+		top: 40px;
 	}
 }
 
