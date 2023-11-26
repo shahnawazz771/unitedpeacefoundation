@@ -48,6 +48,27 @@
 				});
 			}
 		});
+
+		$('.header-bar-icon').click(function(e){
+			e.preventDefault();
+			var resaction=$(this).attr('res-action');
+			if(resaction=="y"){
+				$(".menu .nav").css('display', 'grid');
+				$(".menu .nav").addClass('hideshow-resnav');
+				$(".menu .nav").css('top', '75px');
+				$(".menu .nav").css('background', '#63c090');
+				$(".dropdown-1st").css({'position': 'absolute', 'left':'-20%'});
+				$(".dropdown-2nd").css({'position': 'absolute', 'left':'-105%'});
+				$(".dropdown-3rd").css({'position': 'absolute', 'left':'-118%'});
+				// $(".menu .nav .dropdown-menu").css('left', '-105%');
+                $(this).removeAttr('res-action');
+				$(this).attr('res-action', 'u');
+			}else{
+				$(".menu .nav").css('display', 'none');
+                $(this).removeAttr('res-action');
+				$(this).attr('res-action', 'y');
+			}
+		});
 	});
 </script>
 <script src="js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
