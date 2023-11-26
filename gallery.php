@@ -16,7 +16,7 @@
     <div class="row white">
       <div class="col-md-12">
         <div class="absolute-text">
-          <h2>Gallery</h2>
+          <h2 class="text-center">Gallery</h2>
         </div>
       </div>
     </div>
@@ -25,7 +25,7 @@
   <div class="container padding-top-bottom-100">
   <div class="row text-justify">
     <div class="col-md-12">
-      <h2><strong>GALLERY</strong></h2>
+      <h2 class="text-center"><strong>GALLERY</strong></h2>
     </div>
   </div>
   <div class="service-img text-center">

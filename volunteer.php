@@ -15,7 +15,7 @@
     <div class="row white">
       <div class="col-md-12">
         <div class="absolute-text">
-          <h2>Get Involved > Volunteer With Us</h2>
+          <h2 class="text-center">Get Involved > Volunteer With Us</h2>
         </div>
       </div>
     </div>
@@ -23,15 +23,15 @@
 </div>
 <div class="container padding-top-bottom-100">
   <div class="row">
-    <div class="col-md-8">
-      <h2>Volunteer With Us</h2>
+    <div class="col-md-12">
+      <h2 class="text-center">Volunteer With Us</h2>
       <br>
       <p>Volunteering holds many benefits. It can help you to develop new skills build confidence meet new people create career opportunities and even provides you peace of mind and happiness that help to improve mental and physical fitness.</p>
       <p>Every soul needs its dose to keep it happy and peaceful. Volunteering with us will provide you opportunity to connect with the orphans and special cause.</p>
       <p>If you have any kind of skill talent that can help us to improve our work. Kindly forward your CV.</p>
       <!--<div class="botton-2 margin-50"> <a href="#form-volen">Want to be a volunteer ?</a> &nbsp;&nbsp; <a href="images/form.pdf">Download Form</a> </div>-->
     </div>
-    <div class="col-md-4"> <img src="images/volunteer-with-us.jpg" width="100%"> </div>
+    <div class="col-md-12"> <img src="images/volunteer-with-us.jpg" width="100%"> </div>
   </div>
   <div class="row margin-50">
     <div class="col-md-12">

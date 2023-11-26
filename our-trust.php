@@ -15,7 +15,7 @@
     <div class="row white">
       <div class="col-md-12">
         <div class="absolute-text">
-          <h2>About us > About our Trust</h2>
+          <h2 class="text-center">About us > About our Trust</h2>
         </div>
       </div>
     </div>
@@ -23,13 +23,13 @@
 </div>
 <div class="container padding-top-bottom-100">
   <div class="row">
-    <div class="col-md-8">
-      <h2><strong>ABOUT</strong> <span style="color:#6dc789"><strong>US</strong></span></h2>
+    <div class="col-md-12">
+      <h2 class="text-center"><strong>ABOUT</strong> <span style="color:#6dc789"><strong>US</strong></span></h2>
       <p style="margin-top:50px;">United Peace Foundation is a non-profit organization established to help and uplift the most vulnerable, orphans, destitute and widows regardless of faith race or creed.</p>
       <br>
       <p>Our aim is to provide the nutrition food, quality education, full healthcare and shelter to homeless orphans & badly effected children by scourge of poverty.</p>
     </div>
-    <div class="col-md-4"> <img class="margin-70" src="images/about-us-upf.jpg" width="100%"> </div>
+    <!-- <div class="col-md-4"> <img class="margin-70" src="images/about-us-upf.jpg" width="100%"> </div> -->
   </div>
 </div>
 <!--<div class="background-image" style="background-image:url(images/hands.jpg);">

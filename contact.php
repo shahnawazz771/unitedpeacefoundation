@@ -12,7 +12,7 @@
     <div class="row white">
       <div class="col-md-12">
         <div class="absolute-text">
-          <h2>Contact Us</h2>
+          <h2 class="text-center">Contact Us</h2>
         </div>
       </div>
     </div>

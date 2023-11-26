@@ -15,7 +15,7 @@
     <div class="row white">
       <div class="col-md-12">
         <div class="absolute-text">
-          <h2>Get Involved > Sponser An Orphen</h2>
+          <h2 class="text-center">Get Involved > Sponser An Orphen</h2>
         </div>
       </div>
     </div>
@@ -24,7 +24,7 @@
 <div class="container padding-top-bottom-100">
   <div class="row">
     <div class="col-md-12 margin-20">
-      <h2>Sponsor, Orphan, Sponsorship</h2>
+      <h2 class="text-center">Sponsor, Orphan, Sponsorship</h2>
       <br>
       <p>Urgent appeal, 50 orphans need sponsorship now, they have been waiting desperately for your help. Act now, sponsor at least one orphan and donate just ₹2500 a month for food, education, clothes and healthcare.</p>
       <h4>Donate Generously.</h4>
@@ -33,10 +33,10 @@
         NOTE: Transaction is accepted within India only.</p>
       <h3>You can also donate through any UPI app.</h3>
       <div class="row margin-20">
-        <div class="col-md-2"><img src="images/upi-qr.jpg" width="100%"/></div>
+        <!-- <div class="col-md-2"><img src="images/upi-qr.jpg" width="100%"/></div> -->
         <div class="col-md-3">
-          <p>UPI ID: a228461g@mairtel</p>
-          <p>Mobile no: 8299286901</p>
+          <!-- <p>UPI ID: a228461g@mairtel</p>
+          <p>Mobile no: 8299286901</p> -->
         </div>
       </div>
     </div>

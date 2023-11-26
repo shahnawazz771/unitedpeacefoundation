@@ -32,10 +32,10 @@
         NOTE: Transaction is accepted within India only.</p>
       <h3>You can also donate through any UPI app.</h3>
       <div class="row margin-20">
-        <div class="col-md-3"><img src="images/upi-qr.jpg" width="100%"/></div>
+        <!-- <div class="col-md-3"><img src="images/upi-qr.jpg" width="100%"/></div> -->
         <div class="col-md-4">
-          <p>UPI ID: a228461g@mairtel</p>
-          <p>Mobile no: 8299286901</p>
+<!--           <p>UPI ID: a228461g@mairtel</p>
+          <p>Mobile no: 8299286901</p> -->
         </div>
       </div>
     </div>

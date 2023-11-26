@@ -15,7 +15,7 @@
     <div class="row white">
       <div class="col-md-12">
         <div class="absolute-text">
-          <h2>programmeme > Educational programme</h2>
+          <h2 class="text-center">programmeme > Educational programme</h2>
         </div>
       </div>
     </div>
@@ -26,7 +26,7 @@
 <div class="container padding-top-bottom-100 text-center">
   <div class="row">
     <div class="col-md-12">
-      <h2><b>Educational programme</b></h2>
+      <h2 class="text-center"><b>Educational programme</b></h2>
     </div>
   </div>
   <br>

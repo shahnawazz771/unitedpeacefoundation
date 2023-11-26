@@ -16,7 +16,7 @@
     <div class="row white">
       <div class="col-md-12">
         <div class="absolute-text">
-          <h2>Coming soon</h2>
+          <h2 class="text-center">Coming soon</h2>
         </div>
       </div>
     </div>
