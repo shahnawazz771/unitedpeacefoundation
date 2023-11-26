@@ -599,7 +599,13 @@ ul.gallery li{
 	}
 
 	.logo-head{
-		text-transform: capitalize;color: white;font-size: 25px; position:relative; left:-40px
+		text-transform: 
+		capitalize;
+		color: white;
+		font-size: 25px; 
+		position:relative; 
+		left:-40px
+
 	}
 	
 	.menu .nav {
@@ -780,6 +786,7 @@ ul.gallery li{
 
 .menu .oraganization h3{
 	font-family: 'EKPLAIN';
+	font-size: 28px;
 }
 
 .email-to{
