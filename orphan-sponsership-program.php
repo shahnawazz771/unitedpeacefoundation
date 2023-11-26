@@ -15,7 +15,7 @@
     <div class="row white">
       <div class="col-md-12">
         <div class="absolute-text">
-          <h2>programmeme > Orphan Sponsership programme</h2>
+          <h2>programme > Orphan Sponsership programme</h2>
         </div>
       </div>
     </div>

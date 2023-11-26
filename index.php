@@ -5,6 +5,8 @@
 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="css/style.css" rel="stylesheet" type="text/css">
 <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.cdnfonts.com/css/freestyle-script" rel="stylesheet">
+                
 </head>
 <body>
 
@@ -34,9 +36,14 @@
         <h1>To feed the hungry and destitute.</h1>
       </div>
     </div> -->
-    <div class="item" style="background-image:url(images/slider-4.jpg)">
+    <!-- <div class="item" style="background-image:url(images/slider-4.jpg)">
       <div class="carousel-caption">
         <h1>To educate poor and deprived children.</h1>
+      </div>
+    </div> -->
+    <div class="item" style="background-image:url(images/slider-5.jpg)">
+      <div class="carousel-caption">
+        <h1>To feed the hungry and destitute.</h1>
       </div>
     </div>
   </div>
