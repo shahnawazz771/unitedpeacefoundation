@@ -13,7 +13,7 @@
             <div class="col-md-3">
               <div class="oraganization">
                 <h3 style="" class="logo-head">United Peace Foundation®</h3>
-                <span style="" class="caption logo-caption">A Small Step Towards Orphans</span>
+                <span style="" class="caption logo-caption">A small step towards orphans</span>
               </div>
             </div>
             <div class="col-md-7">
