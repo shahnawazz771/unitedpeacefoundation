@@ -91,9 +91,9 @@
 	  <h3><strong><span style="color:#67c18c">OUR</span> PROGRAMME</strong></h3>
     <img src="images/line.png" width="200" height="25"> </div>
   <div class="row margin-50 text-center">
-    <div class="col-md-3 margin-20 our-programme-paragraph-head"> <img src="images/index-image-1.jpg" width="100%">
+    <div class="col-md-3 margin-20 our-programme-paragraph-head"> <a href="orphan-sponsership-program.php"> <img src="images/index-image-1.jpg" width="100%">
       <h3 class="margin-20">Orphan Sponsorship programme</h3>
-      <p class="our-programme-paragraph">
+      <p class="our-programme-paragraph"></a>
         Orphan sponsorship is a vital lifeline for many poor children. There are many orphans who do not have enough support of their family. There are children whose shelter is a piece of plastic sheeting living day to day with a high risk of abuse and exploitation. <br>Our Orphan Sponsorship Programme changes the lives of children drastically in some of the most deprived section of the society. <br>With your help we can ensure that they receive education, food and healthcare with loving care and support that any child needs.
       </p>
     </div>
