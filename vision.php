@@ -27,7 +27,11 @@
       <div class="col-md-12">
         <h3 class="text-center"><span style="color:#6dc789;">OUR</span> <strong><span style="color:#000;">MISSION</span></strong></h3>
         <br>
-        <p>Many vulnerable orphans and abandoned children are left on the streets begging for survival, need care and support. To induct them into a society where they can get the chance to grow up in a loving and caring environment. To provide nutritious food, quality education, healthcare and shelter for the homeless orphans and poverty-stricken children. To help and uplift the destitute, widows and deprived section of the society regardless of their faith, caste or creed.</p>
+        <p>Many vulnerable orphans and abandoned children are left on the streets begging for survival, need care and support. To induct them into a society where they can get the chance to grow up in a loving and caring environment.
+
+        To provide nutritious food, quality education, healthcare and shelter for the homeless orphans and poverty-stricken children.
+
+        To help and uplift the destitute, widows and deprived section of the society regardless of their faith, caste or creed.</p>
         <hr>
         <div class="img-sec hidden-xs hidden-sm"> <img src="images/mission.jpg" width="100%"> </div>
       </div>

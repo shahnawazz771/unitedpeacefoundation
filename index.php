@@ -71,7 +71,11 @@
       <h2><strong>WHO WE</strong> <span style="color:#67c18c"><strong>ARE</strong></span></h2>
       <img src="images/line.png" width="200" height="25"> </div>
     <div class="col-md-6 margin-30">
-      <p>We are a non-profit organization working to improve the life of orphans, widows, destitute and homeless children. We work across India especially rural areas and for the underprivileged section of the society to establish brotherhood, peace and unity among the people of different religion, caste and creed.</p>
+      <p>Many vulnerable orphans and abandoned children are left on the streets begging for survival, need care and support. To induct them into a society where they can get the chance to grow up in a loving and caring environment.
+
+      To provide nutritious food, quality education, healthcare and shelter for the homeless orphans and poverty-stricken children.
+
+      To help and uplift the destitute, widows and deprived section of the society regardless of their faith, caste or creed.</p>
     </div>
     <div class="col-md-6 margin-30">
       <ul>
@@ -146,7 +150,11 @@
     <div class="col-md-8 col-md-offset-2">
       <h2><strong>OUR</strong> <span style="color:#6dc789"><strong>MISSION</strong></span></h2>
       <img src="images/line.png" width="200" height="25">
-      <p style="margin-top:30px;">Many vulnerable orphans and abandoned children are left on the streets begging for survival, need care and support. To induct them into a society where they can get the chance to grow up in a loving and caring environment. To provide nutritious food, quality education, healthcare and shelter for the homeless orphans and poverty-stricken children. To help and uplift the destitute, widows and deprived section of the society regardless of their faith, caste or creed.</p>
+      <p style="margin-top:30px;">Many vulnerable orphans and abandoned children are left on the streets begging for survival, need care and support. To induct them into a society where they can get the chance to grow up in a loving and caring environment.
+
+      To provide nutritious food, quality education, healthcare and shelter for the homeless orphans and poverty-stricken children.
+
+      To help and uplift the destitute, widows and deprived section of the society regardless of their faith, caste or creed.</p>
     </div>
   </div>
   <!-- <div class="row margin-70 text-center">
