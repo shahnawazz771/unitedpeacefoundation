@@ -2,9 +2,6 @@
 <?php include "layouts/html_starting.php"; ?>
 
 <title>Programme</title>
-<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-<link href="css/style.css" rel="stylesheet" type="text/css">
-<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <style>
   .programme-sub-title-header, .programme-sub-title-main{
     display: none;

@@ -2,9 +2,6 @@
 <?php include "layouts/html_starting.php"; ?>
 
 <title>Sponser An Orphen</title>
-<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-<link href="css/style.css" rel="stylesheet" type="text/css">
-<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 
