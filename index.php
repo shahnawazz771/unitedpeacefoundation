@@ -95,29 +95,40 @@
 	  <h3><strong><span style="color:#67c18c">OUR</span> PROGRAMME</strong></h3>
     <img src="images/line.png" width="200" height="25"> </div>
   <div class="row margin-50 text-center">
-    <div class="col-md-3 margin-20 our-programme-paragraph-head"> <a href="orphan-sponsership-program.php"> <img src="images/index-image-1.jpg" width="100%">
-      <h3 class="margin-20">Orphan Sponsorship programme</h3>
-      <p class="our-programme-paragraph"></a>
-        Orphan sponsorship is a vital lifeline for many poor children. There are many orphans who do not have enough support of their family. There are children whose shelter is a piece of plastic sheeting living day to day with a high risk of abuse and exploitation. <br>Our Orphan Sponsorship Programme changes the lives of children drastically in some of the most deprived section of the society. <br>With your help we can ensure that they receive education, food and healthcare with loving care and support that any child needs.
-      </p>
+    <div class="col-md-3 margin-20 our-programme-paragraph-head"> 
+      <a href="programme.php?page=programme&programme=orphan-sponsorship-programme"> 
+        <img src="images/index-image-1.jpg" width="100%">
+        <h3 class="margin-20">Orphan Sponsorship programme</h3>
+        <p class="our-programme-paragraph">
+          Orphan sponsorship is a vital lifeline for many poor children. There are many orphans who do not have enough support of their family. There are children whose shelter is a piece of plastic sheeting living day to day with a high risk of abuse and exploitation. <br>Our Orphan Sponsorship Programme changes the lives of children drastically in some of the most deprived section of the society. <br>With your help we can ensure that they receive education, food and healthcare with loving care and support that any child needs.
+        </p>
+      </a>
     </div>
-    <div class="col-md-3 margin-20 our-programme-paragraph-head"> <img src="images/index-image-2.jpg" width="100%">
-      <h3 class="margin-20">Educational programme</h3>
-      <p class="our-programme-paragraph">
-        To uplift the deprived and underprivileged section of the society through education and make them capable of living as respected, responsible human beings. <br>By your kind love and support we provide educational expenses of poor students and orphans living with their widowed mother or guardians.<br>Intending to setup free educational institutions for poor students and launch various educational and training programmes.
-      </p>
+    <div class="col-md-3 margin-20 our-programme-paragraph-head">
+      <a href="programme.php?page=programme&programme=educational-programme"> 
+        <img src="images/index-image-2.jpg" width="100%">
+        <h3 class="margin-20">Educational programme</h3>
+        <p class="our-programme-paragraph">
+          To uplift the deprived and underprivileged section of the society through education and make them capable of living as respected, responsible human beings. <br>By your kind love and support we provide educational expenses of poor students and orphans living with their widowed mother or guardians.<br>Intending to setup free educational institutions for poor students and launch various educational and training programmes.
+        </p>
+      </a>
     </div>
-    <div class="col-md-3 margin-20 our-programme-paragraph-head"> <img src="images/index-image-3.jpg" width="100%">
-      <h3 class="margin-20">Food programme</h3>
-      <p class="our-programme-paragraph our-programme-paragraph-head">
-        Dietry assistance or food parcel is a lifeline for the families who have no income or bread earner. And for old helpless destitute who are unable to work and widowed headed families. <br>By your generous support we are able to provide necessary dietry assistance to these needy people. <br>United Peace Foundation is willing to reach every single needy in all parts of cities and villages to provide dietry assistance.
-      </p>
+    <div class="col-md-3 margin-20 our-programme-paragraph-head"> 
+      <a href="programme.php?page=programme&programme=educational-programme"> <img src="images/index-image-3.jpg" width="100%">
+        <h3 class="margin-20">Food programme</h3>
+        <p class="our-programme-paragraph our-programme-paragraph-head">
+          Dietry assistance or food parcel is a lifeline for the families who have no income or bread earner. And for old helpless destitute who are unable to work and widowed headed families. <br>By your generous support we are able to provide necessary dietry assistance to these needy people. <br>United Peace Foundation is willing to reach every single needy in all parts of cities and villages to provide dietry assistance.
+        </p>
+      </a>
     </div>
-    <div class="col-md-3 margin-20 our-programme-paragraph-head"> <img src="images/index-image-3.jpg" width="100%">
-      <h3 class="margin-20">Emergency Relief</h3>
-      <p class="our-programme-paragraph">
-        Disaster whether natural or man-made, children are the most vulnerable and adversely affected. More than half of the people who are affected by disaster are children. Our calling is to protect the well being of children affected by disaster like corona, flood or human conflict etc. <br>With your kind support our disaster management activities seek to save lives and reduce human suffering, protect and restore livelihoods.
-      </p>
+    <div class="col-md-3 margin-20 our-programme-paragraph-head"> 
+      <a href="programme.php?page=programme&programme=educational-programme"> 
+        <img src="images/index-image-3.jpg" width="100%">
+        <h3 class="margin-20">Emergency Relief</h3>
+        <p class="our-programme-paragraph">
+          Disaster whether natural or man-made, children are the most vulnerable and adversely affected. More than half of the people who are affected by disaster are children. Our calling is to protect the well being of children affected by disaster like corona, flood or human conflict etc. <br>With your kind support our disaster management activities seek to save lives and reduce human suffering, protect and restore livelihoods.
+        </p>
+      </a>
     </div>
   </div>
   <!-- <div class="row margin-50 text-center">
