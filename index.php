@@ -65,19 +65,22 @@
   <!-- Controls --> 
   
   <a class="left carousel-control" href="#myslide" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a class="right carousel-control" href="#myslide" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <span class="sr-only">Next</span> </a> </div>
-<div class="container-fluid margin-100">
+<div class="container margin-100">
   <div class="row">
     <div class="col-md-12 text-center">
       <h2><strong>WHO WE</strong> <span style="color:#67c18c"><strong>ARE</strong></span></h2>
       <img src="images/line.png" width="200" height="25"> </div>
-    <div class="col-md-6 margin-30">
+    <div class="col-md-12 margin-30">
       <p>Many vulnerable orphans and abandoned children are left on the streets begging for survival, need care and support. To induct them into a society where they can get the chance to grow up in a loving and caring environment.
 
       To provide nutritious food, quality education, healthcare and shelter for the homeless orphans and poverty-stricken children.
 
-      To help and uplift the destitute, widows and deprived section of the society regardless of their faith, caste or creed.</p>
+      To help and uplift the destitute, widows and deprived section of the society regardless of their faith, caste or creed.</p><br>
+      <p>Support orphans by providing food, education, medical assistance and other basic amenities.</p><br>
+      <p>Sponsorship to orphans who are living with their mother / guardian by taking care of their monthly food and educational expenses.</p><br>
+      <p>Provide monthly dietary assistance to widow headed families, destitute and helpless old age poor who are not capable of earning their bread.</p>
     </div>
-    <div class="col-md-6 margin-30">
+    <!-- <div class="col-md-6 margin-30">
       <ul>
         <li>
           <p>Support orphans by providing food, education, medical assistance and other basic amenities.</p>
@@ -89,7 +92,7 @@
           <p>Provide monthly dietary assistance to widow headed families, destitute and helpless old age poor who are not capable of earning their bread. </p>
         </li>
       </ul>
-    </div>
+    </div> -->
   </div>
   <div class="row text-center margin-50">
 	  <h3><strong><span style="color:#67c18c">OUR</span> PROGRAMME</strong></h3>
@@ -114,7 +117,7 @@
       </a>
     </div>
     <div class="col-md-3 margin-20 our-programme-paragraph-head"> 
-      <a href="programme.php?page=programme&programme=educational-programme"> <img src="images/index-image-3.jpg" width="100%">
+      <a href="programme.php?page=programme&programme=food-programme"> <img src="images/index-image-3.jpg" width="100%">
         <h3 class="margin-20">Food programme</h3>
         <p class="our-programme-paragraph our-programme-paragraph-head">
           Dietry assistance or food parcel is a lifeline for the families who have no income or bread earner. And for old helpless destitute who are unable to work and widowed headed families. <br>By your generous support we are able to provide necessary dietry assistance to these needy people. <br>United Peace Foundation is willing to reach every single needy in all parts of cities and villages to provide dietry assistance.
@@ -122,7 +125,7 @@
       </a>
     </div>
     <div class="col-md-3 margin-20 our-programme-paragraph-head"> 
-      <a href="programme.php?page=programme&programme=educational-programme"> 
+      <a href="programme.php?page=programme&programme=emergency-relief"> 
         <img src="images/index-image-3.jpg" width="100%">
         <h3 class="margin-20">Emergency Relief</h3>
         <p class="our-programme-paragraph">

@@ -107,8 +107,6 @@
 
 		// for programme page content show as per url
 		if(result.page=="programme"){
-			$('.programme-sub-title-header').hide();
-			$('.programme-sub-title-main').hide();
 			if(result.programme=="orphan-sponsorship-programme"){
 				$('.orphanspopro').show();
 				$('.orphanspopromain').show();
@@ -117,8 +115,10 @@
 				$('.edupromain').show();
 			}else if(result.programme=="food-programme"){
 				$('.foodpro').show();
+				$('.foodpromain').show();
 			}else{
 				$('.emergencyrel').show();
+				$('.emergencyrelmain').show();
 			}
 		}
 	});

@@ -25,7 +25,7 @@
   <div class="row">
     <div class="col-md-12">
       <h2 class="text-center"><strong>ABOUT</strong> <span style="color:#6dc789"><strong>US</strong></span></h2>
-      <p style="margin-top:50px;">United Peace Foundation is a non-profit organization established to help and uplift the most vulnerable, orphans, destitute and widows regardless of faith race or creed.</p>
+      <p style="margin-top:50px;">United Peace Foundation is a non-profit organisation established in 2014 and registered under Trust Act 1882 having Reg no. 6454/1048 in the year 2015 at Jamsheddpur Jharkhand. We work across India especially in rural areas to help and improve the life of destiute, orphans, widows and homeless children with a vision to spread peace & harmony and brotherhood amongst the different religions, caste and creed.</p>
       <br>
       <p>Our aim is to provide the nutrition food, quality education, full healthcare and shelter to homeless orphans & badly effected children by scourge of poverty.</p>
     </div>
