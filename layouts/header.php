@@ -8,7 +8,7 @@
       </a>
     </label>
     <ul>
-      <li class="home"><a href="index.php?page=home" class="active">Home</a></li>
+      <li class="home"><a href="index.php?page=home">Home</a></li>
       <!-- <li class="home"><a href="javascript:void(0)" class="nav-li">Test <span class="caret"></span></a>
         <ul class="nested-nav">
           <li class="nested-nav-li">Test 1</li>
@@ -16,20 +16,20 @@
         </ul>
       </li> -->
       <li class="dropdown aboutus"><a class="dropdown-toggle" data-toggle="dropdown" href="#">About Us <span class="caret"></span></a>
-        <ul class="dropdown-menu dropdown-menu-left dropdown-1st">
+        <ul class="dropdown-menu dropdown-menu-left dropdown-1st two-line">
           <li><a href="our-trust.php?page=aboutus">About our trust</a></li>
           <li><a href="vision.php?page=aboutus">Vision, Mission</a></li>
         </ul>
       </li>
       <li class="dropdown getinvolved"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Get Involved <span class="caret"></span></a>
-        <ul class="dropdown-menu dropdown-menu-left dropdown-2nd">
+        <ul class="dropdown-menu dropdown-menu-left dropdown-2nd three-line">
           <li><a href="donate.php?page=getinvolved">How to Donate</a></li>
           <li><a href="sponser-an-orphen.php?page=getinvolved">Sponsor, Orphan, Sponsorship</a></li>
           <li><a href="volunteer.php?page=getinvolved">Volunteer With Us</a></li>
         </ul>
       </li>
       <li class="dropdown programme"><a class="dropdown-toggle" data-toggle="dropdown" href="#">programme <span class="caret"></span></a>
-        <ul class="dropdown-menu dropdown-menu-left dropdown-3rd">
+        <ul class="dropdown-menu dropdown-menu-left dropdown-3rd four-line">
           <li><a href="programme.php?page=programme&programme=orphan-sponsorship-programme">Orphan Sponsorship programme</a></li>
           <li><a href="programme.php?page=programme&programme=educational-programme">Educational programme</a></li>
           <li><a href="programme.php?page=programme&programme=food-programme">Food programme</a></li>
