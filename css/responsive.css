@@ -95,9 +95,7 @@ nav a.active, nav a:hover{
 	border-bottom: 1px solid white;
 }
 
-
-
-@media (max-width: 1500px){
+@media (max-width: 1700px){
 	.active{
 	    background: white;    
 	    width: 100%;
