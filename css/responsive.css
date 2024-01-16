@@ -94,8 +94,98 @@ nav a.active, nav a:hover{
 .active{
 	border-bottom: 1px solid white;
 }
+@media (min-width: 1200px) and (max-width: 1700px) {
+	.logo-head{
+		float: left;
+	    position: relative;
+	    top: 35px;
+	    left: 0px;
+	    font-size: 25px;
+	}
 
-@media (max-width: 1700px){
+	.log-head-slogan{
+		float: left;
+	    position: absolute;
+	    left: 170px;
+	    top: 40px;
+	    font-size: 15px;
+	}
+
+	label.logo{
+		color: white;
+	    font-size: 35px;
+	    line-height: 75px;
+	    padding: 0px 20px;
+	    font-weight: bold;
+	}
+
+	nav ul {
+		float: right;
+		margin-right: 20px;
+	}
+
+	nav ul li{
+		display: inline-block;
+		line-height:80px;
+		margin: 0 2px;
+	}
+
+	nav ul li a{
+		color: white;
+		font-size: 14px;
+		padding: 7px 10px;
+		border-radius: 3px;
+		text-transform: uppercase;
+	}
+}
+
+@media (min-width: 952px) and (max-width: 1200px) {
+	.logo-head{
+		display: none;
+		float: left;
+	    position: relative;
+	    top: 35px;
+	    left: 0px;
+	    font-size: 25px;
+	}
+
+	.log-head-slogan{
+		display: none;
+		float: left;
+	    position: absolute;
+	    left: 170px;
+	    top: 40px;
+	    font-size: 15px;
+	}
+
+	label.logo{
+		color: white;
+	    font-size: 25px;
+	    line-height: 75px;
+	    padding: 0px 10px;
+	    font-weight: bold;
+	}
+	nav ul {
+		float: right;
+		margin-right: 0px;
+	}
+
+	nav ul li{
+		display: inline-block;
+		line-height:80px;
+		margin: 0 0px;
+	}
+
+	nav ul li a{
+		color: white;
+		font-size: 14px;
+		padding: 7px 10px;
+		border-radius: 3px;
+		text-transform: uppercase;
+	}
+}
+@media (max-width: 952px) {
+@media (min-width: 715px) and (max-width: 952px) {
 	.active{
 	    background: white;    
 	    width: 100%;
@@ -139,12 +229,12 @@ nav a.active, nav a:hover{
 
 	nav ul li{
 		display: block;
-		margin: 50px 0;
+		margin: 20px 0;
 		line-height: 30px;
 	}
 
 	nav ul li a{
-		font-size: 20px;
+		font-size: 15px;
 	}
 
 	a:hover, a.active{
@@ -162,9 +252,9 @@ nav a.active, nav a:hover{
 		left:0;
 
 	}                  
-}
+/*}*/
 
-@media (max-width : 952px){
+/*@media (max-width : 952px){*/
 	label.logo{
 		font-size: 30px;
 		padding-left: 50px;
@@ -174,7 +264,7 @@ nav a.active, nav a:hover{
 	}
 }
 
-@media (max-width: 858px){
+/*@media (max-width: 858px){
 	.checkbtn{
 		display: block;
 
@@ -217,4 +307,76 @@ nav a.active, nav a:hover{
 		left:0;
 
 	}                  
+}*/
+
+@media (max-width : 715px){
+	.logo-head{
+/*		display: none;*/
+		top: 45px;
+		font-size: 20px;
+	}
+
+	.log-head-slogan{
+/*		display: none;*/
+		float: left;
+	    position: absolute;
+	    left: 140px;
+	    top: 40px;
+		font-size: 15px;
+	}	
+
+	.checkbtn{
+		display: block;
+		position: relative;
+    	top: 10px;
+
+	}
+
+	label.logo{
+		padding: 0 20px;
+	}
+	nav ul{
+		position: fixed;
+		width: 100%;
+		height: 100vh;
+		background: #2c3e50;
+		top: 90px;
+		left: -100%;
+		text-align: center;
+		transition: all .5s;
+		z-index: 999999;
+	}
+
+	nav ul li{
+		display: block;
+		margin: 50px 0;
+		line-height: 30px;
+	}
+
+	nav ul li a{
+		font-size: 20px;
+	}
+
+	a:hover, a.active{
+		background: none;
+		color: #0082e6;
+
+	}
+	.dropdown-menu-left ~ li{
+		float: left;
+		display: contents;
+		height: auto
+	}
+
+	#check:checked ~ ul{
+		left:0;
+
+	}     
+
+	.open>.dropdown-menu {
+	    height: auto;
+	    width: 100%;
+	    left: -18px;
+	    position: absolute;
+	}             
 }
