@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>United Peace Foundation</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800|Sacramento"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/animate.css" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css" />
+    <link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script nonce="0e3f9638-8183-48ac-8518-94acbb14529d">
+      (function (w, d) {
+        !(function (dp, dq, dr, ds) {
+          dp[dr] = dp[dr] || {};
+          dp[dr].executed = [];
+          dp.zaraz = { deferred: [], listeners: [] };
+          dp.zaraz.q = [];
+          dp.zaraz._f = function (dt) {
+            return async function () {
+              var du = Array.prototype.slice.call(arguments);
+              dp.zaraz.q.push({ m: dt, a: du });
+            };
+          };
+          for (const dv of ["track", "set", "debug"])
+            dp.zaraz[dv] = dp.zaraz._f(dv);
+          dp.zaraz.init = () => {
+            var dw = dq.getElementsByTagName(ds)[0],
+              dx = dq.createElement(ds),
+              dy = dq.getElementsByTagName("title")[0];
+            dy && (dp[dr].t = dq.getElementsByTagName("title")[0].text);
+            dp[dr].x = Math.random();
+            dp[dr].w = dp.screen.width;
+            dp[dr].h = dp.screen.height;
+            dp[dr].j = dp.innerHeight;
+            dp[dr].e = dp.innerWidth;
+            dp[dr].l = dp.location.href;
+            dp[dr].r = dq.referrer;
+            dp[dr].k = dp.screen.colorDepth;
+            dp[dr].n = dq.characterSet;
+            dp[dr].o = new Date().getTimezoneOffset();
+            if (dp.dataLayer)
+              for (const dC of Object.entries(
+                Object.entries(dataLayer).reduce(
+                  (dD, dE) => ({ ...dD[1], ...dE[1] }),
+                  {}
+                )
+              ))
+                zaraz.set(dC[0], dC[1], { scope: "page" });
+            dp[dr].q = [];
+            for (; dp.zaraz.q.length; ) {
+              const dF = dp.zaraz.q.shift();
+              dp[dr].q.push(dF);
+            }
+            dx.defer = !0;
+            for (const dG of [localStorage, sessionStorage])
+              Object.keys(dG || {})
+                .filter((dI) => dI.startsWith("_zaraz_"))
+                .forEach((dH) => {
+                  try {
+                    dp[dr]["z_" + dH.slice(7)] = JSON.parse(dG.getItem(dH));
+                  } catch {
+                    dp[dr]["z_" + dH.slice(7)] = dG.getItem(dH);
+                  }
+                });
+            dx.referrerPolicy = "origin";
+            dx.src =
+              "/cdn-cgi/zaraz/s.js?z=" +
+              btoa(encodeURIComponent(JSON.stringify(dp[dr])));
+            dw.parentNode.insertBefore(dx, dw);
+          };
+          ["complete", "interactive"].includes(dq.readyState)
+            ? zaraz.init()
+            : dp.addEventListener("DOMContentLoaded", zaraz.init);
+        })(w, d, "zarazData", "script");
+      })(window, document);
+    </script>
+  </head>
+  <body>
+    <header role="banner">
+      <!-- <div class="top-bar">
+        <div class="container">
+          <div class="row">
+            <div class="col-6">
+              <a href="#"><span class="fa fa-twitter"></span></a>
+              <a href="#"><span class="fa fa-facebook"></span></a>
+              <a href="#"><span class="fa fa-instagram"></span></a>
+              <a href="#"><span class="fa fa-linkedin"></span></a>
+            </div>
+            <div class="col-6 text-right d-sm-flex d-flex">
+              <d class="ml-auto">
+                <a href="#" class="btn">Sponsor</a>
+                <a href="#" class="cta-btn">Login</a>
+              </d>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+          <!-- <a class="navbar-brand" href="index.html">Adopted</a> -->
+          <a class="navbar-brand" href="index.html"
+            ><img src="img/trust-logo.jpg" height="90px" width="320px"
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarsExample05"
+            aria-controls="navbarsExample05"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarsExample05">
+            <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link active dropdown-toggle"
+                  href="about-us.html"
+                  id="dropdown04"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  >About</a
+                >
+                <div class="dropdown-menu" aria-labelledby="dropdown04">
+                  <a class="dropdown-item" href="about-our-trust.html">About Our Trust</a>
+                  <a class="dropdown-item" href="vision-mission.html">Vision, Mission</a>
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="services.html"
+                  id="dropdown04"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  >Get Involved</a
+                >
+                <div class="dropdown-menu" aria-labelledby="dropdown04">
+                  <a class="dropdown-item" href="how-to-donate.html">How to Donate</a>
+                  <a class="dropdown-item" href="sponsor-orphan-sponsorship.html">Sponsor, Orphan, Sponsorship</a>
+                  <a class="dropdown-item" href="volunteer-with-us.html">Volunteer With Us</a>
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="services.html"
+                  id="dropdown04"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  >Programme</a
+                >
+                <div class="dropdown-menu" aria-labelledby="dropdown04">
+                  <a class="dropdown-item" href="orphan-sponsorship-programme.html">Orphan Sponsorship Programme</a>
+                  <a class="dropdown-item" href="educational-programme.html">Educational Programm</a>
+                  <a class="dropdown-item" href="food-programme.html">Food Programme</a>
+                  <a class="dropdown-item" href="emergency-relief-programme.html">Emergency Relief Programme</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="stories.html">Stories</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <section class="home-slider inner-page owl-carousel">
+      <div
+        class="slider-item"
+        style="background-image: url('img/about-us.jpg')"
+      >
+        <div class="container">
+          <div class="row slider-text align-items-center">
+            <div class="col-md-7 col-sm-12 element-animate">
+              <h1>About Our Trust</h1>
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb breadcrumb-custom">
+                  <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                  <li class="breadcrumb-item"><a href="about-our-trust.html">About</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                    About Our Trust
+                  </li>
+                </ol>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="row">
+          <!-- <div class="col-md-4 order-2 sidebar">
+            <div class="sidebar-box">
+              <h3>About Our Trust</h3>
+              <ul class="list-unstyled sidelink">
+                <li class="active"><a href="#">History</a></li>
+                <li><a href="#">Leadership</a></li>
+                <li><a href="#">Mission</a></li>
+                <li><a href="#">Vision</a></li>
+                <li><a href="#">Support</a></li>
+              </ul>
+            </div>
+          </div> -->
+          <div class="col-md-12 order-1 main mb-5">
+            <div class="row">
+              <div class="col-md-12">
+                <h2>About Our Trust</h2>
+                <p>
+                  United Peace Foundation is a non-profit organisation established in 2014 and registered under Trust Act 1882 having Reg no. 6454/1048 in the year 2015 at Jamsheddpur Jharkhand. We work across India especially in rural areas to help and improve the life of destiute, orphans, widows and homeless children with a vision to spread peace & harmony and brotherhood amongst the different religions, caste and creed.
+                </p>
+                <blockquote class="blockquote">
+                  <p class="mb-0 text-black">
+                    &ldquo;The happiest thing in life is when you care about someone, and they care about you too.&rdquo;
+                  </p>
+                  <footer class="blockquote-footer">
+                    Shahnawaz <cite title="Source Title"></cite>
+                  </footer>
+                </blockquote>
+                <p class="element-animate" data-animate-effect="fadeIn">
+                  <img
+                    src="img/about.jpg"
+                    alt="Image placeholder"
+                    class="img-fluid"
+                  />
+                </p>
+                <p>
+                  Our aim is to provide the nutrition food, quality education, full healthcare and shelter to homeless orphans & badly effected children by scourge of poverty.
+                </p>
+                <!-- <p class="element-animate" data-animate-effect="fadeIn">
+                  <img
+                    src="img/beautiful.jpg"
+                    alt="Image placeholder"
+                    class="img-fluid"
+                  />
+                </p> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section-subscribe bg-light">
+      <div class="container">
+        <div class="row justify-content-center align-items-center">
+          <div class="col-md-12 my-3">
+            <h2 class="text-uppercase heading">Get News &amp; Updates</h2>
+          </div>
+          <div class="col-md-12">
+            <form method="post" action>
+              <div class="row">
+                <div class="col-md-4 mb-3">
+                  <input
+                    type="text"
+                    class="form-control btn-block"
+                    placeholder="Your Name"
+                  />
+                </div>
+                <div class="col-md-4 mb-3">
+                  <input
+                    type="email"
+                    class="form-control btn-block"
+                    placeholder="Your Email"
+                  />
+                </div>
+                <div class="col-md-4 mb-3">
+                  <input
+                    type="submit"
+                    class="btn btn-primary btn-block"
+                    value="Subscribe"
+                  />
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md-3 mb-5">
+            <h3>About</h3>
+            <p>
+              United Peace Foundation is a non-profit organization established to help and uplift the most vulnerable, orphans, destitute and widows regardless of faith race or creed.
+            </p>
+          </div>
+          <div class="col-md-3 mb-5">
+            <h3>Quick Links</h3>
+            <ul class="list-unstyled footer-link">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Get Involved</a></li>
+              <li><a href="#">Programme</a></li>
+              <li><a href="#">Stories</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 mb-5">
+            <h3>Get In Touch</h3>
+            <ul class="list-unstyled footer-link footer-content">
+              <li class="d-flex">
+                <span class="mr-3 fa fa-location-arrow"></span
+                ><span class="text-white"
+                  >Zakir Nagar, Mango, Jamshedpur</span
+                >
+              </li>
+              <li class="d-flex">
+                <span class="mr-3 fa fa-phone"></span
+                ><span class="text-white">+91 7463062868</span>
+              </li>
+              <li class="d-flex">
+                <span class="mr-3 fa fa-envelope"></span
+                ><span class="text-white"
+                  ><a
+                    href="mailto:unitedpeacefoundation.in@gmail.com" class="email-to">unitedpeacefoundation.in@gmail.com</a
+                  ></span
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-3 mb-5">
+            <h3>Get Involved</h3>
+            <ul class="list-unstyled footer-link">
+              <li><a href="#">How to Donate</a></li>
+              <li><a href="#">Sponsor, Orphans</a></li>
+              <li><a href="#">Volunteer With Us</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6 text-md-center text-left">
+            <p>
+              Copyright &copy;
+              <script
+                data-cfasync="false"
+                src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
+              ></script>
+              <script>
+                document.write(new Date().getFullYear());
+              </script>
+              All rights reserved 
+              <!-- | This template is made with
+              <i class="fa fa-heart-o" aria-hidden="true"></i> by
+              <a href="https://colorlib.com" target="_blank">Colorlib</a> -->
+            </p>
+          </div>
+          <div class="col-6 text-md-center text-left">
+            <!-- <h3>Social</h3> -->
+            <ul class="list-unstyled footer-link d-flex footer-social">
+              <li>
+                <a href="#" class="p-2"><span class="fa fa-twitter"></span></a>
+              </li>
+              <li>
+                <a href="#" class="p-2"><span class="fa fa-facebook"></span></a>
+              </li>
+              <li>
+                <a href="#" class="p-2"><span class="fa fa-linkedin"></span></a>
+              </li>
+              <li>
+                <a href="#" class="p-2"
+                  ><span class="fa fa-instagram"></span
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div id="loader" class="show fullscreen">
+      <svg class="circular" width="48px" height="48px">
+        <circle
+          class="path-bg"
+          cx="24"
+          cy="24"
+          r="22"
+          fill="none"
+          stroke-width="4"
+          stroke="#eeeeee"
+        />
+        <circle
+          class="path"
+          cx="24"
+          cy="24"
+          r="22"
+          fill="none"
+          stroke-width="4"
+          stroke-miterlimit="10"
+          stroke="#f4b214"
+        />
+      </svg>
+    </div>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-23581568-13");
+    </script>
+    <script
+      defer
+      src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317"
+      integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA=="
+      data-cf-beacon='{"rayId":"84769b548aea9e26","version":"2023.10.0","token":"cd0b4b3a733644fc843ef0b185f98241"}'
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

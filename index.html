@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>United Peace Foundation</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800|Sacramento"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/animate.css" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css" />
+    <link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css" />
+    <link rel="shortcut icon" href="img/upf-ico.ico">
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script nonce="21a43143-f73c-4ef3-a318-4db2ce7df461">
+      (function (w, d) {
+        !(function (dp, dq, dr, ds) {
+          dp[dr] = dp[dr] || {};
+          dp[dr].executed = [];
+          dp.zaraz = { deferred: [], listeners: [] };
+          dp.zaraz.q = [];
+          dp.zaraz._f = function (dt) {
+            return async function () {
+              var du = Array.prototype.slice.call(arguments);
+              dp.zaraz.q.push({ m: dt, a: du });
+            };
+          };
+          for (const dv of ["track", "set", "debug"])
+            dp.zaraz[dv] = dp.zaraz._f(dv);
+          dp.zaraz.init = () => {
+            var dw = dq.getElementsByTagName(ds)[0],
+              dx = dq.createElement(ds),
+              dy = dq.getElementsByTagName("title")[0];
+            dy && (dp[dr].t = dq.getElementsByTagName("title")[0].text);
+            dp[dr].x = Math.random();
+            dp[dr].w = dp.screen.width;
+            dp[dr].h = dp.screen.height;
+            dp[dr].j = dp.innerHeight;
+            dp[dr].e = dp.innerWidth;
+            dp[dr].l = dp.location.href;
+            dp[dr].r = dq.referrer;
+            dp[dr].k = dp.screen.colorDepth;
+            dp[dr].n = dq.characterSet;
+            dp[dr].o = new Date().getTimezoneOffset();
+            if (dp.dataLayer)
+              for (const dC of Object.entries(
+                Object.entries(dataLayer).reduce(
+                  (dD, dE) => ({ ...dD[1], ...dE[1] }),
+                  {}
+                )
+              ))
+                zaraz.set(dC[0], dC[1], { scope: "page" });
+            dp[dr].q = [];
+            for (; dp.zaraz.q.length; ) {
+              const dF = dp.zaraz.q.shift();
+              dp[dr].q.push(dF);
+            }
+            dx.defer = !0;
+            for (const dG of [localStorage, sessionStorage])
+              Object.keys(dG || {})
+                .filter((dI) => dI.startsWith("_zaraz_"))
+                .forEach((dH) => {
+                  try {
+                    dp[dr]["z_" + dH.slice(7)] = JSON.parse(dG.getItem(dH));
+                  } catch {
+                    dp[dr]["z_" + dH.slice(7)] = dG.getItem(dH);
+                  }
+                });
+            dx.referrerPolicy = "origin";
+            dx.src =
+              "/cdn-cgi/zaraz/s.js?z=" +
+              btoa(encodeURIComponent(JSON.stringify(dp[dr])));
+            dw.parentNode.insertBefore(dx, dw);
+          };
+          ["complete", "interactive"].includes(dq.readyState)
+            ? zaraz.init()
+            : dp.addEventListener("DOMContentLoaded", zaraz.init);
+        })(w, d, "zarazData", "script");
+      })(window, document);
+    </script>
+  </head>
+  <body>
+    <header role="banner">
+      <!-- <div class="top-bar">
+        <div class="container">
+          <div class="row">
+            <div class="col-6">
+              <a href="#"><span class="fa fa-twitter"></span></a>
+              <a href="#"><span class="fa fa-facebook"></span></a>
+              <a href="#"><span class="fa fa-instagram"></span></a>
+              <a href="#"><span class="fa fa-linkedin"></span></a>
+            </div>
+            <div class="col-6 text-right d-sm-flex d-flex">
+              <d class="ml-auto">
+                <a href="#" class="btn">Sponsor</a>
+                <a href="#" class="cta-btn">Login</a>
+              </d>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+          <!-- <a class="navbar-brand" href="index.html">Adopted</a> -->
+          <a class="navbar-brand" href="index.html"
+            ><img src="img/trust-logo.jpg" height="90px" width="320px"
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarsExample05"
+            aria-controls="navbarsExample05"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarsExample05">
+            <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
+              <li class="nav-item">
+                <a class="nav-link active" href="index.html">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="about-us.html"
+                  id="dropdown04"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  >About</a
+                >
+                <div class="dropdown-menu" aria-labelledby="dropdown04">
+                  <a class="dropdown-item" href="about-our-trust.html">About Our Trust</a>
+                  <a class="dropdown-item" href="vision-mission.html">Vision & Mission</a>
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="services.html"
+                  id="dropdown04"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  >Get Involved</a
+                >
+                <div class="dropdown-menu" aria-labelledby="dropdown04">
+                  <a class="dropdown-item" href="how-to-donate.html">How to Donate</a>
+                  <a class="dropdown-item" href="sponsor-orphan-sponsorship.html">Sponsor, Orphan, Sponsorship</a>
+                  <a class="dropdown-item" href="volunteer-with-us.html">Volunteer With Us</a>
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="services.html"
+                  id="dropdown04"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  >Programme</a
+                >
+                <div class="dropdown-menu" aria-labelledby="dropdown04">
+                  <a class="dropdown-item" href="orphan-sponsorship-programme.html">Orphan Sponsorship Programme</a>
+                  <a class="dropdown-item" href="educational-programme.html">Educational Programm</a>
+                  <a class="dropdown-item" href="food-programme.html">Food Programme</a>
+                  <a class="dropdown-item" href="emergency-relief-programme.html">Emergency Relief Programme</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="stories.html">Stories</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <section class="home-slider owl-carousel">
+      <div
+        class="slider-item"
+        style="background-image: url('img/carousel/slider1.jpg')"
+      >
+        <div class="container">
+          <div class="row slider-text align-items-center">
+            <div class="col-md-6 col-sm-12 element-animate">
+              <!-- <span class="child-name cursive"
+                >Celine Richardson, 14 yrs. old</span
+              > -->
+              <h1>An attempt to improve orphans’ life.</h1>
+              <!-- <p>
+                An attempt to improve orphans’ life.
+              </p> -->
+              <!-- <p><a href="#" class="btn btn-primary">Adopt Her Now!</a></p> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="slider-item"
+        style="background-image: url('img/carousel/slider2.jpg')"
+      >
+        <div class="container">
+          <div class="row slider-text align-items-center">
+            <div class="col-md-6 col-sm-12 element-animate">
+              <!-- <span class="child-name cursive"
+                >Mark Rodriguez, 12 yrs. old</span
+              > -->
+              <h1>To educate poor and deprived children.</h1>
+              <!-- <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Commodi unde impedit, necessitatibus, soluta sit quam minima
+                expedita atque corrupti reiciendis.
+              </p> -->
+              <!-- <p><a href="#" class="btn btn-primary">Adopt Him Now!</a></p> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="slider-item"
+        style="background-image: url('img/carousel/slider6.jpg')"
+      >
+        <div class="container">
+          <div class="row slider-text align-items-center">
+            <div class="col-md-6 col-sm-12 element-animate">
+              <!-- <span class="child-name cursive"
+                >Mark Rodriguez, 12 yrs. old</span
+              > -->
+              <h1>To feed the hungry and destitute.</h1>
+              <!-- <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Commodi unde impedit, necessitatibus, soluta sit quam minima
+                expedita atque corrupti reiciendis.
+              </p> -->
+              <!-- <p><a href="#" class="btn btn-primary">Adopt Him Now!</a></p> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="slider-item"
+        style="background-image: url('img/carousel/slider4.jpg')"
+      >
+        <div class="container">
+          <div class="row slider-text align-items-center">
+            <div class="col-md-6 col-sm-12 element-animate">
+              <!-- <span class="child-name cursive"
+                >Mark Rodriguez, 12 yrs. old</span
+              > -->
+              <h1>Bring light through nutrition and care.</h1>
+              <!-- <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Commodi unde impedit, necessitatibus, soluta sit quam minima
+                expedita atque corrupti reiciendis.
+              </p> -->
+              <!-- <p><a href="#" class="btn btn-primary">Adopt Him Now!</a></p> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="slider-item"
+        style="background-image: url('img/carousel/slider5.jpg')"
+      >
+        <div class="container">
+          <div class="row slider-text align-items-center">
+            <div class="col-md-6 col-sm-12 element-animate">
+              <!-- <span class="child-name cursive"
+                >Mark Rodriguez, 12 yrs. old</span
+              > -->
+              <h1>Let's build a better future for the poor.</h1>
+              <!-- <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Commodi unde impedit, necessitatibus, soluta sit quam minima
+                expedita atque corrupti reiciendis.
+              </p> -->
+              <!-- <p><a href="#" class="btn btn-primary">Adopt Him Now!</a></p> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5 mb-4">
+            <svg
+              version="1.1"
+              id="Layer_1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="0px"
+              y="0px"
+              viewBox="0 0 512.001 512.001"
+              style="enable-background: new 0 0 512.001 512.001"
+              xml:space="preserve"
+            >
+              <path
+                style="fill: #d59f63"
+                d="M388.414,57.379L388.414,57.379L388.414,57.379L388.414,57.379L388.414,57.379
+  c53.629,0,97.104,43.475,97.104,97.103l0,0c0,61.793,8.828,123.586,8.828,123.586s-44.138,26.483-105.931,35.31
+  c-61.793-8.828-105.931-35.31-105.931-35.31s8.828-61.793,8.828-123.586l0,0C291.31,100.854,334.785,57.379,388.414,57.379
+  L388.414,57.379L388.414,57.379L388.414,57.379L388.414,57.379z"
+              />
+              <path
+                style="fill: #cd915a"
+                d="M353.103,145.655v-26.483c0-30.008,21.396-55,49.76-60.602c-4.726-0.707-9.525-1.191-14.449-1.191
+  h-0.001c-53.629,0-97.103,43.475-97.103,97.103c0,61.793-8.828,123.586-8.828,123.586s44.138,26.483,105.931,35.31V180.966
+  L353.103,145.655z"
+              />
+              <path
+                style="fill: #fad7a5"
+                d="M495.353,342.031l-60.531-24.212c-6.703-2.681-11.098-9.173-11.098-16.392v-32.185h-70.621v32.185
+  c0,7.219-4.395,13.711-11.098,16.392l-60.531,24.212c-10.054,4.022-16.647,13.76-16.647,24.588v35.036
+  c0,4.875,3.952,8.828,8.828,8.828l0,0v79.448h220.69c4.875,0,8.828-3.952,8.828-8.828v-70.621l0,0c4.875,0,8.828-3.952,8.828-8.828
+  v-35.036C512,355.79,505.407,346.052,495.353,342.031z"
+              />
+              <g>
+                <path
+                  style="fill: #f0c891"
+                  d="M503.172,401.655v26.483h-8.828c-4.875,0-8.828,3.952-8.828,8.828v52.966h-26.483v-88.276h44.139
+    V401.655z"
+                />
+                <path
+                  style="fill: #f0c891"
+                  d="M353.103,297.809c10.96,4.299,22.844,6.744,35.31,6.744s24.35-2.445,35.31-6.744v-28.566h-70.621
+    v28.566H353.103z"
+                />
+              </g>
+              <path
+                style="fill: #ffe1b4"
+                d="M388.414,286.897L388.414,286.897c-43.878,0-79.448-35.57-79.448-79.448v-27.215
+  c0-4.338,3.198-7.992,7.484-8.658c20.268-3.149,30.084-18.77,34.175-27.96c1.378-3.096,5.22-4.1,7.925-2.059
+  c37.4,28.216,109.313,7.103,109.313,65.893l0,0C467.862,251.326,432.292,286.897,388.414,286.897z"
+              />
+              <path
+                style="fill: #fad098"
+                d="M353.103,207.448v-66.282c-1.032,0.521-1.957,1.277-2.479,2.449
+  c-4.091,9.19-13.907,24.811-34.175,27.96c-4.287,0.666-7.484,4.321-7.484,8.658v27.215c0,43.878,35.57,79.448,79.448,79.448
+  c7.667,0,15.055-1.145,22.069-3.171C377.354,274.154,353.103,243.66,353.103,207.448z"
+              />
+              <path
+                style="fill: #d7af7d"
+                d="M388.414,251.586c-9.345,0-18.276-4.409-24.509-12.095c-3.078-3.789-2.491-9.345,1.293-12.418
+  c3.802-3.069,9.353-2.483,12.414,1.297c5.828,7.172,15.776,7.172,21.603,0c3.06-3.78,8.621-4.366,12.414-1.297
+  c3.784,3.073,4.371,8.629,1.293,12.418C406.69,247.177,397.759,251.586,388.414,251.586z"
+              />
+              <g>
+                <path
+                  style="fill: #64463c"
+                  d="M423.724,207.448c-4.879,0-8.828-3.953-8.828-8.828v-8.828c0-4.875,3.948-8.828,8.828-8.828
+    c4.879,0,8.828,3.953,8.828,8.828v8.828C432.552,203.496,428.603,207.448,423.724,207.448z"
+                />
+                <path
+                  style="fill: #64463c"
+                  d="M353.103,207.448c-4.879,0-8.828-3.953-8.828-8.828v-8.828c0-4.875,3.948-8.828,8.828-8.828
+    s8.828,3.953,8.828,8.828v8.828C361.931,203.496,357.983,207.448,353.103,207.448z"
+                />
+              </g>
+              <path
+                style="fill: #ff507d"
+                d="M495.353,342.031l-37.655-15.062C451.359,359.464,422.765,384,388.414,384
+  s-62.945-24.536-69.284-57.031l-37.655,15.062c-10.054,4.022-16.647,13.76-16.647,24.588v123.312h44.138h158.897v-79.448h35.31
+  c4.875,0,8.828-3.952,8.828-8.828V366.62C512,355.79,505.407,346.052,495.353,342.031z"
+              />
+              <g>
+                <path
+                  style="fill: #d23c69"
+                  d="M457.698,326.969C451.359,359.464,422.765,384,388.414,384s-62.945-24.536-69.284-57.031
+    l-16.574,6.629c9.153,38.992,44.073,68.057,85.858,68.057s76.705-29.065,85.858-68.057L457.698,326.969z"
+                />
+                <path
+                  style="fill: #d23c69"
+                  d="M467.862,400.141c0-4.682,1.86-9.173,5.171-12.484l34.951-34.951
+    c2.539,4.101,4.016,8.874,4.016,13.913v35.036c0,4.875-3.952,8.828-8.828,8.828h-35.31L467.862,400.141L467.862,400.141z"
+                />
+              </g>
+              <path
+                style="fill: #b48764"
+                d="M61.793,489.931H17.655c-4.875,0-8.828-3.952-8.828-8.828V375.172h52.966V489.931z"
+              />
+              <g>
+                <path
+                  style="fill: #966d50"
+                  d="M8.828,392.828v17.655h17.655c4.875,0,8.828,3.952,8.828,8.828v70.621h26.483v-97.103H8.828V392.828
+    z"
+                />
+                <rect
+                  x="203.03"
+                  y="375.171"
+                  style="fill: #966d50"
+                  width="52.966"
+                  height="114.76"
+                />
+              </g>
+              <path
+                style="fill: #00aaf0"
+                d="M245.313,281.574l-77.589-21.161H97.103l-77.589,21.161C7.993,284.717,0,295.181,0,307.124V384
+  c0,4.875,3.952,8.828,8.828,8.828h44.138v97.103h158.897V372.966h52.965v-65.842C264.828,295.181,256.835,284.717,245.313,281.574z"
+              />
+              <path
+                style="fill: #0096dc"
+                d="M167.724,260.414H97.103l-34.607,9.438c4.624,34.529,34.123,61.183,69.918,61.183
+  s65.294-26.654,69.918-61.183L167.724,260.414z"
+              />
+              <path
+                style="fill: #b48764"
+                d="M88.276,229.517v30.897c0,24.377,19.761,44.138,44.138,44.138s44.138-19.761,44.138-44.138v-30.897
+  H88.276z"
+              />
+              <path
+                style="fill: #966d50"
+                d="M88.276,249.723c13.258,6.801,28.242,10.691,44.138,10.691s30.88-3.89,44.138-10.691v-20.206H88.276
+  V249.723z"
+              />
+              <path
+                style="fill: #c39772"
+                d="M211.862,128V75.034H52.966V128c-9.751,0-17.655,7.904-17.655,17.655
+  c0,9.751,7.905,17.655,17.655,17.655c0,43.878,35.57,79.448,79.448,79.448s79.448-35.57,79.448-79.448
+  c9.751,0,17.655-7.905,17.655-17.655C229.517,135.904,221.613,128,211.862,128z"
+              />
+              <path
+                style="fill: #b48764"
+                d="M97.103,163.31V75.034H52.966V128c-9.751,0-17.655,7.904-17.655,17.655
+  c0,9.751,7.905,17.655,17.655,17.655c0,43.878,35.57,79.448,79.448,79.448c7.666,0,15.055-1.145,22.069-3.171
+  C121.354,230.016,97.103,199.522,97.103,163.31z"
+              />
+              <path
+                style="fill: #966d50"
+                d="M132.414,207.448c-9.345,0-18.276-4.409-24.509-12.095c-3.078-3.789-2.491-9.345,1.293-12.418
+  c3.802-3.065,9.353-2.478,12.414,1.297c5.828,7.172,15.776,7.172,21.603,0c3.069-3.776,8.621-4.362,12.414-1.297
+  c3.784,3.073,4.371,8.629,1.293,12.418C150.69,203.039,141.759,207.448,132.414,207.448z"
+              />
+              <g>
+                <path
+                  style="fill: #553732"
+                  d="M97.103,163.31c-4.879,0-8.828-3.953-8.828-8.828v-8.828c0-4.875,3.948-8.828,8.828-8.828
+    s8.828,3.953,8.828,8.828v8.828C105.931,159.358,101.983,163.31,97.103,163.31z"
+                />
+                <path
+                  style="fill: #553732"
+                  d="M167.724,163.31c-4.879,0-8.828-3.953-8.828-8.828v-8.828c0-4.875,3.948-8.828,8.828-8.828
+    c4.879,0,8.828,3.953,8.828,8.828v8.828C176.552,159.358,172.603,163.31,167.724,163.31z"
+                />
+              </g>
+              <path
+                style="fill: #64463c"
+                d="M191.837,119.598c2.578,6.827,9.875,9.92,17.063,8.659c0.961-0.169,1.95-0.257,2.962-0.257
+  c3.232,0,6.222,0.932,8.828,2.449V75.034c0-13.207-7.336-24.585-18.074-30.641c-2.006-12.637-12.862-22.325-26.064-22.325h-70.621
+  c-34.127,0-61.793,27.666-61.793,61.793v46.587c2.606-1.517,5.595-2.449,8.828-2.449c1.135,0,2.242,0.11,3.312,0.321
+  c8.597,1.693,17.206-3.059,19.359-11.553l0,0l2.171-8.683c0.959-3.838,4.324-6.574,8.278-6.681
+  c16.424-0.443,59.779-2.621,89.34-13.321c5.234-1.894,10.874,1.293,11.789,6.783l3.305,19.832
+  C190.803,116.401,191.248,118.038,191.837,119.598z"
+              />
+              <path
+                style="fill: #553732"
+                d="M97.103,75.034c0-29.252,23.713-52.966,52.966-52.966h-44.138c-34.127,0-61.793,27.665-61.793,61.793
+  v46.587c2.606-1.517,5.595-2.449,8.828-2.449c1.135,0,2.241,0.11,3.311,0.321c8.598,1.692,17.206-3.059,19.359-11.553l2.171-8.683
+  c0.959-3.838,4.323-6.574,8.278-6.681c2.898-0.078,6.668-0.215,11.019-0.439L97.103,75.034L97.103,75.034z"
+              />
+              <path
+                style="fill: #0096dc"
+                d="M0,307.123V384c0,4.875,3.952,8.828,8.828,8.828h44.138v-28.994c0-9.815-3.272-19.35-9.298-27.098
+  L6.883,289.441C2.604,294.186,0,300.392,0,307.123z"
+              />
+              <path
+                style="fill: #e6af78"
+                d="M326.168,439.757l-28.821-9.607c-3.605-1.202-6.036-4.575-6.036-8.374v-20.12h-52.965v20.12
+  c0,3.8-2.431,7.173-6.036,8.374l-28.821,9.607c-10.814,3.605-18.108,13.725-18.108,25.124v16.223c0,4.875,3.952,8.828,8.828,8.828
+  H335.45c4.875,0,8.828-3.952,8.828-8.828v-16.223C344.276,453.482,336.982,443.362,326.168,439.757z"
+              />
+              <path
+                style="fill: #d29b6e"
+                d="M238.345,401.655v20.12c0,0.504-0.149,0.969-0.231,1.454c7.647,2.869,15.79,4.617,24.283,4.872
+  c0.81,0.024,1.626,0.036,2.431,0.036c9.393,0,18.372-1.719,26.743-4.726c-0.104-0.542-0.26-1.07-0.26-1.636v-20.12L238.345,401.655
+  L238.345,401.655z"
+              />
+              <path
+                style="fill: #64463c"
+                d="M264.828,216.276L264.828,216.276c-43.878,0-79.448,35.57-79.448,79.448v26.483h158.897v-26.483
+  C344.276,251.846,308.706,216.276,264.828,216.276z"
+              />
+              <path
+                style="fill: #553732"
+                d="M291.31,220.893c-8.294-2.936-17.182-4.617-26.483-4.617c-43.878,0-79.448,35.57-79.448,79.448
+  v26.483h52.966v-26.483C238.345,261.147,260.474,231.811,291.31,220.893z"
+              />
+              <path
+                style="fill: #f0c087"
+                d="M326.621,304.552v-7.644c0-13.026-13.602-21.199-25.363-15.598
+  c-48.693,23.189-98.223,23.242-98.223,23.242c-9.751,0-17.655,7.904-17.655,17.655s7.905,17.655,17.655,17.655v6.236
+  c0,33.835,26.072,63.34,59.892,64.356c34.995,1.051,63.694-27.006,63.694-61.764v-8.828c9.751,0,17.655-7.905,17.655-17.655
+  C344.276,312.456,336.371,304.552,326.621,304.552z"
+              />
+              <path
+                style="fill: #ffdc64"
+                d="M311.641,201.257l-46.813,20.063l-46.813-20.063c-2.913-1.248-6.152,0.888-6.152,4.057v39.578
+  c0,3.169,3.24,5.305,6.152,4.057l46.813-20.063l46.813,20.063c2.913,1.248,6.152-0.888,6.152-4.057v-39.578
+  C317.793,202.146,314.553,200.009,311.641,201.257z"
+              />
+              <path
+                style="fill: #e6af78"
+                d="M238.345,348.69v-47.827c-20.874,3.64-35.31,3.689-35.31,3.689c-9.751,0-17.655,7.904-17.655,17.655
+  s7.905,17.655,17.655,17.655v6.236c0,33.835,26.072,63.341,59.892,64.356c6.817,0.205,13.382-0.725,19.556-2.564
+  C256.964,400.289,238.345,376.677,238.345,348.69z"
+              />
+              <path
+                style="fill: #d29b6e"
+                d="M264.828,384c-9.345,0-18.276-4.409-24.509-12.095c-3.078-3.789-2.491-9.345,1.293-12.418
+  c3.793-3.065,9.353-2.478,12.414,1.297c5.828,7.172,15.776,7.172,21.603,0c3.06-3.776,8.612-4.362,12.414-1.297
+  c3.784,3.073,4.371,8.629,1.293,12.418C283.103,379.591,274.172,384,264.828,384z"
+              />
+              <g>
+                <path
+                  style="fill: #553732"
+                  d="M238.345,339.862c-2.293,0-4.595-0.974-6.267-2.56c-1.595-1.677-2.56-3.974-2.56-6.267
+    c0-2.297,0.966-4.591,2.56-6.267c3.267-3.267,9.267-3.267,12.534,0c1.586,1.677,2.56,3.97,2.56,6.267
+    c0,2.293-0.974,4.591-2.56,6.267C242.931,338.888,240.638,339.862,238.345,339.862z"
+                />
+                <path
+                  style="fill: #553732"
+                  d="M291.31,339.862c-2.293,0-4.595-0.974-6.267-2.56c-0.793-0.797-1.414-1.767-1.853-2.914
+    c-0.44-1.06-0.707-2.207-0.707-3.353c0-1.151,0.267-2.297,0.707-3.358c0.44-1.147,1.06-2.116,1.853-2.909
+    c3.267-3.267,9.181-3.267,12.534,0c0.793,0.879,1.414,1.763,1.853,2.909c0.44,1.06,0.707,2.207,0.707,3.358
+    c0,2.293-0.974,4.591-2.56,6.267C295.897,338.888,293.603,339.862,291.31,339.862z"
+                />
+              </g>
+              <path
+                style="fill: #ffdc64"
+                d="M326.168,439.757l-14.395-4.798c-8.842,16.922-26.529,28.49-46.945,28.49
+  s-38.103-11.567-46.944-28.49l-14.395,4.798c-10.814,3.605-18.108,13.725-18.108,25.124v16.223c0,4.875,3.952,8.828,8.828,8.828
+  H335.45c4.875,0,8.828-3.952,8.828-8.828v-16.223C344.276,453.482,336.982,443.362,326.168,439.757z"
+              />
+              <circle style="fill: #ffc850" cx="264.83" cy="225.1" r="13.241" />
+            </svg>
+            <p class="mb-5">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias
+              nemo et, esse laudantium consequatur. Eum soluta illum architecto
+              dolorum quae suscipit dignissimos! Saepe, amet explicabo nemo
+              eligendi totam sint repudiandae.
+            </p>
+            <p>
+              <a href="#" class="btn btn-outline-primary">Adopt a child now</a>
+            </p>
+          </div>
+    </section> -->  
+    <section class="section bg-light">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-12 text-center">
+            <h2 class="text-uppercase heading mb-4">About Us</h2>
+            <p class="mb-0 text-left">
+              United Peace Foundation is a non-profit organisation established in 2014 and registered under Trust Act 1882 having Reg no. 6454/1048 in the year 2015 at Jamsheddpur Jharkhand. We work across India especially in rural areas to help and improve the life of destiute, orphans, widows and homeless children with a vision to spread peace & harmony and brotherhood amongst the different religions, caste and creed.
+            </p><br>
+            <p class="mb-0 text-left">Our aim is to provide the nutrition food, quality education, full healthcare and shelter to homeless orphans & badly effected children by scourge of poverty.
+            </p>
+          </div>
+        </div>
+      </div><br>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+              <p class="element-animate" data-animate-effect="fadeIn">
+                <img
+                  src="img/about.jpg"
+                  alt="Image placeholder"
+                  class="img-fluid"
+                />
+              </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bg-light">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-12 text-center">
+            <h2 class="text-uppercase heading mb-4">WHO WE ARE</h2>
+            <p class="mb-0 text-left">
+              Many vulnerable orphans and abandoned children are left on the streets begging for survival, need care and support. To induct them into a society where they can get the chance to grow up in a loving and caring environment. To provide nutritious food, quality education, healthcare and shelter for the homeless orphans and poverty-stricken children. To help and uplift the destitute, widows and deprived section of the society regardless of their faith, caste or creed.
+            </p><br>
+            <p class="mb-0 text-left">
+              Support orphans by providing food, education, medical assistance and other basic amenities.
+            </p><br>
+            <p class="mb-0 text-left">
+              Sponsorship to orphans who are living with their mother / guardian by taking care of their monthly food and educational expenses.
+            </p><br>
+            <p class="mb-0 text-left">
+              Provide monthly dietary assistance to widow headed families, destitute and helpless old age poor who are not capable of earning their bread.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h2 class="text-uppercase heading mb-4">OUR MISSION</h2>
+            <p class="mb-0 text-left">
+              Many vulnerable orphans and abandoned children are left on the streets begging for survival, need care and support. To induct them into a society where they can get the chance to grow up in a loving and caring environment. To provide nutritious food, quality education, healthcare and shelter for the homeless orphans and poverty-stricken children. To help and uplift the destitute, widows and deprived section of the society regardless of their faith, caste or creed.</p>
+              <p class="element-animate" data-animate-effect="fadeIn">
+                <img
+                  src="img/mission.jpg"
+                  alt="Image placeholder"
+                  class="img-fluid"
+                />
+              </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bg-light">
+      <div class="container">
+        <div class="row justify-content-center mb-5 element-animate">
+          <div class="col-md-8 text-center">
+            <h2 class="text-uppercase heading mb-4">Our Programme</h2>
+            <p class="mb-0">
+              We strive to uplift the destitute, orphans, widows, and homeless children.
+            </p>
+            <!-- <p class="mb-0">
+              <a href="#" class="btn btn-primary"
+                >Find More Waiting Children <span class="icon-arrow"></span
+              ></a>
+            </p> -->
+          </div>
+        </div>
+        <div class="row element-animate">
+          <div class="major-caousel js-carousel-1 owl-carousel">
+            <div>
+              <div class="media d-block media-custom text-left">
+                <a href="adoption-single.html"
+                  ><img
+                    src="img/programme/programme1.jpg"
+                    alt="Image Placeholder"
+                    class="img-fluid"
+                /></a>
+                <div class="media-body">
+                  <h3 class="mt-0 text-black">
+                    <a href="orphan-sponsorship-programme.html" class="text-black"
+                      >Orphan Sponsorship Programme<span class="age"><br>Read more...</span></a
+                    >
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="media d-block media-custom text-left">
+                <a href="adoption-single.html"
+                  ><img
+                    src="img/programme/programme2.jpg"
+                    alt="Image Placeholder"
+                    class="img-fluid"
+                /></a>
+                <div class="media-body">
+                  <h3 class="mt-0 text-black">
+                    <a href="educational-programme.html" class="text-black"
+                      >Educational Programme<span class="age"><br>Read more...</span></a
+                    >
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="media d-block media-custom text-left">
+                <a href="adoption-single.html"
+                  ><img
+                    src="img/programme/programme3.jpg"
+                    alt="Image Placeholder"
+                    class="img-fluid"
+                /></a>
+                <div class="media-body">
+                  <h3 class="mt-0 text-black">
+                    <a href="food-programme.html" class="text-black"
+                      >Food Programme<span class="age"><br>Read more...</span></a
+                    >
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="media d-block media-custom text-left">
+                <a href="adoption-single.html"
+                  ><img
+                    src="img/programme/programme4.jpg"
+                    alt="Image Placeholder"
+                    class="img-fluid"
+                /></a>
+                <div class="media-body">
+                  <h3 class="mt-0 text-black">
+                    <a href="emergency-relief-programme.html" class="text-black"
+                      >Emergency Relief Programme<span class="age"><br>Read more...</span></a
+                    >
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <!-- <div>
+              <div class="media d-block media-custom text-left">
+                <a href="adoption-single.html"
+                  ><img
+                    src="img/children_5.jpg"
+                    alt="Image Placeholder"
+                    class="img-fluid"
+                /></a>
+                <div class="media-body">
+                  <h3 class="mt-0 text-black">
+                    <a href="#" class="text-black"
+                      >Ben, <span class="age">14 yrs. old</span></a
+                    >
+                  </h3>
+                </div>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section border-t">
+      <div class="container">
+        <div class="row justify-content-center mb-5 element-animate">
+          <div class="col-md-8 text-center">
+            <h2 class="text-uppercase heading mb-4">Featured Stories</h2>
+          </div>
+        </div>
+        <div class="row no-gutters">
+          <div class="col-md-4 element-animate">
+            <a href="javascript:void(0)" class="link-thumbnail">
+              <h3>
+                <span class="date">Date</span> "Name"
+              </h3>
+              <span class="ion-plus icon"></span>
+              <img
+                src="img/stories/story3.jpg"
+                alt="Image placeholder"
+                class="img-fluid"
+              />
+            </a>
+          </div>
+          <div class="col-md-4 element-animate">
+            <a href="javascript:void(0)" class="link-thumbnail">
+              <h3>
+                <span class="date">Date</span> "Name"
+              </h3>
+              <span class="ion-plus icon"></span>
+              <img
+                src="img/stories/story2.jpg"
+                alt="Image placeholder"
+                class="img-fluid"
+              />
+            </a>
+          </div>
+          <div class="col-md-4 element-animate">
+            <a href="javascript:void(0)" class="link-thumbnail">
+              <h3>
+                <span class="date">Date</span> "Name"
+              </h3>
+              <span class="ion-plus icon"></span>
+              <img
+                src="img/stories/story1.jpg"
+                alt="Image placeholder"
+                class="img-fluid"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-subscribe bg-light">
+      <div class="container">
+        <div class="row justify-content-center align-items-center">
+          <div class="col-md-12 my-3">
+            <h2 class="text-uppercase heading">Get News &amp; Updates</h2>
+          </div>
+          <div class="col-md-12">
+            <form method="post" action>
+              <div class="row">
+                <div class="col-md-4 mb-3">
+                  <input
+                    type="text"
+                    class="form-control btn-block"
+                    placeholder="Your Name"
+                  />
+                </div>
+                <div class="col-md-4 mb-3">
+                  <input
+                    type="email"
+                    class="form-control btn-block"
+                    placeholder="Your Email"
+                  />
+                </div>
+                <div class="col-md-4 mb-3">
+                  <input
+                    type="submit"
+                    class="btn btn-primary btn-block"
+                    value="Subscribe"
+                  />
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md-3 mb-5">
+            <h3>About</h3>
+            <p>
+              United Peace Foundation is a non-profit organization established to help and uplift the most vulnerable, orphans, destitute and widows regardless of faith race or creed.
+            </p>
+          </div>
+          <div class="col-md-3 mb-5">
+            <h3>Quick Links</h3>
+            <ul class="list-unstyled footer-link">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Get Involved</a></li>
+              <li><a href="#">Programme</a></li>
+              <li><a href="#">Stories</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 mb-5">
+            <h3>Get In Touch</h3>
+            <ul class="list-unstyled footer-link footer-content">
+              <li class="d-flex">
+                <span class="mr-3 fa fa-location-arrow"></span
+                ><span class="text-white"
+                  >Zakir Nagar, Mango, Jamshedpur</span
+                >
+              </li>
+              <li class="d-flex">
+                <span class="mr-3 fa fa-phone"></span
+                ><span class="text-white">+91 7463062868</span>
+              </li>
+              <li class="d-flex">
+                <span class="mr-3 fa fa-envelope"></span
+                ><span class="text-white"
+                  ><a
+                    href="mailto:unitedpeacefoundation.in@gmail.com" class="email-to">unitedpeacefoundation.in@gmail.com</a
+                  ></span
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-3 mb-5">
+            <h3>Get Involved</h3>
+            <ul class="list-unstyled footer-link">
+              <li><a href="#">How to Donate</a></li>
+              <li><a href="#">Sponsor, Orphans</a></li>
+              <li><a href="#">Volunteer With Us</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6 text-md-center text-left">
+            <p>
+              Copyright &copy;
+              <script
+                data-cfasync="false"
+                src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
+              ></script>
+              <script>
+                document.write(new Date().getFullYear());
+              </script>
+              All rights reserved 
+              <!-- | This template is made with
+              <i class="fa fa-heart-o" aria-hidden="true"></i> by
+              <a href="https://colorlib.com" target="_blank">Colorlib</a> -->
+            </p>
+          </div>
+          <div class="col-6 text-md-center text-left">
+            <!-- <h3>Social</h3> -->
+            <ul class="list-unstyled footer-link d-flex footer-social">
+              <li>
+                <a href="#" class="p-2"><span class="fa fa-twitter"></span></a>
+              </li>
+              <li>
+                <a href="#" class="p-2"><span class="fa fa-facebook"></span></a>
+              </li>
+              <li>
+                <a href="#" class="p-2"><span class="fa fa-linkedin"></span></a>
+              </li>
+              <li>
+                <a href="#" class="p-2"
+                  ><span class="fa fa-instagram"></span
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div id="loader" class="show fullscreen">
+      <svg class="circular" width="48px" height="48px">
+        <circle
+          class="path-bg"
+          cx="24"
+          cy="24"
+          r="22"
+          fill="none"
+          stroke-width="4"
+          stroke="#eeeeee"
+        />
+        <circle
+          class="path"
+          cx="24"
+          cy="24"
+          r="22"
+          fill="none"
+          stroke-width="4"
+          stroke-miterlimit="10"
+          stroke="#f4b214"
+        />
+      </svg>
+    </div>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-23581568-13");
+    </script>
+    <script
+      defer
+      src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317"
+      integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA=="
+      data-cf-beacon='{"rayId":"847683ea7ebaf3fd","version":"2023.10.0","token":"cd0b4b3a733644fc843ef0b185f98241"}'
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
