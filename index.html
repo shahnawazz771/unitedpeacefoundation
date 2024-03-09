@@ -18,7 +18,8 @@
     <link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css" />
     <link rel="shortcut icon" href="img/upf-ico.ico">
-
+    <style>
+    </style>
     <link rel="stylesheet" href="css/style.css" />
     <script nonce="21a43143-f73c-4ef3-a318-4db2ce7df461">
       (function (w, d) {
@@ -88,6 +89,10 @@
     </script>
   </head>
   <body>
+        <!-- pop-up content -->
+    <div class="popup-container">
+      <div class="popup"> <a href="javascript:void(0)"><img src="img/ramadan-popup.jpeg" /></a> </div>
+    </div>
     <header role="banner">
       <!-- <div class="top-bar">
         <div class="container">
@@ -967,5 +972,18 @@
       data-cf-beacon='{"rayId":"847683ea7ebaf3fd","version":"2023.10.0","token":"cd0b4b3a733644fc843ef0b185f98241"}'
       crossorigin="anonymous"
     ></script>
+    <script>
+      $(document).ready(function(){
+        $('body').delegate('.popup-container img', 'click', function(e){
+          e.preventDefault();
+          window.location.href="contact.html";
+        });
+
+        $('body').delegate('.popup-container', 'click', function(e){
+          e.preventDefault();
+          $('.popup-container').remove();
+        });
+      });
+    </script>
   </body>
 </html>
