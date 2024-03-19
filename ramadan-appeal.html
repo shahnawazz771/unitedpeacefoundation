@@ -1,16 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <title>United Peace Foundation</title>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800|Sacramento"
-      rel="stylesheet"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800|Sacramento" rel="stylesheet" />
     <link rel="stylesheet" href="css/bootstrap.css" />
     <link rel="stylesheet" href="css/animate.css" />
     <link rel="stylesheet" href="css/owl.carousel.min.css" />
@@ -20,75 +15,76 @@
 
     <link rel="stylesheet" href="css/style.css" />
     <script nonce="939da161-67c5-40a6-8dcf-bbe34d75056c">
-      (function (w, d) {
-        !(function (dp, dq, dr, ds) {
-          dp[dr] = dp[dr] || {};
-          dp[dr].executed = [];
-          dp.zaraz = { deferred: [], listeners: [] };
-          dp.zaraz.q = [];
-          dp.zaraz._f = function (dt) {
-            return async function () {
-              var du = Array.prototype.slice.call(arguments);
-              dp.zaraz.q.push({ m: dt, a: du });
-            };
-          };
-          for (const dv of ["track", "set", "debug"])
-            dp.zaraz[dv] = dp.zaraz._f(dv);
-          dp.zaraz.init = () => {
-            var dw = dq.getElementsByTagName(ds)[0],
-              dx = dq.createElement(ds),
-              dy = dq.getElementsByTagName("title")[0];
-            dy && (dp[dr].t = dq.getElementsByTagName("title")[0].text);
-            dp[dr].x = Math.random();
-            dp[dr].w = dp.screen.width;
-            dp[dr].h = dp.screen.height;
-            dp[dr].j = dp.innerHeight;
-            dp[dr].e = dp.innerWidth;
-            dp[dr].l = dp.location.href;
-            dp[dr].r = dq.referrer;
-            dp[dr].k = dp.screen.colorDepth;
-            dp[dr].n = dq.characterSet;
-            dp[dr].o = new Date().getTimezoneOffset();
-            if (dp.dataLayer)
-              for (const dC of Object.entries(
-                Object.entries(dataLayer).reduce(
-                  (dD, dE) => ({ ...dD[1], ...dE[1] }),
-                  {}
-                )
-              ))
-                zaraz.set(dC[0], dC[1], { scope: "page" });
-            dp[dr].q = [];
-            for (; dp.zaraz.q.length; ) {
-              const dF = dp.zaraz.q.shift();
-              dp[dr].q.push(dF);
-            }
-            dx.defer = !0;
-            for (const dG of [localStorage, sessionStorage])
-              Object.keys(dG || {})
-                .filter((dI) => dI.startsWith("_zaraz_"))
-                .forEach((dH) => {
-                  try {
-                    dp[dr]["z_" + dH.slice(7)] = JSON.parse(dG.getItem(dH));
-                  } catch {
-                    dp[dr]["z_" + dH.slice(7)] = dG.getItem(dH);
-                  }
-                });
-            dx.referrerPolicy = "origin";
-            dx.src =
-              "/cdn-cgi/zaraz/s.js?z=" +
-              btoa(encodeURIComponent(JSON.stringify(dp[dr])));
-            dw.parentNode.insertBefore(dx, dw);
-          };
-          ["complete", "interactive"].includes(dq.readyState)
-            ? zaraz.init()
-            : dp.addEventListener("DOMContentLoaded", zaraz.init);
-        })(w, d, "zarazData", "script");
-      })(window, document);
+        (function (w, d) {
+            !(function (dp, dq, dr, ds) {
+                dp[dr] = dp[dr] || {};
+                dp[dr].executed = [];
+                dp.zaraz = { deferred: [], listeners: [] };
+                dp.zaraz.q = [];
+                dp.zaraz._f = function (dt) {
+                    return async function () {
+                        var du = Array.prototype.slice.call(arguments);
+                        dp.zaraz.q.push({ m: dt, a: du });
+                    };
+                };
+                for (const dv of ["track", "set", "debug"])
+                    dp.zaraz[dv] = dp.zaraz._f(dv);
+                dp.zaraz.init = () => {
+                    var dw = dq.getElementsByTagName(ds)[0],
+                        dx = dq.createElement(ds),
+                        dy = dq.getElementsByTagName("title")[0];
+                    dy && (dp[dr].t = dq.getElementsByTagName("title")[0].text);
+                    dp[dr].x = Math.random();
+                    dp[dr].w = dp.screen.width;
+                    dp[dr].h = dp.screen.height;
+                    dp[dr].j = dp.innerHeight;
+                    dp[dr].e = dp.innerWidth;
+                    dp[dr].l = dp.location.href;
+                    dp[dr].r = dq.referrer;
+                    dp[dr].k = dp.screen.colorDepth;
+                    dp[dr].n = dq.characterSet;
+                    dp[dr].o = new Date().getTimezoneOffset();
+                    if (dp.dataLayer)
+                        for (const dC of Object.entries(
+                            Object.entries(dataLayer).reduce(
+                                (dD, dE) => ({ ...dD[1], ...dE[1] }),
+                                {}
+                            )
+                        ))
+                            zaraz.set(dC[0], dC[1], { scope: "page" });
+                    dp[dr].q = [];
+                    for (; dp.zaraz.q.length;) {
+                        const dF = dp.zaraz.q.shift();
+                        dp[dr].q.push(dF);
+                    }
+                    dx.defer = !0;
+                    for (const dG of [localStorage, sessionStorage])
+                        Object.keys(dG || {})
+                            .filter((dI) => dI.startsWith("_zaraz_"))
+                            .forEach((dH) => {
+                                try {
+                                    dp[dr]["z_" + dH.slice(7)] = JSON.parse(dG.getItem(dH));
+                                } catch {
+                                    dp[dr]["z_" + dH.slice(7)] = dG.getItem(dH);
+                                }
+                            });
+                    dx.referrerPolicy = "origin";
+                    dx.src =
+                        "/cdn-cgi/zaraz/s.js?z=" +
+                        btoa(encodeURIComponent(JSON.stringify(dp[dr])));
+                    dw.parentNode.insertBefore(dx, dw);
+                };
+                ["complete", "interactive"].includes(dq.readyState)
+                    ? zaraz.init()
+                    : dp.addEventListener("DOMContentLoaded", zaraz.init);
+            })(w, d, "zarazData", "script");
+        })(window, document);
     </script>
-  </head>
-  <body>
+</head>
+
+<body>
     <header role="banner">
-      <!-- <div class="top-bar">
+        <!-- <div class="top-bar">
         <div class="container">
           <div class="row">
             <div class="col-6">
@@ -106,341 +102,270 @@
           </div>
         </div>
       </div> -->
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-          <!-- <a class="navbar-brand" href="index.html">Adopted</a> -->
-          <a class="navbar-brand" href="index.html"
-            ><img src="img/trust-logo.jpg" height="90px" width="320px"
-          /></a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarsExample05"
-            aria-controls="navbarsExample05"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarsExample05">
-            <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
-              <li class="nav-item">
-                <a class="nav-link" href="index.html">Home</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="services.html"
-                  id="dropdown04"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                  >About</a
-                >
-                <div class="dropdown-menu" aria-labelledby="dropdown04">
-                  <a class="dropdown-item" href="about-our-trust.html">About Our Trust</a>
-                  <a class="dropdown-item" href="vision-mission">Vision, Mission</a>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <!-- <a class="navbar-brand" href="index.html">Adopted</a> -->
+                <a class="navbar-brand" href="index.html"><img src="img/trust-logo.jpg" height="90px"
+                        width="320px" /></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05"
+                    aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarsExample05">
+                    <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="services.html" id="dropdown04"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown04">
+                                <a class="dropdown-item" href="about-our-trust.html">About Our Trust</a>
+                                <a class="dropdown-item" href="vision-mission">Vision, Mission</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="services.html" id="dropdown04"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Get Involved</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown04">
+                                <a class="dropdown-item" href="how-to-donate.html">How to Donate</a>
+                                <a class="dropdown-item" href="sponsor-orphan-sponsorship.html">Sponsor, Orphan,
+                                    Sponsorship</a>
+                                <a class="dropdown-item" href="volunteer-with-us.html">Volunteer With Us</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="services.html" id="dropdown04"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Programme</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown04">
+                                <a class="dropdown-item" href="orphan-sponsorship-programme.html">Orphan Sponsorship
+                                    Programme</a>
+                                <a class="dropdown-item" href="educational-programme.html">Educational Programm</a>
+                                <a class="dropdown-item" href="food-programme.html">Food Programme</a>
+                                <a class="dropdown-item" href="emergency-relief-programme.html">Emergency Relief
+                                    Programme</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="stories.html">Stories</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="gallery.html">Gallery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
                 </div>
-              </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="services.html"
-                  id="dropdown04"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                  >Get Involved</a
-                >
-                <div class="dropdown-menu" aria-labelledby="dropdown04">
-                  <a class="dropdown-item" href="how-to-donate.html">How to Donate</a>
-                  <a class="dropdown-item" href="sponsor-orphan-sponsorship.html">Sponsor, Orphan, Sponsorship</a>
-                  <a class="dropdown-item" href="volunteer-with-us.html">Volunteer With Us</a>
-                </div>
-              </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="services.html"
-                  id="dropdown04"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                  >Programme</a
-                >
-                <div class="dropdown-menu" aria-labelledby="dropdown04">
-                  <a class="dropdown-item" href="orphan-sponsorship-programme.html">Orphan Sponsorship Programme</a>
-                  <a class="dropdown-item" href="educational-programme.html">Educational Programm</a>
-                  <a class="dropdown-item" href="food-programme.html">Food Programme</a>
-                  <a class="dropdown-item" href="emergency-relief-programme.html">Emergency Relief Programme</a>
-                </div>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="stories.html">Stories</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="gallery.html">Gallery</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="contact.html">Contact</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+            </div>
+        </nav>
     </header>
 
     <section class="home-slider inner-page owl-carousel">
-      <div
-        class="slider-item"
-        style="background-image: url('img/about-us.jpg')"
-      >
-        <div class="container">
-          <div class="row slider-text align-items-center">
-            <div class="col-md-7 col-sm-12 element-animate">
-              <h1>Ramadan Appeal</h1>
-              <nav aria-label="breadcrumb">
-                <ol class="breadcrumb breadcrumb-custom">
-                  <li class="breadcrumb-item"><a href="#">Home</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">
-                    Ramadan Appeal 2024
-                  </li>
-                </ol>
-              </nav>
+        <div class="slider-item" style="background-image: url('img/about-us.jpg')">
+            <div class="container">
+                <div class="row slider-text align-items-center">
+                    <div class="col-md-7 col-sm-12 element-animate">
+                        <h1>Ramadan Appeal</h1>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb breadcrumb-custom">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">
+                                    Ramadan Appeal 2024
+                                </li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </section>
 
     <section class="section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4 order-2 sidebar">
-            <div class="sidebar-box">
-              <h3 class="mb-4">Contact Details</h3>
-              <h5 class="text-uppercase mb-3 h6 text-black">Address</h5>
-              <p class="mb-5">
-                Zakir Nagar, Mango, <br />
-                Jamshedpur, Jharkhand <br />
-                INDIA
-              </p>
-              <h5 class="text-uppercase mb-3 h6 text-black">Email Us At</h5>
-              <p class="mb-5">
-                <a
-                    href="mailto:unitedpeacefoundation.in@gmail.com" class="email-to">unitedpeacefoundation.in@gmail.com</a
-                  ></span
-                >
-              </p>
-              <h5 class="text-uppercase mb-3 h6 text-black">Call Us</h5>
-              <p>
-                Phone: +91 7463062868
-              </p>
-            </div>
-          </div>
-          <div class="col-md-8 order-1 main">
+        <div class="container">
             <div class="row">
-              <div class="col-md-12">
-                <h2>Let's chat</h2>
-                <form action="#" method="post">
-                  <div class="row">
-                    <div class="col-md-12 form-group">
-                      <label for="name">Name</label>
-                      <input type="text" id="name" class="form-control" />
+                <div class="col-md-5 order-2 sidebar">
+                    <div class="appeal-box">
+                        <div class="col-lg-12 col-md-12 col-12">
+                            <a href="javascript:void(0)" class="link-thumbnail">
+                                <img src="img/ramadan-appeal.jpeg" alt="Image placeholder" class="img-fluid" />
+                            </a>
+                            
+                            <div class="row">
+                                <div class="col-md-6 form-group">
+                                    <input type="submit" value="Donate Now" class="btn btn-primary" />
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12 form-group">
-                      <label for="phone">Phone</label>
-                      <input type="text" id="phone" class="form-control" />
+                </div>
+                <div class="col-md-7 order-1 main">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2 class="text-center">Ramadan Appeal 2024</h2>
+                            <form action="#" method="post">
+                                <div class="row">
+                                    <div class="col-md-12 form-group">
+                                        <label for="name">
+                                            <b><i>FEED a family this Ramadan</i></b><br><br>
+                                            <i>Ramadan is on the doorstep. There are hundreds of widow headed poor families
+                                                waiting for us and your support to deliver the ration kits.
+                                                Your generosity and  support can provide SUHOOR and IFTAR to the poor
+                                                families.<br><br>
+                                            We have a target to deliver a ration kit to 1000 families this Ramadan.<b> InShaAllah <br></b></i><br>
+                                            <b>We need your help</b> 🙏<br>
+                                            1 Ration Kit 📦=  <b>₹ 2500/-</b><br><br>
+                                            <b>Our beloved Prophet Muhammad ﷺ said:</b><br>
+                                            <i>“Whoever gives food to a fasting person with which to break his fast will
+                                            have a reward like without deracting from the reward of fasting person in
+                                            the slighestest.”</i><br>
+                                            ―(Al Tirmidhi ) <br><br>
+                                            Donate you Zakat & Sadaqah. <br>
+                                            <b>Donate Generously to
+                                            United Peace Foundation</b><br>
+                                            ICICI BANK <br>
+                                            A/C : 141205000918 <br>
+                                            IFSC code: ICIC0001412 <br>
+                                            <b>Note:</b> This A/C does not accept the foreign transaction and transaction from
+                                            NRI A/C. <br><br>
+                                            <b>Find the Scanner Below</b> 👇
+                                            <p>Merchant Name : M/S.UNITED PEACE FOUNDATION<br>
+                                                Mobile Number : 8825139198</p>
+                                            </p>
+                                            <p class="element-animate" data-animate-effect="fadeIn">
+                                                <img
+                                                  src="img/upi.jpeg"
+                                                  alt="Image placeholder"
+                                                  class=""
+                                                  width="250px" height="250px"
+                                                />
+                                              </p>
+                                        </label>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12 form-group">
-                      <label for="email">Email</label>
-                      <input type="email" id="email" class="form-control" />
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12 form-group">
-                      <label for="message">Write Message</label>
-                      <textarea
-                        name="message"
-                        id="message"
-                        class="form-control"
-                        cols="30"
-                        rows="8"
-                      ></textarea>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-6 form-group">
-                      <input
-                        type="submit"
-                        value="Send Message"
-                        class="btn btn-primary"
-                      />
-                    </div>
-                  </div>
-                </form>
-              </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </section>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3677.884049903956!2d86.20118731488776!3d22.80675993008248!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f5e30f29160b25%3A0xfac0b933ba0c80cd!2sX-way+Designs!5e0!3m2!1sen!2sin!4v1527583353529" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen=""></iframe>
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3677.884049903956!2d86.20118731488776!3d22.80675993008248!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f5e30f29160b25%3A0xfac0b933ba0c80cd!2sX-way+Designs!5e0!3m2!1sen!2sin!4v1527583353529"
+        width="100%" height="450" frameborder="0" style="border:0" allowfullscreen=""></iframe>
     <section class="section-subscribe bg-light">
-      <div class="container">
-        <div class="row justify-content-center align-items-center">
-          <div class="col-md-12 my-3">
-            <h2 class="text-uppercase heading">Get News &amp; Updates</h2>
-          </div>
-          <div class="col-md-12">
-            <form method="post" action>
-              <div class="row">
-                <div class="col-md-4 mb-3">
-                  <input
-                    type="text"
-                    class="form-control btn-block"
-                    placeholder="Your Name"
-                  />
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-md-12 my-3">
+                    <h2 class="text-uppercase heading">Get News &amp; Updates</h2>
                 </div>
-                <div class="col-md-4 mb-3">
-                  <input
-                    type="email"
-                    class="form-control btn-block"
-                    placeholder="Your Email"
-                  />
+                <div class="col-md-12">
+                    <form method="post" action>
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <input type="text" class="form-control btn-block" placeholder="Your Name" />
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <input type="email" class="form-control btn-block" placeholder="Your Email" />
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <input type="submit" class="btn btn-primary btn-block" value="Subscribe" />
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                <div class="col-md-4 mb-3">
-                  <input
-                    type="submit"
-                    class="btn btn-primary btn-block"
-                    value="Subscribe"
-                  />
-                </div>
-              </div>
-            </form>
-          </div>
+            </div>
         </div>
-      </div>
     </section>
     <footer class="site-footer" role="contentinfo">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-md-3 mb-5">
-            <h3>About</h3>
-            <p>
-              United Peace Foundation is a non-profit organization established to help and uplift the most vulnerable, orphans, destitute and widows regardless of faith race or creed.
-            </p>
-          </div>
-          <div class="col-md-3 mb-5">
-            <h3>Quick Links</h3>
-            <ul class="list-unstyled footer-link">
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Get Involved</a></li>
-              <li><a href="#">Programme</a></li>
-              <li><a href="#">Stories</a></li>
-              <li><a href="#">Contact</a></li>
-            </ul>
-          </div>
-          <div class="col-md-3 mb-5">
-            <h3>Get In Touch</h3>
-            <ul class="list-unstyled footer-link footer-content">
-              <li class="d-flex">
-                <span class="mr-3 fa fa-location-arrow"></span
-                ><span class="text-white"
-                  >Zakir Nagar, Mango, Jamshedpur</span
-                >
-              </li>
-              <li class="d-flex">
-                <span class="mr-3 fa fa-phone"></span
-                ><span class="text-white">+91 7463062868</span>
-              </li>
-              <li class="d-flex">
-                <span class="mr-3 fa fa-envelope"></span
-                ><span class="text-white"
-                  ><a
-                    href="mailto:unitedpeacefoundation.in@gmail.com" class="email-to">unitedpeacefoundation.in@gmail.com</a
-                  ></span
-                >
-              </li>
-            </ul>
-          </div>
-          <div class="col-md-3 mb-5">
-            <h3>Get Involved</h3>
-            <ul class="list-unstyled footer-link">
-              <li><a href="#">How to Donate</a></li>
-              <li><a href="#">Sponsor, Orphans</a></li>
-              <li><a href="#">Volunteer With Us</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-6 text-md-center text-left">
-            <p>
-              Copyright &copy;
-              <script
-                data-cfasync="false"
-                src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
-              ></script>
-              <script>
-                document.write(new Date().getFullYear());
-              </script>
-              All rights reserved 
-              <!-- | This template is made with
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-md-3 mb-5">
+                    <h3>About</h3>
+                    <p>
+                        United Peace Foundation is a non-profit organization established to help and uplift the most
+                        vulnerable, orphans, destitute and widows regardless of faith race or creed.
+                    </p>
+                </div>
+                <div class="col-md-3 mb-5">
+                    <h3>Quick Links</h3>
+                    <ul class="list-unstyled footer-link">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Get Involved</a></li>
+                        <li><a href="#">Programme</a></li>
+                        <li><a href="#">Stories</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-5">
+                    <h3>Get In Touch</h3>
+                    <ul class="list-unstyled footer-link footer-content">
+                        <li class="d-flex">
+                            <span class="mr-3 fa fa-location-arrow"></span><span class="text-white">Zakir Nagar, Mango,
+                                Jamshedpur</span>
+                        </li>
+                        <li class="d-flex">
+                            <span class="mr-3 fa fa-phone"></span><span class="text-white">+91 7463062868</span>
+                        </li>
+                        <li class="d-flex">
+                            <span class="mr-3 fa fa-envelope"></span><span class="text-white"><a
+                                    href="mailto:unitedpeacefoundation.in@gmail.com"
+                                    class="email-to">unitedpeacefoundation.in@gmail.com</a></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-5">
+                    <h3>Get Involved</h3>
+                    <ul class="list-unstyled footer-link">
+                        <li><a href="#">How to Donate</a></li>
+                        <li><a href="#">Sponsor, Orphans</a></li>
+                        <li><a href="#">Volunteer With Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 text-md-center text-left">
+                    <p>
+                        Copyright &copy;
+                        <script data-cfasync="false"
+                            src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+                        <script>
+                            document.write(new Date().getFullYear());
+                        </script>
+                        All rights reserved
+                        <!-- | This template is made with
               <i class="fa fa-heart-o" aria-hidden="true"></i> by
               <a href="https://colorlib.com" target="_blank">Colorlib</a> -->
-            </p>
-          </div>
-          <div class="col-6 text-md-center text-left">
-            <!-- <h3>Social</h3> -->
-            <ul class="list-unstyled footer-link d-flex footer-social">
-              <li>
-                <a href="#" class="p-2"><span class="fa fa-twitter"></span></a>
-              </li>
-              <li>
-                <a href="#" class="p-2"><span class="fa fa-facebook"></span></a>
-              </li>
-              <li>
-                <a href="#" class="p-2"><span class="fa fa-linkedin"></span></a>
-              </li>
-              <li>
-                <a href="#" class="p-2"
-                  ><span class="fa fa-instagram"></span
-                ></a>
-              </li>
-            </ul>
-          </div>
+                    </p>
+                </div>
+                <div class="col-6 text-md-center text-left">
+                    <!-- <h3>Social</h3> -->
+                    <ul class="list-unstyled footer-link d-flex footer-social">
+                        <li>
+                            <a href="#" class="p-2"><span class="fa fa-twitter"></span></a>
+                        </li>
+                        <li>
+                            <a href="#" class="p-2"><span class="fa fa-facebook"></span></a>
+                        </li>
+                        <li>
+                            <a href="#" class="p-2"><span class="fa fa-linkedin"></span></a>
+                        </li>
+                        <li>
+                            <a href="#" class="p-2"><span class="fa fa-instagram"></span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-      </div>
     </footer>
 
     <div id="loader" class="show fullscreen">
-      <svg class="circular" width="48px" height="48px">
-        <circle
-          class="path-bg"
-          cx="24"
-          cy="24"
-          r="22"
-          fill="none"
-          stroke-width="4"
-          stroke="#eeeeee"
-        />
-        <circle
-          class="path"
-          cx="24"
-          cy="24"
-          r="22"
-          fill="none"
-          stroke-width="4"
-          stroke-miterlimit="10"
-          stroke="#f4b214"
-        />
-      </svg>
+        <svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+                stroke="#f4b214" />
+        </svg>
     </div>
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/popper.min.js"></script>
@@ -449,25 +374,21 @@
     <script src="js/jquery.waypoints.min.js"></script>
     <script src="js/main.js"></script>
 
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"
-    ></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
 
-      gtag("config", "UA-23581568-13");
+        gtag("config", "UA-23581568-13");
     </script>
-    <script
-      defer
-      src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317"
-      integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA=="
-      data-cf-beacon='{"rayId":"847697d5ad7f602d","version":"2023.10.0","token":"cd0b4b3a733644fc843ef0b185f98241"}'
-      crossorigin="anonymous"
-    ></script>
-  </body>
+    <script defer
+        src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317"
+        integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA=="
+        data-cf-beacon='{"rayId":"847697d5ad7f602d","version":"2023.10.0","token":"cd0b4b3a733644fc843ef0b185f98241"}'
+        crossorigin="anonymous"></script>
+</body>
+
 </html>

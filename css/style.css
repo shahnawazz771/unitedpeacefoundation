@@ -1,6 +1,7 @@
 body {
   background: #fff;
   font-family: "Open Sans", Arial, sans-serif;
+  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
   font-weight: 400;
   font-size: 18px;
   line-height: 1.8;
@@ -12,7 +13,7 @@ a {
   -o-transition: 0.3s all ease;
   transition: 0.3s all ease;
   text-decoration: none;
-/*  color: white !important;*/
+  /*  color: white !important;*/
   font-size: 1.1rem;
 }
 
@@ -498,7 +499,7 @@ header .navbar .cta-btn a:hover {
   color: #fff;
 }
 
-.breadcrumb-custom li.breadcrumb-item + .breadcrumb-item:before {
+.breadcrumb-custom li.breadcrumb-item+.breadcrumb-item:before {
   content: "/";
   color: rgba(255, 255, 255, 0.3);
 }
@@ -582,7 +583,7 @@ header .navbar .cta-btn a:hover {
   top: 0;
 }
 
-.media-custom > a {
+.media-custom>a {
   position: relative;
   overflow: hidden;
   display: block;
@@ -923,10 +924,12 @@ header .navbar .cta-btn a:hover {
     stroke-dasharray: 1, 200;
     stroke-dashoffset: 0;
   }
+
   50% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -35px;
   }
+
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px;
@@ -946,31 +949,52 @@ header .navbar .cta-btn a:hover {
 /*From here,*/
 
 
-.fa{
+.fa {
   color: white;
 }
 
-.img-fluid{
+.img-fluid {
   width: 1110px;
 }
 
-.img-fluiding{
+.img-fluiding {
   width: 900px
 }
 
-.fluiding{
+.fluiding {
   text-align: center;
   background-color: #67c18c;
 }
 
-.popup-container{
+.appeal-box {
+  margin-bottom: 30px;
+  padding: 2px;
+  font-size: 15px;
+  width: 100%;
+  border-radius: 7px;
+  float: left;
+  border: 2px solid #f0f0f0;
+  background: #fff;
+}
+
+.appeal-box-box *:last-child {
+  margin-bottom: 0;
+}
+
+.appeal-box h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.popup-container {
   width: 100%;
   height: 100%;
   position: fixed;
-  background-color: rgba(0,0,0,0.90);
+  background-color: rgba(0, 0, 0, 0.90);
   z-index: 1000;
 }
-.popup{
+
+.popup {
   position: absolute;
   top: -85px;
   width: 70%;
@@ -982,7 +1006,8 @@ header .navbar .cta-btn a:hover {
   margin-top: 100px;
   cursor: pointer;
 }
-.popup img{
+
+.popup img {
   width: 100%;
   max-width: 100%;
 }
