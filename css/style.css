@@ -1036,7 +1036,8 @@ header .navbar .cta-btn a:hover {
   max-width: 100%;
 }
 
-/* Media queries for responsiveness */
+/* Media queries for pop-up responsiveness */
+
 @media screen and (max-width: 767px) {
   .popup {
     width: 70%;
