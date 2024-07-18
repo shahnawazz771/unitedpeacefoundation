@@ -27,11 +27,6 @@
 			$this.find('.dropdown-menu').removeClass('show');
 	});
 
-
-	$('#dropdown04').on('show.bs.dropdown', function () {
-	  console.log('show');
-	});
-
 	// home slider
 	$('.home-slider').owlCarousel({
     loop:true,

@@ -153,47 +153,36 @@
         <div class="row">
           <div class="col-md-4 order-2 sidebar">
             <div class="sidebar-box">
-              <h3 class="mb-4">Contact Details</h3>
-              <h5 class="text-uppercase mb-3 h6 text-black">Address</h5>
-              <p class="mb-5">
-                Zakir Nagar, Mango, <br />
-                Jamshedpur, Jharkhand <br />
-                INDIA
-              </p>
-              <h5 class="text-uppercase mb-3 h6 text-black">Email Us At</h5>
-              <p class="mb-5">
-                <a
-                    href="mailto:unitedpeacefoundation.in@gmail.com" class="email-to">unitedpeacefoundation.in@gmail.com</a
-                  ></span
-                >
-              </p>
+              <h3 class="mb-4 text-center">Connect With Us</h3>
               <h5 class="text-uppercase mb-3 h6 text-black">Call Us</h5>
-              <p>
-                Phone: +91 7463062868
-              </p>
+              <p>Phone: +91 7463062868</p>
+              <h5 class="text-uppercase mb-3 h6 text-black">Address</h5>
+              <p class="mb-5 ">Zakir Nagar, Mango, <br /> Jamshedpur, Jharkhand <br /> INDIA</p>
+              <h5 class="text-uppercase mb-3 h6 text-black">Email</h5>
+              <p class="mb-5"> <a href="mailto:unitedpeacefoundation.in@gmail.com" class="email-to">unitedpeacefoundation.in@gmail.com</a></span></p>
             </div>
           </div>
           <div class="col-md-8 order-1 main">
             <div class="row">
               <div class="col-md-12">
-                <h2>Let's chat</h2>
+                <h2>Let's Talk & Ask Anything</h2>
                 <form action="#" method="post">
                   <div class="row">
                     <div class="col-md-12 form-group">
                       <label for="name">Name</label>
-                      <input type="text" id="name" class="form-control" />
+                      <input type="text" id="name" class="form-control" placeholder="Enter Name" />
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-md-12 form-group">
                       <label for="phone">Phone</label>
-                      <input type="text" id="phone" class="form-control" />
+                      <input type="text" id="phone" class="form-control" placeholder="Enter Phone" />
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-md-12 form-group">
                       <label for="email">Email</label>
-                      <input type="email" id="email" class="form-control" />
+                      <input type="email" id="email" class="form-control" placeholder="Enter Email" />
                     </div>
                   </div>
                   <div class="row">
@@ -204,7 +193,8 @@
                         id="message"
                         class="form-control"
                         cols="30"
-                        rows="8"
+                        rows="8" 
+                        placeholder="Enter Message"
                       ></textarea>
                     </div>
                   </div>
@@ -212,7 +202,7 @@
                     <div class="col-md-6 form-group">
                       <input
                         type="submit"
-                        value="Send Message"
+                        value="Send Your Message"
                         class="btn btn-primary"
                       />
                     </div>
@@ -378,5 +368,56 @@
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/jquery.waypoints.min.js"></script>
     <script src="js/main.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('form').submit(function(e) {
+          e.preventDefault();
+          var validation = 1;
+          var name = $('#name').val();
+          var phone = $('#phone').val();
+          var email = $('#email').val();
+          var message = $('#message').val();
+
+          if (name == '') {
+            $('#name').after('<p style="color:red;">Please enter your name</p>');
+            validation = 0;
+          }
+          if (phone == '') {
+            $('#phone').after('<p style="color:red;">Please enter your phone number</p>');
+            validation = 0;
+          }
+          if (email == '') {
+            $('#email').after('<p style="color:red;">Please enter your email</p>');
+            validation = 0;
+          } else if (!validateEmail(email)) {
+            $('#email').after('<p style="color:red;">Please enter a valid email</p>');
+            validation = 0;
+          }
+          if (message == '') {
+            $('#message').after('<p style="color:red;">Please enter your message</p>');
+            validation = 0;
+          }
+
+          if (validation == 1) {
+            $.ajax({
+              type: 'POST',
+              url: 'api/index.php',
+              data: { contact_action:1, name: name, phone: phone, email: email, message: message },
+              success: function(data) {
+                alert('Form submitted successfully!');
+              },
+              error: function(xhr, status, error) {
+                console.log(xhr.responseText);
+              }
+            });
+          }
+        });
+
+        function validateEmail(email) {
+          var emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+          return emailRegex.test(email);
+        }
+      });
+    </script>
   </body>
 </html>
