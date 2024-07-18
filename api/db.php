@@ -2,7 +2,7 @@
 	// Configuration
 	$db_host = 'localhost';
 	$db_username = 'upf';
-	$db_password = 'upf123#';
+	$db_password = 'Unitedpeace123#';
 	$db_name = 'upf';
 	// Connect to database
 	$conn = new mysqli($db_host, $db_username, $db_password, $db_name);

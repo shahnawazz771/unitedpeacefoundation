@@ -400,7 +400,7 @@
 
           if (validation == 1) {
             $.ajax({
-              type: 'POST',
+              method: 'POST',
               url: 'api/index.php',
               data: { contact_action:1, name: name, phone: phone, email: email, message: message },
               success: function(data) {
