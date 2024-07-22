@@ -145,6 +145,11 @@
                                 load_gallery();
                                 $('.addgallerybtnclose').click();
                                 message="Image saved.";
+                                $('.imagename').val('');
+                                $('.add-title').val('');
+                                $('.add-captured-date').val('');
+                                $('.add-city').val('NA');
+                                $('.add-state').val('NA');
                                 $('.show-upf-success-popup').click();
                                 $(".succMessage").html(message);
                             }else if(argument=="duplicate"){

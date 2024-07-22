@@ -52,4 +52,16 @@
     // Close database connection
     $conn->close();
   }
+
+  if(isset($_POST['gallery_action'])){
+    $query = "SELECT file_path, title,  EXTRACT(YEAR FROM captured_date) AS year FROM gallery"; // Replace 'gallery_table' with your actual table name
+    $result = mysqli_query($conn, $query);
+
+    $galleryData = array();
+    while($row = mysqli_fetch_assoc($result)){
+        $galleryData[] = $row;
+    }
+
+    echo json_encode($galleryData);
+}
 ?>

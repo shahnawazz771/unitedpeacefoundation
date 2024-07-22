@@ -14,28 +14,27 @@
     <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css" />
 
     <link rel="stylesheet" href="css/style.css" />
+    <style>
+        
+        #gallery-filters li {
+    margin-right: 10px; /* Adjust spacing as needed */
+}
+
+#gallery-filters li a {
+    text-decoration: none;
+    color: #000; /* Adjust color as needed */
+}
+
+#gallery-filters li a.active {
+    font-weight: bold;
+    color: #007bff; /* Adjust color as needed */
+}
+
+    </style>
 </head>
 
 <body>
     <header role="banner">
-        <!-- <div class="top-bar">
-        <div class="container">
-          <div class="row">
-            <div class="col-6">
-              <a href="#"><span class="fa fa-twitter"></span></a>
-              <a href="#"><span class="fa fa-facebook"></span></a>
-              <a href="#"><span class="fa fa-instagram"></span></a>
-              <a href="#"><span class="fa fa-linkedin"></span></a>
-            </div>
-            <div class="col-6 text-right d-sm-flex d-flex">
-              <d class="ml-auto">
-                <a href="#" class="btn">Sponsor</a>
-                <a href="#" class="cta-btn">Login</a>
-              </d>
-            </div>
-          </div>
-        </div>
-      </div> -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">
                 <!-- <a class="navbar-brand" href="index.html">Adopted</a> -->
@@ -117,41 +116,15 @@
     <section class="section bg-light">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-6 col-12">
-                    <a href="javascript:void(0)" class="link-thumbnail">
-                        <img src="img/gallery/gallery-1.jpg" alt="Image placeholder" class="img-fluid" />
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <a href="javascript:void(0)" class="link-thumbnail">
-                        <img src="img/gallery/gallery-2.jpg" alt="Image placeholder" class="img-fluid" />
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <a href="javascript:void(0)" class="link-thumbnail">
-                        <img src="img/gallery/gallery-3.jpg" alt="Image placeholder" class="img-fluid" />
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <a href="javascript:void(0)" class="link-thumbnail">
-                        <img src="img/gallery/gallery-4.jpg" alt="Image placeholder" class="img-fluid" />
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <a href="javascript:void(0)" class="link-thumbnail">
-                        <img src="img/gallery/gallery-5.jpg" alt="Image placeholder" class="img-fluid" />
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <a href="javascript:void(0)" class="link-thumbnail">
-                        <!-- <h3>
-                            <span class="date">Date</span> "Name"
-                        </h3>
-                        <span class="ion-plus icon"></span> -->
-                        <img src="img/gallery/gallery-1.jpg" alt="Image placeholder" class="img-fluid" />
-                    </a>
-                </div>
-            </div>
+    <div class="col-lg-12 col-md-12 col-12">
+        <ul id="gallery-filters" class="d-flex list-unstyled">
+            <!-- Filter items will be dynamically loaded here -->
+        </ul>
+    </div>
+</div>
+<div class="row gallery">
+    <!-- Gallery items will be loaded here -->
+</div>
         </div>
     </section>
     <section class="section-subscribe">
@@ -233,9 +206,6 @@
                             document.write(new Date().getFullYear());
                         </script>
                         All rights reserved
-                        <!-- | This template is made with
-              <i class="fa fa-heart-o" aria-hidden="true"></i> by
-              <a href="https://colorlib.com" target="_blank">Colorlib</a> -->
                     </p>
                 </div>
                 <div class="col-6 text-md-center text-left">
@@ -272,6 +242,59 @@
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/jquery.waypoints.min.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        $(document).ready(function() {
+            load_gallery();
+
+            function load_gallery(filterYear = 'all') {
+                $.ajax({
+                    url: 'api/index.php',
+                    type: 'POST',
+                    data: { gallery_action: 1 },
+                    success: function(response) {
+                        const galleryData = JSON.parse(response);
+                        let years = new Set();
+                        let output = '';
+                        
+                        galleryData.forEach(item => {
+                            years.add(item.year); // Assuming `year` is part of your response data
+                            if (filterYear === 'all' || parseInt(filterYear) === parseInt(item.year)) {
+                                output += `
+                                    <div class="col-lg-4 col-md-6 col-12">
+                                        <a href="javascript:void(0)" class="link-thumbnail">
+                                            <img src="upf_images/${item.file_path}" alt="${item.title || 'Image placeholder'}" class="img-fluid">
+                                        </a>
+                                    </div>
+                                `;
+                            }
+                        });
+
+                        $('.gallery').html(output);
+
+                        // Populate filters
+                        let filterOutput = '<li><a href="#" data-filter="all" class="active">All</a></li>';
+                        years.forEach(year => {
+                            filterOutput += `<li><a href="#" data-filter="${year}">${year}</a></li>`;
+                        });
+                        $('#gallery-filters').html(filterOutput);
+                    },
+                    error: function(error) {
+                        console.error('Error loading gallery:', error);
+                    }
+                });
+            }
+
+            // Event delegation for filter clicks
+            $('#gallery-filters').on('click', 'a', function(event) {
+                event.preventDefault();
+                const filterYear = $(this).data('filter');
+                $('#gallery-filters a').removeClass('active');
+                $(this).addClass('active');
+                load_gallery(filterYear);
+            });
+        });
+
+    </script>
 </body>
 
 </html>
