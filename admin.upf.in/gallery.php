@@ -117,6 +117,7 @@
                 // add gallery form
                 $('.upf-add-gallery').on('submit', function(e){
                     e.preventDefault();
+                    $(this).prop('disabled', true);
                     var message="";
                     var validated=1;
                     var gallery=$('.imagename').val();
@@ -152,26 +153,32 @@
                                 $('.add-state').val('NA');
                                 $('.show-upf-success-popup').click();
                                 $(".succMessage").html(message);
+                                $('.upf-add-gallery').prop('disabled', false);
                             }else if(argument=="duplicate"){
                                 message="Don't enter same image twice";
                                 $('.show-upf-alert-popup').click();
                                 $(".errorMessage").html(message);
+                                $('.upf-add-gallery').prop('disabled', false);
                             }else if(argument=="logout"){
                                 message="Logged out";
                                 $('.show-upf-alert-popup').click();
                                 $(".errorMessage").html(message);
+                                $('.upf-add-gallery').prop('disabled', false);
                             }else if(argument=="error"){
                                 message="Something went wrong please check and try again.";
                                 $('.show-upf-alert-popup').click();
                                 $(".errorMessage").html(message);
+                                $('.upf-add-gallery').prop('disabled', false);
                             }else if(argument=="error_uploading_file"){
                                 message="Something went wrong please check image and try again.";
                                 $('.show-upf-alert-popup').click();
                                 $(".errorMessage").html(message);
+                                $('.upf-add-gallery').prop('disabled', false);
                             }else if(argument=="invalid_file_type"){
                                 message="Invalid file type.";
                                 $('.show-upf-alert-popup').click();
                                 $(".errorMessage").html(message);
+                                $('.upf-add-gallery').prop('disabled', false);
                             }
                         }
                       }); 
