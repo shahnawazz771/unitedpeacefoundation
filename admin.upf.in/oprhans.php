@@ -9,7 +9,7 @@
 
     <head>
         <meta charset="utf-8" />
-        <title>Profile | United Peace Foundation</title>
+        <title>Oprhans | United Peace Foundation</title>
         <?php include_once("layouts/header_links.php"); ?>
 
         <style>
@@ -38,11 +38,11 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box d-flex align-items-center justify-content-between">
-                                    <h4 class="mb-0 font-size-18">Profile</h4>
+                                    <h4 class="mb-0 font-size-18">Oprhans</h4>
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
                                             <li class="breadcrumb-item"><a href="javascript: void(0);">United Peace Foundation</a></li>
-                                            <li class="breadcrumb-item active">Profile</li>
+                                            <li class="breadcrumb-item active">Oprhans</li>
                                         </ol>
                                     </div>
                                 </div>
@@ -55,7 +55,7 @@
                             <div class="col-sm-12 col-xl-12">
                                 <div class="card">
                                     <div class="card-body" style="width: auto;overflow-x: auto;white-space: nowrap;">
-                                        <h4 class="header-title"><button type="button" class="btn btn-primary btn-sm waves-effect waves-light add-profile-modal" data-toggle="modal" data-target=".bs-example-modal-center" style="font-size: 1rem; padding: 5px 8px";>Add profile</button></h4>        
+                                        <h4 class="header-title"><button type="button" class="btn btn-primary btn-sm waves-effect waves-light add-oprhans-modal" data-toggle="modal" data-target=".bs-example-modal-center" style="font-size: 1rem; padding: 5px 8px";>Add oprhan</button></h4>        
                                         <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                             <thead>
                                             <tr>
@@ -76,7 +76,7 @@
                                                 <th class="text_center">Action</th>
                                             </tr>
                                             </thead>        
-                                            <tbody class="upf-profile-table-data">
+                                            <tbody class="upf-oprhans-table-data">
                                                 <tr>
                                                     <td>1</td>
                                                     <td><img src="../../../upf_images/image.jpg" width="100px"></td>
@@ -146,15 +146,15 @@
         <script>
             $(document).ready(function(){
 
-                // add profile form
-                $('.upf-add-profile').on('submit', function(e){
+                // add oprhans form
+                $('.upf-add-oprhans').on('submit', function(e){
                     e.preventDefault();
                     var message="";
                     var validated=0;
-                    var profile=$('.add-profile').val();
+                    var oprhans=$('.add-oprhans').val();
                     $('.validation-tag').remove();
-                    if(profile==""){
-                      $(".add-profile").after("<span class='text-danger validation-tag'>Please enter profile</span>");
+                    if(oprhans==""){
+                      $(".add-oprhans").after("<span class='text-danger validation-tag'>Please enter oprhans</span>");
                           validated=0;
                     }else{
                         $('.validation-tag').remove();
@@ -162,7 +162,7 @@
                     }
                     if(validated==1){
                       $.ajax({
-                        url         : "tva/hewhoremains_profile.php",
+                        url         : "tva/hewhoremains_oprhans.php",
                         method      : "post",
                         data        : new FormData(this),
                         contentType : false,
@@ -172,13 +172,13 @@
                           // console.log(argument);
                             argument=argument.trim();
                             if(argument=="success"){
-                                load_profile();
-                                $('.addprofilebtnclose').click();
-                                message="profile saved.";
+                                load_oprhans();
+                                $('.addoprhansbtnclose').click();
+                                message="oprhans saved.";
                                 $('.show-upf-success-popup').click();
                                 $(".succMessage").html(message);
                             }else if(argument=="duplicate"){
-                                message="Don't enter same profile twice";
+                                message="Don't enter same oprhans twice";
                                 $('.show-upf-alert-popup').click();
                                 $(".errorMessage").html(message);
                             }else if(argument=="logout"){
@@ -191,53 +191,53 @@
                     }
                 });
 
-                // Load profile
-                load_profile();
-                function load_profile(){
+                // Load oprhans
+                load_oprhans();
+                function load_oprhans(){
                     $.ajax({
-                      url       : "tva/hewhoremains_profile.php",
+                      url       : "tva/hewhoremains_oprhans.php",
                       method    : "POST",
-                      data      : {load_profile:1},
+                      data      : {load_oprhans:1},
                       dataType  : "JSON",
-                      success   : function(profile){
-                        // console.log(profile);
-                        $('.upf-profile-table-data').html(profile);
+                      success   : function(oprhans){
+                        // console.log(oprhans);
+                        $('.upf-oprhans-table-data').html(oprhans);
                       }
                     });
                 }
 
-                // call profile
-                function call_profile(profile_id){
+                // call oprhans
+                function call_oprhans(oprhans_id){
                     $.ajax({
-                      url       : "tva/hewhoremains_profile.php",
+                      url       : "tva/hewhoremains_oprhans.php",
                       method    : "POST",
-                      data      : {call_profile:1,profile_id:profile_id},
+                      data      : {call_oprhans:1,oprhans_id:oprhans_id},
                       dataType  : "JSON",
-                      success   : function(profile){
-                        // console.log(profile);
-                        $('.add-profile').val(profile.name);
+                      success   : function(oprhans){
+                        // console.log(oprhans);
+                        $('.add-oprhans').val(oprhans.name);
 
                       }
                     });
                 }
 
-                // delete for profile
-                $('body').delegate('.upf-delet-profile', 'click',  function(e){
+                // delete for oprhans
+                $('body').delegate('.upf-delet-oprhans', 'click',  function(e){
                   e.preventDefault();
-                  var profile_id=$(this).attr('id');
+                  var oprhans_id=$(this).attr('id');
                   $.ajax({
-                    url         : "tva/hewhoremains_profile.php",
+                    url         : "tva/hewhoremains_oprhans.php",
                     method      : "post",
-                    data        : {delete_profile:1,profile_id:profile_id},
+                    data        : {delete_oprhans:1,oprhans_id:oprhans_id},
                     dataType    : "JSON",
                     success     : function (argument) {
                       // console.log(argument);
                         argument=argument.trim();
                         var message="";
                         if(argument=="success"){
-                            load_profile();
-                            $('.addprofilebtnclose').click();
-                            message="profile deleted.";
+                            load_oprhans();
+                            $('.addoprhansbtnclose').click();
+                            message="oprhans deleted.";
                             $('.show-upf-success-popup').click();
                             $(".succMessage").html(message);
                         }else if(argument=="error"){
@@ -256,25 +256,25 @@
                   }); 
                 });
 
-                $('body').delegate('.upf-edit-profile', 'click', function(){
-                    var profile_id=$(this).attr('id');
-                    call_profile(profile_id);
-                    $('.changeprofile-option').html("Edit profile");
-                    $('.add-profile-id-hidden').val(profile_id);
-                    $('.add-profile-btn').removeAttr('name');
-                    $('.add-profile-btn').attr('name', 'edit-profile-btn');
-                    $('.add-profile').val("");
-                    $('.add-profile').removeAttr('placeholder');
-                    $('.add-profile').attr('placeholder', 'Rename your profile');
+                $('body').delegate('.upf-edit-oprhans', 'click', function(){
+                    var oprhans_id=$(this).attr('id');
+                    call_oprhans(oprhans_id);
+                    $('.changeoprhans-option').html("Edit oprhans");
+                    $('.add-oprhans-id-hidden').val(oprhans_id);
+                    $('.add-oprhans-btn').removeAttr('name');
+                    $('.add-oprhans-btn').attr('name', 'edit-oprhans-btn');
+                    $('.add-oprhans').val("");
+                    $('.add-oprhans').removeAttr('placeholder');
+                    $('.add-oprhans').attr('placeholder', 'Rename your oprhans');
                 });
 
-                $('body').delegate('.add-profile-modal', 'click', function(){
-                    $('.changeprofile-option').html("Add profile");
-                    $('.add-profile-btn').removeAttr('name');
-                    $('.add-profile-btn').attr('name', 'add-profile-btn');
-                    $('.add-profile').val("");
-                    $('.add-profile').removeAttr('placeholder');
-                    $('.add-profile').attr('placeholder', 'Enter your profile');
+                $('body').delegate('.add-oprhans-modal', 'click', function(){
+                    $('.changeoprhans-option').html("Add oprhans");
+                    $('.add-oprhans-btn').removeAttr('name');
+                    $('.add-oprhans-btn').attr('name', 'add-oprhans-btn');
+                    $('.add-oprhans').val("");
+                    $('.add-oprhans').removeAttr('placeholder');
+                    $('.add-oprhans').attr('placeholder', 'Enter your oprhans');
                 });
 
             });
@@ -284,7 +284,7 @@
                     var reader = new FileReader();
 
                     reader.onload = function (e) {
-                        $('#upf-profile-image')
+                        $('#upf-oprhans-image')
                             .attr('src', e.target.result)
                             .width(150)
                             .height(200);
@@ -300,8 +300,8 @@
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title mt-0 changeprofile-option">Add Profile</h5>
-                <button type="button" class="addprofilebtnclose" data-dismiss="modal" aria-label="Close">
+                <h5 class="modal-title mt-0 changeoprhans-option">Add oprhans</h5>
+                <button type="button" class="addoprhansbtnclose" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -313,7 +313,7 @@
                                 <div class="form-group row">
                                     <label for="add-title" class="col-md-2 col-form-label">Orphan's Name</label>
                                     <div class="col-md-6">
-                                        <input class="form-control add-title" type="text" spellcheck="true" name="add-profile" placeholder="Enter orphan's name" id="add-title" spellcheck="false" data-ms-editor="true">
+                                        <input class="form-control add-title" type="text" spellcheck="true" name="add-oprhans" placeholder="Enter orphan's name" id="add-title" spellcheck="false" data-ms-editor="true">
                                     </div>
                                     <label for="add-title" class="col-md-1 col-form-label">Photo</label>
                                     <div class="col-md-3">
@@ -323,98 +323,98 @@
                                 <div class="form-group row">
                                     <label for="add-phonenumber" class="col-md-2 col-form-label">Phone Number</label>
                                     <div class="col-md-6">
-                                        <input class="form-control add-phonenumber" type="tel" maxlength="10" spellcheck="true" name="add-profile" placeholder="Enter phone number" id="add-phonenumber" spellcheck="false" data-ms-editor="true">
+                                        <input class="form-control add-phonenumber" type="tel" maxlength="10" spellcheck="true" name="add-oprhans" placeholder="Enter phone number" id="add-phonenumber" spellcheck="false" data-ms-editor="true">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="add-dob" class="col-md-2 col-form-label">Date Of Birth</label>
                                     <div class="col-md-6">
-                                        <input class="form-control add-dob" type="date" spellcheck="true" name="add-profile" id="add-dob" spellcheck="false" data-ms-editor="true">
+                                        <input class="form-control add-dob" type="date" spellcheck="true" name="add-oprhans" id="add-dob" spellcheck="false" data-ms-editor="true">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="add-mothername" class="col-md-2 col-form-label">Mother's Name</label>
                                     <div class="col-md-6">
-                                        <input class="form-control add-mothername" type="text" spellcheck="true" name="add-profile" placeholder="Enter mother's name" id="add-mothername" spellcheck="false" data-ms-editor="true">
+                                        <input class="form-control add-mothername" type="text" spellcheck="true" name="add-oprhans" placeholder="Enter mother's name" id="add-mothername" spellcheck="false" data-ms-editor="true">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="add-reasonofdeath" class="col-md-2 col-form-label">If Died (cause of death)</label>
                                     <div class="col-md-6">
-                                        <input class="form-control add-reasonofdeath" type="text" spellcheck="true" name="add-profile" placeholder="Enter the reason of death" id="add-reasonofdeath" spellcheck="false" data-ms-editor="true">
+                                        <input class="form-control add-reasonofdeath" type="text" spellcheck="true" name="add-oprhans" placeholder="Enter the reason of death" id="add-reasonofdeath" spellcheck="false" data-ms-editor="true">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="add-motherdeathdate" class="col-md-2 col-form-label">Date of death</label>
                                     <div class="col-md-6">
-                                        <input class="form-control add-motherdeathdate" type="date" spellcheck="true" name="add-profile" id="add-motherdeathdate" spellcheck="false" data-ms-editor="true">
+                                        <input class="form-control add-motherdeathdate" type="date" spellcheck="true" name="add-oprhans" id="add-motherdeathdate" spellcheck="false" data-ms-editor="true">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="add-guardianname" class="col-md-2 col-form-label">Guardian's Name</label>
                                     <div class="col-md-6">
-                                        <input class="form-control add-guardianname" type="text" spellcheck="true" name="add-profile" placeholder="Enter guardian's name" id="add-guardianname" spellcheck="false" data-ms-editor="true">
+                                        <input class="form-control add-guardianname" type="text" spellcheck="true" name="add-oprhans" placeholder="Enter guardian's name" id="add-guardianname" spellcheck="false" data-ms-editor="true">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="add-relation" class="col-md-2 col-form-label">Relation with orphan</label>
                                     <div class="col-md-6">
-                                        <input class="form-control add-relation" type="text" spellcheck="true" name="add-profile" placeholder="Enter relation with orphan" id="add-relation" spellcheck="false" data-ms-editor="true">
+                                        <input class="form-control add-relation" type="text" spellcheck="true" name="add-oprhans" placeholder="Enter relation with orphan" id="add-relation" spellcheck="false" data-ms-editor="true">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="add-motheroccupation" class="col-md-2 col-form-label">Mother's Occupation</label>
                                     <div class="col-md-6">
-                                        <input class="form-control add-motheroccupation" type="text" spellcheck="true" name="add-profile" placeholder="Enter mother's occupation" id="add-motheroccupation" spellcheck="false" data-ms-editor="true">
+                                        <input class="form-control add-motheroccupation" type="text" spellcheck="true" name="add-oprhans" placeholder="Enter mother's occupation" id="add-motheroccupation" spellcheck="false" data-ms-editor="true">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="add-incomesource" class="col-md-2 col-form-label">Source Of Income</label>
                                     <div class="col-md-6">
-                                        <input class="form-control add-incomesource" type="text" spellcheck="true" name="add-profile" placeholder="Enter source of income" id="add-incomesource" spellcheck="false" data-ms-editor="true">
+                                        <input class="form-control add-incomesource" type="text" spellcheck="true" name="add-oprhans" placeholder="Enter source of income" id="add-incomesource" spellcheck="false" data-ms-editor="true">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="add-fathername" class="col-md-2 col-form-label">Father's Name</label>
                                     <div class="col-md-6">
-                                        <input class="form-control add-fathername" type="text" spellcheck="true" name="add-profile" placeholder="Enter father's name" id="add-fathername" spellcheck="false" data-ms-editor="true">
+                                        <input class="form-control add-fathername" type="text" spellcheck="true" name="add-oprhans" placeholder="Enter father's name" id="add-fathername" spellcheck="false" data-ms-editor="true">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="add-fatherdeathcause" class="col-md-2 col-form-label">Cause Of Death</label>
                                     <div class="col-md-6">
-                                        <input class="form-control add-fatherdeathcause" type="text" spellcheck="true" name="add-profile" placeholder="Enter the reason of death" id="add-fatherdeathcause" spellcheck="false" data-ms-editor="true">
+                                        <input class="form-control add-fatherdeathcause" type="text" spellcheck="true" name="add-oprhans" placeholder="Enter the reason of death" id="add-fatherdeathcause" spellcheck="false" data-ms-editor="true">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="add-fatherdeathdate" class="col-md-2 col-form-label">Date Of Death</label>
                                     <div class="col-md-6">
-                                        <input class="form-control add-fatherdeathdate" type="date" spellcheck="true" name="add-profile" id="add-fatherdeathdate" spellcheck="false" data-ms-editor="true">
+                                        <input class="form-control add-fatherdeathdate" type="date" spellcheck="true" name="add-oprhans" id="add-fatherdeathdate" spellcheck="false" data-ms-editor="true">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="add-totalfamilymember" class="col-md-2 col-form-label">Total Family Member </label>
                                     <div class="col-md-6">
-                                        <input class="form-control add-totalfamilymember" type="tel" spellcheck="true" name="add-profile" placeholder="Enter total family member" id="add-totalfamilymember" spellcheck="false" data-ms-editor="true">
+                                        <input class="form-control add-totalfamilymember" type="tel" spellcheck="true" name="add-oprhans" placeholder="Enter total family member" id="add-totalfamilymember" spellcheck="false" data-ms-editor="true">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="add-fulladdress" class="col-md-2 col-form-label">Full Address</label>
                                     <div class="col-md-6">
-                                        <textarea class="form-control add-fulladdress" name="add-profile" placeholder="Enter full address here" id="add-fulladdress"></textarea>
+                                        <textarea class="form-control add-fulladdress" name="add-oprhans" placeholder="Enter full address here" id="add-fulladdress"></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="add-bankaccount" class="col-md-2 col-form-label">Bank Account Details</label>
                                     <div class="col-md-6">
-                                        <input class="form-control add-bankaccount" type="text" spellcheck="true" name="add-profile" placeholder="Enter complete details of bank" id="add-bankaccount" spellcheck="false" data-ms-editor="true">
+                                        <input class="form-control add-bankaccount" type="text" spellcheck="true" name="add-oprhans" placeholder="Enter complete details of bank" id="add-bankaccount" spellcheck="false" data-ms-editor="true">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-md-12">
-                                        <input type="hidden"  name="add-profile-id-hidden" class="add-profile-id-hidden">
-                                        <input type="hidden"  name="add-profile-btn" class="add-profile-btn">
-                                        <button type="submit" class="btn btn-primary mt-3 mt-sm-0" >Save Profile</button>
+                                        <input type="hidden"  name="add-oprhans-id-hidden" class="add-oprhans-id-hidden">
+                                        <input type="hidden"  name="add-oprhans-btn" class="add-oprhans-btn">
+                                        <button type="submit" class="btn btn-primary mt-3 mt-sm-0" >Save oprhans</button>
                                     </div>
                                 </div>
                             </div>

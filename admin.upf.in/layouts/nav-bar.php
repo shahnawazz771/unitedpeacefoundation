@@ -23,7 +23,17 @@
                                     <li><a href="state.php">State</a></li>
                                     <li><a href="user.php">User</a></li>
                                 </ul>
-
+                            </li>
+                            <li>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <i class="fas fa-receipt"></i>
+                                    <span>Accounts</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="income.php">Income</a></li>
+                                    <li><a href="expense.php">Expense</a></li>
+                                    <li><a href="ledger.php">Ledger</a></li>
+                                </ul>
                             </li>
                             <li>
                                 <a href="gallery.php" class="waves-effect">
@@ -32,9 +42,9 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="profile.php" class="waves-effect">
+                                <a href="oprhans.php" class="waves-effect">
                                     <i class="fas fa-user-plus"></i><span class="badge badge-pill badge-success float-right"></span>
-                                    <span>Profile</span>
+                                    <span>Orphans</span>
                                 </a>
                             </li>
                             <li>

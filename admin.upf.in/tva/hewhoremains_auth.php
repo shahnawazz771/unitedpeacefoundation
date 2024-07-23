@@ -32,6 +32,7 @@ class Earth616_user extends multiverse_con{
 			$xavier_result=mysqli_fetch_assoc($xavier_getquery);
 			$_SESSION['upf_admin_info_id']=$xavier_result['id'];
 			$_SESSION['upf_admin_info_name']=$xavier_result['name'];
+			$_SESSION['upf_admin_role']=$xavier_result['role'];
 			$xavier="success";
 		}else{
 			$xavier='not';
