@@ -251,7 +251,6 @@
                         });
                     } 
                 });
-
             });
 
             function readURL(input) {

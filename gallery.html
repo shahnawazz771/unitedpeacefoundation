@@ -271,12 +271,14 @@
 
                         $('.gallery').html(output);
 
-                        // Populate filters
-                        let filterOutput = '<li><a href="#" data-filter="all" class="active">All</a></li>';
-                        years.forEach(year => {
-                            filterOutput += `<li><a href="#" data-filter="${year}">${year}</a></li>`;
-                        });
-                        $('#gallery-filters').html(filterOutput);
+                        if(filterYear=='all'){
+                            // Populate filters
+                            let filterOutput = '<li><a href="#" data-filter="all" class="active">All</a></li>';
+                            years.forEach(year => {
+                                filterOutput += `<li><a href="#" data-filter="${year}">${year}</a></li>`;
+                            });
+                            $('#gallery-filters').html(filterOutput);
+                        }
                     },
                     error: function(error) {
                         console.error('Error loading gallery:', error);
