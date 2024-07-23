@@ -22,7 +22,8 @@
       /* Add this CSS code to your stylesheet */
       .donatenow-fixed {
         position: fixed;
-        bottom: 20px;
+        top: 24px;
+        z-index: 10;
         right: 20px;
         background-color: #EA4231; /* red color */
         color: #fff;
@@ -36,6 +37,13 @@
       .donatenow-fixed:hover {
         background-color: #FF3737; /* darker red color on hover */
       }
+
+      @media (max-width: 767.98px) {
+        .donatenow-fixed {
+          top: 121px;
+        }
+      }
+      
     </style>
     <link rel="stylesheet" href="css/style.css" />
   </head>
