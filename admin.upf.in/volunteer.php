@@ -9,7 +9,7 @@
 
     <head>
         <meta charset="utf-8" />
-        <title>Contact | United Peace Foundation</title>
+        <title>Volunteer | United Peace Foundation</title>
         <?php include_once("layouts/header_links.php"); ?>
 
         <style>
@@ -38,11 +38,11 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box d-flex align-items-center justify-content-between">
-                                    <h4 class="mb-0 font-size-18">Contact</h4>
+                                    <h4 class="mb-0 font-size-18">Volunteer</h4>
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
                                             <li class="breadcrumb-item"><a href="javascript: void(0);">United Peace Foundation</a></li>
-                                            <li class="breadcrumb-item active">Contact</li>
+                                            <li class="breadcrumb-item active">Volunteer</li>
                                         </ol>
                                     </div>
                                 </div>
@@ -62,12 +62,12 @@
                                                 <th class="text_center">Name</th>
                                                 <th class="text_center">Email</th>
                                                 <th class="text_center">Phone Number</th>
-                                                <th class="text_center">Message</th>
+                                                <th class="text_center">Skills</th>
                                                 <th class="text_center">Created_at</th>
                                                 <th class="text_center">Action</th>
                                             </tr>
                                             </thead>        
-                                            <tbody class="upf-contact-table-data">
+                                            <tbody class="upf-volunteer-table-data">
                                             <tr>
                                                 <td>loading...</td>
                                             </tr>
@@ -100,54 +100,54 @@
         <script>
             $(document).ready(function(){
                 // Load user
-                load_contact();
-                function load_contact(){
+                load_volunteer();
+                function load_volunteer(){
                     $.ajax({
-                      url       : "tva/hewhoremains_contact.php",
+                      url       : "tva/hewhoremains_volunteer.php",
                       method    : "POST",
-                      data      : {load_contact:1},
+                      data      : {load_volunteer:1},
                       dataType  : "JSON",
                       success   : function(user){
                         // console.log(user);
-                        $('.upf-contact-table-data').html(user);
+                        $('.upf-volunteer-table-data').html(user);
                       }
                     });
                 }
 
                 // delete for user
-                $('body').delegate('.upf-delet-contact', 'click',  function(e){
-                    e.preventDefault();
-                    var id=$(this).attr('id');
-                    if(confirm("Are you sure?")){
-                        $.ajax({
-                            url         : "tva/hewhoremains_contact.php",
-                            method      : "post",
-                            data        : {delete_contact:1,id:id},
-                            dataType    : "JSON",
-                            success     : function (argument) {
-                              // console.log(argument);
-                                argument=argument.trim();
-                                var message="";
-                                if(argument=="success"){
-                                    load_contact();
-                                    $('.adduserbtnclose').click();
-                                    message="Contact Deleted.";
-                                    $('.show-upf-success-popup').click();
-                                    $(".succMessage").html(message);
-                                }else if(argument=="error"){
-                                    message="yeah empty";
-                                    $('.show-upf-alert-popup').click();
-                                }else if(argument=="empty"){
-                                    message="yeah empty";
-                                    $('.show-upf-alert-popup').click();
-                                    $(".errorMessage").html(message);
-                                }else if(argument=="logout"){
-                                    message="Logged out";
-                                    $('.show-upf-alert-popup').click();
-                                    $(".errorMessage").html(message);
-                                }
+                $('body').delegate('.upf-delet-volunteer', 'click',  function(e){
+                  e.preventDefault();
+                  var id=$(this).attr('id');
+                  if(confirm("Are you sure?")){
+                      $.ajax({
+                        url         : "tva/hewhoremains_volunteer.php",
+                        method      : "post",
+                        data        : {delete_volunteer:1,id:id},
+                        dataType    : "JSON",
+                        success     : function (argument) {
+                          // console.log(argument);
+                            argument=argument.trim();
+                            var message="";
+                            if(argument=="success"){
+                                load_volunteer();
+                                $('.adduserbtnclose').click();
+                                message="Volunteer Deleted.";
+                                $('.show-upf-success-popup').click();
+                                $(".succMessage").html(message);
+                            }else if(argument=="error"){
+                                message="yeah empty";
+                                $('.show-upf-alert-popup').click();
+                            }else if(argument=="empty"){
+                                message="yeah empty";
+                                $('.show-upf-alert-popup').click();
+                                $(".errorMessage").html(message);
+                            }else if(argument=="logout"){
+                                message="Logged out";
+                                $('.show-upf-alert-popup').click();
+                                $(".errorMessage").html(message);
                             }
-                        });
+                        }
+                      }); 
                     }
                 });
             });

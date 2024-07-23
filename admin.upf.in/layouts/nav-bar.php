@@ -43,6 +43,12 @@
                                     <span>Contact</span>
                                 </a>
                             </li>
+                            <li>
+                                <a href="volunteer.php" class="waves-effect">
+                                    <i class="fas fa-handshake"></i><span class="badge badge-pill badge-success float-right"></span>
+                                    <span>Volunteer</span>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>

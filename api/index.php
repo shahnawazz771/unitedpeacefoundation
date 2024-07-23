@@ -1,6 +1,7 @@
 <?php
   include_once("db.php");
 
+  // mail contact
   if(isset($_POST['contact_action'])){
     // Insert into database
     $name = $_POST['name'];
@@ -53,15 +54,51 @@
     $conn->close();
   }
 
+  // show gallery
   if(isset($_POST['gallery_action'])){
-    $query = "SELECT file_path, title,  EXTRACT(YEAR FROM captured_date) AS year FROM gallery"; // Replace 'gallery_table' with your actual table name
-    $result = mysqli_query($conn, $query);
+      $query = "SELECT file_path, title,  EXTRACT(YEAR FROM captured_date) AS year FROM gallery";
+      $result = mysqli_query($conn, $query);
 
-    $galleryData = array();
-    while($row = mysqli_fetch_assoc($result)){
-        $galleryData[] = $row;
+      $galleryData = array();
+      while($row = mysqli_fetch_assoc($result)){
+          $galleryData[] = $row;
+      }
+
+      echo json_encode($galleryData);
+  }
+
+  // create volunteers form
+  if(isset($_POST['volunteer_form'])){
+    // Get form data
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $availability = $_POST['availability'];
+    $skills = $_POST['skills'];
+
+    if(empty($name) || empty($email) || empty($phone)){
+      echo "<p style='color:red'>Please complete all fields.</p>";
+    } elseif(!preg_match('/^[0-9]{10}$/', $phone) || $phone=="7463062868") {
+      echo "<p style='color:red'>Invalid phone number. Please enter a 10-digit phone number.</p>";
+    } elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      echo "<p style='color:red'>Invalid email address. Please enter a valid email address.</p>";
+    }else{
+      // Check if email or phone already exists
+      $checkQuery = "SELECT * FROM volunteers WHERE email = '$email' OR phone = '$phone'";
+      $result = $conn->query($checkQuery);
+
+      if ($result->num_rows > 0) {
+        echo "<p style='color:red'>A volunteer with this email or phone number already exists.</p>";
+      } else {
+        // Insert data into database
+        $sql = "INSERT INTO volunteers (name, email, phone, availability, skills, status) VALUES ('$name', '$email', '$phone', '$availability', '$skills', 0)";
+
+        if ($conn->query($sql) === TRUE) {
+            echo "<p style='color:#67c18c'>Volunteer registration successful!</p>";
+        } else {
+            echo "<p style='color:red'>Error: " . $sql . "<br>" . $conn->error . "</p>";
+        }
+      }
     }
-
-    echo json_encode($galleryData);
-}
+  }
 ?>

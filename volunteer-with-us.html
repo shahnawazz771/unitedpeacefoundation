@@ -19,6 +19,37 @@
     <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css" />
 
     <link rel="stylesheet" href="css/style.css" />
+    <style>
+      #volunteer-form {
+        max-width: 500px;
+        margin: 40px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+      input, select, textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+      }
+      input[type="submit"] {
+        background-color: #4CAF50;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #3e8e41;
+      }
+    </style>
   </head>
   <body>
     <header role="banner">
@@ -180,10 +211,30 @@
                     width="100%" 
                   />
                 </p>
-                  <footer class="blockquote-footer" style="color:#67c18c; font-size:25px">
-                    <b>Terms & Condition for membership</b> <cite title="Source Title"></cite>
-                  </footer>
-                </blockquote>
+                <!-- Volunteer Form HTML Structure -->
+                <form id="volunteer-form">
+                  <h2>Volunteer Registration Form</h2>
+                  <label for="name">Name:</label>
+                  <input type="text" id="name" name="name" placeholder="Enter name"><br><br>
+                  <label for="email">Email:</label>
+                  <input type="email" id="email" name="email" placeholder="Enter email"><br><br>
+                  <label for="phone">Phone:</label>
+                  <input type="number" id="phone" name="phone" placeholder="Enter 10 digit phone for ex: 7463062868"><br><br>
+                  <label for="availability">Availability:</label>
+                  <select id="availability" name="availability">
+                    <option value="daily">Daily</option>
+                    <option value="weekly">Weekly</option>
+                    <option value="monthly">Monthly</option>
+                  </select><br><br>
+                  <label for="skills">Skills:</label>
+                  <textarea id="skills" name="skills" placeholder="Enter skills"></textarea><br><br>
+                  <input type="hidden" name="volunteer_form">
+                  <input type="submit" value="Submit">
+                </form>
+                <div id="response"></div>
+                <footer class="blockquote-footer" style="color:#67c18c; font-size:25px">
+                  <b>Terms & Condition for membership</b> <cite title="Source Title"></cite>
+                </footer>
                 <ul>
                   <li>No salary shall be paid to any of the members/volunteers in any way shape or form.</li>
                   <li>United Peace Foundation is not responsible for member’s/volunteer’s personal character either good or bad.</li>
@@ -353,5 +404,21 @@
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/jquery.waypoints.min.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        $(document).ready(function() {
+          $('#volunteer-form').submit(function(event) {
+            event.preventDefault();
+            var formData = $(this).serialize();
+            $.ajax({
+              type: 'POST',
+              url: 'api/index.php',
+              data: formData,
+              success: function(response) {
+                $('#response').html(response);
+              }
+            });
+          });
+        });
+    </script>
   </body>
 </html>
