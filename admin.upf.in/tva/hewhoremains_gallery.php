@@ -38,7 +38,7 @@ class Earth616_gallery extends multiverse_con{
 				U.name as username
 			FROM gallery G  
 			LEFT JOIN city C 
-			ON G.city_id=c.id
+			ON G.city_id=C.id
 			LEFT JOIN state S 
 			ON G.state_id=S.id
 			LEFT JOIN users U 
