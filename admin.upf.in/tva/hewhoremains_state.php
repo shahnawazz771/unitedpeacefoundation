@@ -149,8 +149,8 @@ if(isset($_POST['add-state-btn'])){
 	$state_name = $_POST['add-state'];
 	if(empty($state_name)){
 		$out="empty";
-	// }else if (empty(@$_SESSION['upf_login_info'])){
-		// $out="logout";
+	}else if (empty(@$_SESSION['upf_admin_info_id'])){
+		$out="logout";
 	}else{
 		$illuminati=new Earth616_state();
 		$out=$illuminati->add_state($state_name);
@@ -162,12 +162,12 @@ if(isset($_POST['add-state-btn'])){
 if(isset($_POST['load_state'])){
 	$out='';
 
-	// if (empty(@$_SESSION['upf_login_info'])){
-		// $out="logout";
-	// }else{
+	if (empty(@$_SESSION['upf_admin_info_id'])){
+		$out="logout";
+	}else{
 		$illuminati=new Earth616_state();
 		$out=$illuminati->show_state();
-	// }
+	}
 	echo json_encode($out);
 }
 
@@ -175,12 +175,12 @@ if(isset($_POST['load_state'])){
 if(isset($_POST['delete_state'])){
 	$out='';
 	$state_id = $_POST['state_id'];
-	// if (empty(@$_SESSION['upf_login_info'])){
-		// $out="logout";
-	// }else{
+	if (empty(@$_SESSION['upf_admin_info_id'])){
+		$out="logout";
+	}else{
 		$illuminati=new Earth616_state();
 		$out=$illuminati->delete_state($state_id);
-	// }
+	}
 	echo json_encode($out);
 }
 
@@ -189,14 +189,14 @@ if(isset($_POST['edit-state-btn'])){
 	$out='';
 	$state_name = $_POST['add-state'];
 	$state_id = $_POST['add-state-id-hidden'];
-	// if(empty($state_name)){
-	// 	$out="empty";
-	// // }else if (empty(@$_SESSION['upf_login_info'])){
-	// 	// $out="logout";
-	// }else{
+	if(empty($state_name)){
+		$out="empty";
+	}else if (empty(@$_SESSION['upf_admin_info_id'])){
+		$out="logout";
+	}else{
 		$illuminati=new Earth616_state();
 		$out=$illuminati->edit_state($state_name, $state_id);
-	// }
+	}
 	echo $out;
 }
 

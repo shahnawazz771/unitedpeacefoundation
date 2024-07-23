@@ -9,7 +9,7 @@
 
     <head>
         <meta charset="utf-8" />
-        <title>Oprhans | United Peace Foundation</title>
+        <title>Orphans | United Peace Foundation</title>
         <?php include_once("layouts/header_links.php"); ?>
 
         <style>
@@ -38,11 +38,11 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box d-flex align-items-center justify-content-between">
-                                    <h4 class="mb-0 font-size-18">Oprhans</h4>
+                                    <h4 class="mb-0 font-size-18">Orphans</h4>
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
                                             <li class="breadcrumb-item"><a href="javascript: void(0);">United Peace Foundation</a></li>
-                                            <li class="breadcrumb-item active">Oprhans</li>
+                                            <li class="breadcrumb-item active">Orphans</li>
                                         </ol>
                                     </div>
                                 </div>
@@ -55,68 +55,20 @@
                             <div class="col-sm-12 col-xl-12">
                                 <div class="card">
                                     <div class="card-body" style="width: auto;overflow-x: auto;white-space: nowrap;">
-                                        <h4 class="header-title"><button type="button" class="btn btn-primary btn-sm waves-effect waves-light add-oprhans-modal" data-toggle="modal" data-target=".bs-example-modal-center" style="font-size: 1rem; padding: 5px 8px";>Add oprhan</button></h4>        
+                                        <h4 class="header-title"><button type="button" class="btn btn-primary btn-sm waves-effect waves-light add-orphans-modal" data-toggle="modal" data-target=".bs-example-modal-center" style="font-size: 1rem; padding: 5px 8px";>Add orphan</button></h4>        
                                         <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                             <thead>
                                             <tr>
                                                 <th class="text_center">Sl No.</th>
                                                 <th class="text_center">Image</th>
                                                 <th class="text_center">Name</th>
-                                                <th class="text_center">D.O.B</th>
-                                                <th class="text_center">Parent's Name</th>
-                                                <th class="text_center">Phone number</th>
-                                                <th class="text_center">Address</th>
-                                                <th class="text_center">City</th>
-                                                <th class="text_center">State</th>
-                                                <th class="text_center">Pincode</th>
-                                                <th class="text_center">Created by</th>
+                                                <th class="text_center">Phone</th>
                                                 <th class="text_center">Created at</th>
-                                                <th class="text_center">Updated by</th>
-                                                <th class="text_center">Updated at</th>
+                                                <th class="text_center">Created by</th>
                                                 <th class="text_center">Action</th>
                                             </tr>
                                             </thead>        
-                                            <tbody class="upf-oprhans-table-data">
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td><img src="../../../upf_images/image.jpg" width="100px"></td>
-                                                    <td>orphan1</td>
-                                                    <td>2/5/2012</td>
-                                                    <td>shafak</td>
-                                                    <td>12397654</td>
-                                                    <td>local</td>
-                                                    <td>Jamhsedpur</td>
-                                                    <td>Jharkhand</td>
-                                                    <td>832110</td>
-                                                    <td>Shahnawaz Ahmad</td>
-                                                    <td>18 Sep 2023 01:30:52 pm</td>
-                                                    <td>Shahnawaz Ahmad</td>
-                                                    <td>18 Sep 2023 01:30:52 pm</td>
-                                                    <td class="text-center">
-                                                        <a href="javascript:void(0)" class="btn btn-info waves-effect waves-light upf-edit-city" id="8" data-toggle="modal" data-target=".bs-example-modal-center"><i class="mdi mdi-pencil-outline"></i></a>
-                                                        <a href="javascript:void(0)" class="btn btn-danger waves-effect waves-light upf-delet-city" id="8"><i class="mdi mdi-trash-can-outline"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>2</td>
-                                                    <td><img src="../../upf_images/PH.jpg" width="100px"></td>
-                                                    <td>orphan2</td>
-                                                    <td>25/4/1999</td>
-                                                    <td>anzar</td>
-                                                    <td>97654321</td>
-                                                    <td>outside</td>
-                                                    <td>Jamhsedpur</td>
-                                                    <td>Jharkhand</td>
-                                                    <td>832110</td>
-                                                    <td>Shahnawaz Ahmad</td>
-                                                    <td>18 Sep 2023 01:30:52 pm</td>
-                                                    <td>Shahnawaz Ahmad</td>
-                                                    <td>18 Sep 2023 01:30:52 pm</td>
-                                                    <td class="text-center">
-                                                        <a href="javascript:void(0)" class="btn btn-info waves-effect waves-light upf-edit-city" id="8" data-toggle="modal" data-target=".bs-example-modal-center"><i class="mdi mdi-pencil-outline"></i></a>
-                                                        <a href="javascript:void(0)" class="btn btn-danger waves-effect waves-light upf-delet-city" id="8"><i class="mdi mdi-trash-can-outline"></i></a>
-                                                    </td>
-                                                </tr>
+                                            <tbody class="upf-orphans-table-data">
                                             </tbody>
                                         </table>                                        
                                     </div>
@@ -146,15 +98,15 @@
         <script>
             $(document).ready(function(){
 
-                // add oprhans form
-                $('.upf-add-oprhans').on('submit', function(e){
+                // add orphans form
+                $('.upf-add-orphans').on('submit', function(e){
                     e.preventDefault();
                     var message="";
                     var validated=0;
-                    var oprhans=$('.add-oprhans').val();
+                    var orphans=$('.add-orphans').val();
                     $('.validation-tag').remove();
-                    if(oprhans==""){
-                      $(".add-oprhans").after("<span class='text-danger validation-tag'>Please enter oprhans</span>");
+                    if(orphans==""){
+                      $(".add-orphans").after("<span class='text-danger validation-tag'>Please enter orphans</span>");
                           validated=0;
                     }else{
                         $('.validation-tag').remove();
@@ -162,7 +114,7 @@
                     }
                     if(validated==1){
                       $.ajax({
-                        url         : "tva/hewhoremains_oprhans.php",
+                        url         : "tva/hewhoremains_orphans.php",
                         method      : "post",
                         data        : new FormData(this),
                         contentType : false,
@@ -172,13 +124,13 @@
                           // console.log(argument);
                             argument=argument.trim();
                             if(argument=="success"){
-                                load_oprhans();
-                                $('.addoprhansbtnclose').click();
-                                message="oprhans saved.";
+                                load_orphans();
+                                $('.addorphansbtnclose').click();
+                                message="orphans saved.";
                                 $('.show-upf-success-popup').click();
                                 $(".succMessage").html(message);
                             }else if(argument=="duplicate"){
-                                message="Don't enter same oprhans twice";
+                                message="Don't enter same orphans twice";
                                 $('.show-upf-alert-popup').click();
                                 $(".errorMessage").html(message);
                             }else if(argument=="logout"){
@@ -191,53 +143,54 @@
                     }
                 });
 
-                // Load oprhans
-                load_oprhans();
-                function load_oprhans(){
+                // Load orphans
+                load_orphans();
+                function load_orphans(){
                     $.ajax({
-                      url       : "tva/hewhoremains_oprhans.php",
+                      url       : "tva/hewhoremains_orphans.php",
                       method    : "POST",
-                      data      : {load_oprhans:1},
+                      data      : {load_orphans:1},
                       dataType  : "JSON",
-                      success   : function(oprhans){
-                        // console.log(oprhans);
-                        $('.upf-oprhans-table-data').html(oprhans);
+                      success   : function(orphans){
+                        // console.log(orphans);
+                        $('.upf-orphans-table-data').html(orphans);
                       }
                     });
                 }
 
-                // call oprhans
-                function call_oprhans(oprhans_id){
+                // call orphans
+                function call_orphans(orphans_id){
                     $.ajax({
-                      url       : "tva/hewhoremains_oprhans.php",
+                      url       : "tva/hewhoremains_orphans.php",
                       method    : "POST",
-                      data      : {call_oprhans:1,oprhans_id:oprhans_id},
+                      data      : {call_orphans:1,orphans_id:orphans_id},
                       dataType  : "JSON",
-                      success   : function(oprhans){
-                        // console.log(oprhans);
-                        $('.add-oprhans').val(oprhans.name);
+                      success   : function(orphans){
+                        // console.log(orphans);
+                        $('.edit-orphans').val(orphans.name);
+                        $('.edit-phone').val(orphans.phone);
 
                       }
                     });
                 }
 
-                // delete for oprhans
-                $('body').delegate('.upf-delet-oprhans', 'click',  function(e){
+                // delete for orphans
+                $('body').delegate('.upf-delet-orphans', 'click',  function(e){
                   e.preventDefault();
-                  var oprhans_id=$(this).attr('id');
+                  var orphans_id=$(this).attr('id');
                   $.ajax({
-                    url         : "tva/hewhoremains_oprhans.php",
+                    url         : "tva/hewhoremains_orphans.php",
                     method      : "post",
-                    data        : {delete_oprhans:1,oprhans_id:oprhans_id},
+                    data        : {delete_orphans:1,orphans_id:orphans_id},
                     dataType    : "JSON",
                     success     : function (argument) {
                       // console.log(argument);
                         argument=argument.trim();
                         var message="";
                         if(argument=="success"){
-                            load_oprhans();
-                            $('.addoprhansbtnclose').click();
-                            message="oprhans deleted.";
+                            load_orphans();
+                            $('.addorphansbtnclose').click();
+                            message="orphans deleted.";
                             $('.show-upf-success-popup').click();
                             $(".succMessage").html(message);
                         }else if(argument=="error"){
@@ -256,25 +209,25 @@
                   }); 
                 });
 
-                $('body').delegate('.upf-edit-oprhans', 'click', function(){
-                    var oprhans_id=$(this).attr('id');
-                    call_oprhans(oprhans_id);
-                    $('.changeoprhans-option').html("Edit oprhans");
-                    $('.add-oprhans-id-hidden').val(oprhans_id);
-                    $('.add-oprhans-btn').removeAttr('name');
-                    $('.add-oprhans-btn').attr('name', 'edit-oprhans-btn');
-                    $('.add-oprhans').val("");
-                    $('.add-oprhans').removeAttr('placeholder');
-                    $('.add-oprhans').attr('placeholder', 'Rename your oprhans');
+                $('body').delegate('.upf-edit-orphans', 'click', function(){
+                    var orphans_id=$(this).attr('id');
+                    call_orphans(orphans_id);
+                    $('.changeorphans-option').html("Edit orphans");
+                    $('.add-orphans-id-hidden').val(orphans_id);
+                    $('.add-orphans-btn').removeAttr('name');
+                    $('.add-orphans-btn').attr('name', 'edit-orphans-btn');
+                    $('.add-orphans').val("");
+                    $('.add-orphans').removeAttr('placeholder');
+                    $('.add-orphans').attr('placeholder', 'Rename your orphans');
                 });
 
-                $('body').delegate('.add-oprhans-modal', 'click', function(){
-                    $('.changeoprhans-option').html("Add oprhans");
-                    $('.add-oprhans-btn').removeAttr('name');
-                    $('.add-oprhans-btn').attr('name', 'add-oprhans-btn');
-                    $('.add-oprhans').val("");
-                    $('.add-oprhans').removeAttr('placeholder');
-                    $('.add-oprhans').attr('placeholder', 'Enter your oprhans');
+                $('body').delegate('.add-orphans-modal', 'click', function(){
+                    $('.changeorphans-option').html("Add orphans");
+                    $('.add-orphans-btn').removeAttr('name');
+                    $('.add-orphans-btn').attr('name', 'add-orphans-btn');
+                    $('.add-orphans').val("");
+                    $('.add-orphans').removeAttr('placeholder');
+                    $('.add-orphans').attr('placeholder', 'Enter your orphans');
                 });
 
             });
@@ -284,7 +237,7 @@
                     var reader = new FileReader();
 
                     reader.onload = function (e) {
-                        $('#upf-oprhans-image')
+                        $('#upf-orphans-image')
                             .attr('src', e.target.result)
                             .width(150)
                             .height(200);
@@ -296,12 +249,13 @@
         </script>
     </body>
 </html>
+<!-- create modal -->
 <div class="modal fade bs-example-modal-center" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title mt-0 changeoprhans-option">Add oprhans</h5>
-                <button type="button" class="addoprhansbtnclose" data-dismiss="modal" aria-label="Close">
+                <h5 class="modal-title mt-0 changeorphans-option">Add orphan</h5>
+                <button type="button" class="addorphansbtnclose" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -311,9 +265,63 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="form-group row">
-                                    <label for="add-title" class="col-md-2 col-form-label">Orphan's Name</label>
+                                    <label for="add-name" class="col-md-2 col-form-label">Orphan's Name</label>
                                     <div class="col-md-6">
-                                        <input class="form-control add-title" type="text" spellcheck="true" name="add-oprhans" placeholder="Enter orphan's name" id="add-title" spellcheck="false" data-ms-editor="true">
+                                        <form class="upf-add-orphans">
+                                        <input class="form-control add-name" type="text" spellcheck="true" name="add-orphans" placeholder="Enter orphan's name" id="add-title" spellcheck="false" data-ms-editor="true">
+                                    </div>
+                                    <label for="add-title" class="col-md-1 col-form-label">Photo</label>
+                                    <div class="col-md-3">
+                                        <img src="../../../upf_images/image.jpg" width="100px" id="render-image">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="add-phonenumber" class="col-md-2 col-form-label">Photo</label>
+                                    <div class="col-md-6">
+                                        <input type="file" name="add-orphans-image" onchange="readURL(this);">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="add-phonenumber" class="col-md-2 col-form-label">Phone Number</label>
+                                    <div class="col-md-6">
+                                        <input class="form-control add-phonenumber" type="tel" maxlength="10" spellcheck="true" name="add-phonenumber" placeholder="Enter phone number" id="add-phonenumber" spellcheck="false" data-ms-editor="true">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-12">
+                                        <input type="hidden"  name="add-orphans-btn" class="add-orphans-btn">
+                                        <button type="submit" class="btn btn-primary mt-3 mt-sm-0" >Save orphans</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+<!-- update modal -->
+<div class="modal fade bs-example-modal-center2" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title mt-0 changeorphans-option">Add orphans</h5>
+                <button type="button" class="addorphansbtnclose" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-12 col-xl-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="form-group row">
+                                    <label for="edit-orphans" class="col-md-2 col-form-label">Orphan's Name</label>
+                                    <div class="col-md-6">
+                                        <input class="form-control edit-orphans" type="text" spellcheck="true" name="edit-orphans" placeholder="Enter orphan's name" id="edit-orphans" spellcheck="false" data-ms-editor="true">
                                     </div>
                                     <label for="add-title" class="col-md-1 col-form-label">Photo</label>
                                     <div class="col-md-3">
@@ -321,100 +329,94 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="add-phonenumber" class="col-md-2 col-form-label">Phone Number</label>
+                                    <label for="edit-phone" class="col-md-2 col-form-label">Phone Number</label>
                                     <div class="col-md-6">
-                                        <input class="form-control add-phonenumber" type="tel" maxlength="10" spellcheck="true" name="add-oprhans" placeholder="Enter phone number" id="add-phonenumber" spellcheck="false" data-ms-editor="true">
+                                        <input class="form-control edit-phone" type="tel" maxlength="10" spellcheck="true" name="edit-phone" placeholder="Enter phone number" id="edit-phone" spellcheck="false" data-ms-editor="true">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="add-dob" class="col-md-2 col-form-label">Date Of Birth</label>
                                     <div class="col-md-6">
-                                        <input class="form-control add-dob" type="date" spellcheck="true" name="add-oprhans" id="add-dob" spellcheck="false" data-ms-editor="true">
+                                        <input class="form-control add-dob" type="date" spellcheck="true" name="add-orphans" id="add-dob" spellcheck="false" data-ms-editor="true">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="add-mothername" class="col-md-2 col-form-label">Mother's Name</label>
                                     <div class="col-md-6">
-                                        <input class="form-control add-mothername" type="text" spellcheck="true" name="add-oprhans" placeholder="Enter mother's name" id="add-mothername" spellcheck="false" data-ms-editor="true">
+                                        <input class="form-control add-mothername" type="text" spellcheck="true" name="add-orphans" placeholder="Enter mother's name" id="add-mothername" spellcheck="false" data-ms-editor="true">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="add-reasonofdeath" class="col-md-2 col-form-label">If Died (cause of death)</label>
                                     <div class="col-md-6">
-                                        <input class="form-control add-reasonofdeath" type="text" spellcheck="true" name="add-oprhans" placeholder="Enter the reason of death" id="add-reasonofdeath" spellcheck="false" data-ms-editor="true">
+                                        <input class="form-control add-reasonofdeath" type="text" spellcheck="true" name="add-orphans" placeholder="Enter the reason of death" id="add-reasonofdeath" spellcheck="false" data-ms-editor="true">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="add-motherdeathdate" class="col-md-2 col-form-label">Date of death</label>
                                     <div class="col-md-6">
-                                        <input class="form-control add-motherdeathdate" type="date" spellcheck="true" name="add-oprhans" id="add-motherdeathdate" spellcheck="false" data-ms-editor="true">
+                                        <input class="form-control add-motherdeathdate" type="date" spellcheck="true" name="add-orphans" id="add-motherdeathdate" spellcheck="false" data-ms-editor="true">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="add-guardianname" class="col-md-2 col-form-label">Guardian's Name</label>
                                     <div class="col-md-6">
-                                        <input class="form-control add-guardianname" type="text" spellcheck="true" name="add-oprhans" placeholder="Enter guardian's name" id="add-guardianname" spellcheck="false" data-ms-editor="true">
+                                        <input class="form-control add-guardianname" type="text" spellcheck="true" name="add-orphans" placeholder="Enter guardian's name" id="add-guardianname" spellcheck="false" data-ms-editor="true">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="add-relation" class="col-md-2 col-form-label">Relation with orphan</label>
                                     <div class="col-md-6">
-                                        <input class="form-control add-relation" type="text" spellcheck="true" name="add-oprhans" placeholder="Enter relation with orphan" id="add-relation" spellcheck="false" data-ms-editor="true">
+                                        <input class="form-control add-relation" type="text" spellcheck="true" name="add-orphans" placeholder="Enter relation with orphan" id="add-relation" spellcheck="false" data-ms-editor="true">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="add-motheroccupation" class="col-md-2 col-form-label">Mother's Occupation</label>
                                     <div class="col-md-6">
-                                        <input class="form-control add-motheroccupation" type="text" spellcheck="true" name="add-oprhans" placeholder="Enter mother's occupation" id="add-motheroccupation" spellcheck="false" data-ms-editor="true">
+                                        <input class="form-control add-motheroccupation" type="text" spellcheck="true" name="add-orphans" placeholder="Enter mother's occupation" id="add-motheroccupation" spellcheck="false" data-ms-editor="true">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="add-incomesource" class="col-md-2 col-form-label">Source Of Income</label>
                                     <div class="col-md-6">
-                                        <input class="form-control add-incomesource" type="text" spellcheck="true" name="add-oprhans" placeholder="Enter source of income" id="add-incomesource" spellcheck="false" data-ms-editor="true">
+                                        <input class="form-control add-incomesource" type="text" spellcheck="true" name="add-orphans" placeholder="Enter source of income" id="add-incomesource" spellcheck="false" data-ms-editor="true">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="add-fathername" class="col-md-2 col-form-label">Father's Name</label>
                                     <div class="col-md-6">
-                                        <input class="form-control add-fathername" type="text" spellcheck="true" name="add-oprhans" placeholder="Enter father's name" id="add-fathername" spellcheck="false" data-ms-editor="true">
+                                        <input class="form-control add-fathername" type="text" spellcheck="true" name="add-orphans" placeholder="Enter father's name" id="add-fathername" spellcheck="false" data-ms-editor="true">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="add-fatherdeathcause" class="col-md-2 col-form-label">Cause Of Death</label>
                                     <div class="col-md-6">
-                                        <input class="form-control add-fatherdeathcause" type="text" spellcheck="true" name="add-oprhans" placeholder="Enter the reason of death" id="add-fatherdeathcause" spellcheck="false" data-ms-editor="true">
+                                        <input class="form-control add-fatherdeathcause" type="text" spellcheck="true" name="add-orphans" placeholder="Enter the reason of death" id="add-fatherdeathcause" spellcheck="false" data-ms-editor="true">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="add-fatherdeathdate" class="col-md-2 col-form-label">Date Of Death</label>
                                     <div class="col-md-6">
-                                        <input class="form-control add-fatherdeathdate" type="date" spellcheck="true" name="add-oprhans" id="add-fatherdeathdate" spellcheck="false" data-ms-editor="true">
+                                        <input class="form-control add-fatherdeathdate" type="date" spellcheck="true" name="add-orphans" id="add-fatherdeathdate" spellcheck="false" data-ms-editor="true">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="add-totalfamilymember" class="col-md-2 col-form-label">Total Family Member </label>
                                     <div class="col-md-6">
-                                        <input class="form-control add-totalfamilymember" type="tel" spellcheck="true" name="add-oprhans" placeholder="Enter total family member" id="add-totalfamilymember" spellcheck="false" data-ms-editor="true">
+                                        <input class="form-control add-totalfamilymember" type="tel" spellcheck="true" name="add-orphans" placeholder="Enter total family member" id="add-totalfamilymember" spellcheck="false" data-ms-editor="true">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="add-fulladdress" class="col-md-2 col-form-label">Full Address</label>
                                     <div class="col-md-6">
-                                        <textarea class="form-control add-fulladdress" name="add-oprhans" placeholder="Enter full address here" id="add-fulladdress"></textarea>
+                                        <textarea class="form-control add-fulladdress" name="add-orphans" placeholder="Enter full address here" id="add-fulladdress"></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="add-bankaccount" class="col-md-2 col-form-label">Bank Account Details</label>
                                     <div class="col-md-6">
-                                        <input class="form-control add-bankaccount" type="text" spellcheck="true" name="add-oprhans" placeholder="Enter complete details of bank" id="add-bankaccount" spellcheck="false" data-ms-editor="true">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-md-12">
-                                        <input type="hidden"  name="add-oprhans-id-hidden" class="add-oprhans-id-hidden">
-                                        <input type="hidden"  name="add-oprhans-btn" class="add-oprhans-btn">
-                                        <button type="submit" class="btn btn-primary mt-3 mt-sm-0" >Save oprhans</button>
+                                        <input type="hidden"  name="add-orphans-id-hidden" class="add-orphans-id-hidden">
+                                        <input class="form-control add-bankaccount" type="text" spellcheck="true" name="add-orphans" placeholder="Enter complete details of bank" id="add-bankaccount" spellcheck="false" data-ms-editor="true">
                                     </div>
                                 </div>
                             </div>
