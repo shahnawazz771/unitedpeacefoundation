@@ -124,6 +124,7 @@
                                     $('.login-btn').prop('disabled', false);
                                     message="Invalid credential";
                                     $('.show-upf-alert-popup').click();
+                                    $('.errorMessage').html(message);
                                 }
                             }
                         });                         
