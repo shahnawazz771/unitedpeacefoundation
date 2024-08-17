@@ -8,7 +8,7 @@ class Earth616_user extends multiverse_con{
 	public function show_volunteer(){
 		$xavier="";
 		$xavier_getquery=mysqli_query($this->upf_dbs, "
-			SELECT `id`, `name`, `phone`, `email`, `skills`, `created_date` FROM `volunteers` ORDER BY TIMESTAMP(`created_date`) DESC
+			SELECT `id`, `name`, `phone`, `email`, `skills`, `cv`, `created_date` FROM `volunteers` ORDER BY TIMESTAMP(`created_date`) DESC
 		");
 		if(mysqli_num_rows($xavier_getquery)>0){
 			$slno=0;
@@ -21,6 +21,7 @@ class Earth616_user extends multiverse_con{
 						<td>'.$row['email'].'</td>
 						<td>'.$row['phone'].'</td>
 						<td>'.$row['skills'].'</td>
+						<td><a href="../documents/'.$row['cv'].'" target="_blank">View</a></td>
 						<td>'.date('d M Y h:i:s a', strtotime($row['created_date'])).'</td>
 						<td class="text-center">
 							<a href="javascript:void(0)" class="btn btn-danger waves-effect waves-light upf-delet-volunteer" id="'.$row['id'].'"><i class="mdi mdi-trash-can-outline"></i></a>

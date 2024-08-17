@@ -213,7 +213,7 @@
                   />
                 </p>
                 <!-- Volunteer Form HTML Structure -->
-                <form id="volunteer-form">
+                <form id="volunteer-form" enctype="multipart/form-data">
                   <h2>Volunteer Registration Form</h2>
                   <label for="name">Name:</label>
                   <input type="text" id="name" name="name" placeholder="Enter name"><br><br>
@@ -229,23 +229,11 @@
                   </select><br><br>
                   <label for="skills">Skills:</label>
                   <textarea id="skills" name="skills" placeholder="Enter skills"></textarea><br><br>
+                  <input type="file" class="form-control" id="cv" name="cv" ><br><br>
                   <input type="hidden" name="volunteer_form">
                   <input type="submit" value="Submit">
                 </form>
                 <div id="response"></div>
-                <footer class="blockquote-footer" style="color:#67c18c; font-size:25px">
-                  <b>Terms & Condition for membership</b> <cite title="Source Title"></cite>
-                </footer>
-                <ul>
-                  <li>No salary shall be paid to any of the members/volunteers in any way shape or form.</li>
-                  <li>United Peace Foundation is not responsible for member’s/volunteer’s personal character either good or bad.</li>
-                  <li>United Peace Foundation is not responsible for any member/volunteer if he/she violates any law of the country or found guilty in any anti-social/national activities</li>
-                  <li>United Peace Foundation is not responsible if member/volunteer gets into trouble when working with other social welfare organization or political party.</li>
-                  <li>United Peace Foundation will not provide any kind of help to member/volunteer in any social or personal problem unless it is directly related to assigned work by United Peace Foundation.</li>
-                  <li>It is not valid for a member/volunteer to assign himself/herself a designation/position in United Peace Foundation or in central office.</li>
-                  <li>Member/volunteer cannot use name/fame for his personal benefits whatsoever.</li>
-                  <li>United Peace Foundation has full authority to cancel membership at any time without prior notice and without any valid reason/cause.</li>
-                </ul>
               </div>
             </div>
           </div>
@@ -409,11 +397,12 @@
         $(document).ready(function() {
           $('#volunteer-form').submit(function(event) {
             event.preventDefault();
-            var formData = $(this).serialize();
             $.ajax({
               type: 'POST',
               url: 'api/index.php',
-              data: formData,
+              data: new FormData(this),
+              contentType: false, // Prevent jQuery from overriding the content type
+              processData: false, // Prevent jQuery from processing the data
               success: function(response) {
                 $('#response').html(response);
               }

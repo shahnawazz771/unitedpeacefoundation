@@ -67,38 +67,65 @@
       echo json_encode($galleryData);
   }
 
-  // create volunteers form
   if(isset($_POST['volunteer_form'])){
-    // Get form data
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $phone = $_POST['phone'];
-    $availability = $_POST['availability'];
-    $skills = $_POST['skills'];
+      // Get form data
+      $name = $_POST['name'];
+      $email = $_POST['email'];
+      $phone = $_POST['phone'];
+      $availability = $_POST['availability'];
+      $skills = $_POST['skills'];
 
-    if(empty($name) || empty($email) || empty($phone)){
-      echo "<p style='color:red'>Please complete all fields.</p>";
-    } elseif(!preg_match('/^[0-9]{10}$/', $phone) || $phone=="7463062868") {
-      echo "<p style='color:red'>Invalid phone number. Please enter a 10-digit phone number.</p>";
-    } elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-      echo "<p style='color:red'>Invalid email address. Please enter a valid email address.</p>";
-    }else{
-      // Check if email or phone already exists
-      $checkQuery = "SELECT * FROM volunteers WHERE email = '$email' OR phone = '$phone'";
-      $result = $conn->query($checkQuery);
-
-      if ($result->num_rows > 0) {
-        echo "<p style='color:red'>A volunteer with this email or phone number already exists.</p>";
+      if(empty($name) || empty($email) || empty($phone)){
+          echo "<p style='color:red'>Please complete all fields.</p>";
+      } elseif(!preg_match('/^[0-9]{10}$/', $phone) || $phone == "7463062868") {
+          echo "<p style='color:red'>Invalid phone number. Please enter a 10-digit phone number.</p>";
+      } elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+          echo "<p style='color:red'>Invalid email address. Please enter a valid email address.</p>";
+      } elseif(!isset($_FILES['cv'])) {
+          echo "<p style='color:red'>Please upload a valid CV.</p>";
       } else {
-        // Insert data into database
-        $sql = "INSERT INTO volunteers (name, email, phone, availability, skills, status) VALUES ('$name', '$email', '$phone', '$availability', '$skills', 0)";
+          $cv = $_FILES['cv'];
+          $cvName = $cv['name'];
+          $cvTmpName = $cv['tmp_name'];
+          $cvSize = $cv['size'];
+          $cvError = $cv['error'];
+          $cvType = $cv['type'];
 
-        if ($conn->query($sql) === TRUE) {
-            echo "<p style='color:#67c18c'>Volunteer registration successful!</p>";
-        } else {
-            echo "<p style='color:red'>Error: " . $sql . "<br>" . $conn->error . "</p>";
-        }
+          // Allowed file types
+          $allowed = array('pdf', 'doc', 'docx');
+          $cvExt = explode('.', $cvName);
+          $cvActualExt = strtolower(end($cvExt));
+
+          if(!in_array($cvActualExt, $allowed)) {
+              echo "<p style='color:red'>Invalid file type. Please upload a PDF, DOC, or DOCX file.</p>";
+          } elseif($cvSize > 5000000) { // Limit file size to 5MB
+              echo "<p style='color:red'>File size too large. Maximum allowed size is 5MB.</p>";
+          } else {
+              // Check if email or phone already exists
+              $checkQuery = "SELECT * FROM volunteers WHERE email = '$email' OR phone = '$phone'";
+              $result = $conn->query($checkQuery);
+
+              if ($result->num_rows > 0) {
+                  echo "<p style='color:red'>A volunteer with this email or phone number already exists.</p>";
+              } else {
+                  // Create a unique file name and move the file to the documents directory
+                  $cvNewName = uniqid('', true) . "." . $cvActualExt;
+                  $cvDestination = '../documents/' . $cvNewName;
+
+                  if(move_uploaded_file($cvTmpName, $cvDestination)) {
+                      // Insert data into database
+                      $sql = "INSERT INTO volunteers (name, email, phone, availability, skills, cv, status) VALUES ('$name', '$email', '$phone', '$availability', '$skills', '$cvNewName', 1)";
+
+                      if ($conn->query($sql) === TRUE) {
+                          echo "<p style='color:#67c18c'>Volunteer registration successful!</p>";
+                      }
+                  } else {
+                      echo "<p style='color:red'>Failed to upload CV.</p>";
+                  }
+              }
+          }
       }
-    }
   }
+
+
 ?>

@@ -63,6 +63,7 @@
                                                 <th class="text_center">Email</th>
                                                 <th class="text_center">Phone Number</th>
                                                 <th class="text_center">Skills</th>
+                                                <th class="text_center">CV</th>
                                                 <th class="text_center">Created_at</th>
                                                 <th class="text_center">Action</th>
                                             </tr>
