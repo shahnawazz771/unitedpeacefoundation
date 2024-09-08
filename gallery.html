@@ -16,21 +16,22 @@
 
     <link rel="stylesheet" href="css/style.css" />
     <style>
-        
         #gallery-filters li {
-    margin-right: 10px; /* Adjust spacing as needed */
-}
+            margin-right: 10px;
+            /* Adjust spacing as needed */
+        }
 
-#gallery-filters li a {
-    text-decoration: none;
-    color: #000; /* Adjust color as needed */
-}
+        #gallery-filters li a {
+            text-decoration: none;
+            color: #000;
+            /* Adjust color as needed */
+        }
 
-#gallery-filters li a.active {
-    font-weight: bold;
-    color: #007bff; /* Adjust color as needed */
-}
-
+        #gallery-filters li a.active {
+            font-weight: bold;
+            color: #007bff;
+            /* Adjust color as needed */
+        }
     </style>
 </head>
 
@@ -54,8 +55,9 @@
                             <a class="nav-link dropdown-toggle" href="services.html" id="dropdown04"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
                             <div class="dropdown-menu" aria-labelledby="dropdown04">
-                                <a class="dropdown-item" href="about-our-trust.html">About Our Trust</a>
-                                <a class="dropdown-item" href="vision-mission.html">Vision, Mission</a>
+                                <a class="dropdown-item" href="about-our-trust.html">About Us</a>
+                                <a class="dropdown-item" href="vision-mission.html">Vision & Mission</a>
+                                <a class="dropdown-item" href="values.html">Values</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
@@ -117,15 +119,15 @@
     <section class="section bg-light">
         <div class="container">
             <div class="row">
-    <div class="col-lg-12 col-md-12 col-12">
-        <ul id="gallery-filters" class="d-flex list-unstyled">
-            <!-- Filter items will be dynamically loaded here -->
-        </ul>
-    </div>
-</div>
-<div class="row gallery">
-    <!-- Gallery items will be loaded here -->
-</div>
+                <div class="col-lg-12 col-md-12 col-12">
+                    <ul id="gallery-filters" class="d-flex list-unstyled">
+                        <!-- Filter items will be dynamically loaded here -->
+                    </ul>
+                </div>
+            </div>
+            <div class="row gallery">
+                <!-- Gallery items will be loaded here -->
+            </div>
         </div>
     </section>
     <section class="section-subscribe">
@@ -176,12 +178,13 @@
                 <div class="col-md-4 mb-5">
                     <h3>Get In Touch</h3>
                     <ul class="list-unstyled footer-link footer-content">
-              <li class="d-flex">
-                  <a href="https://www.google.com/maps/place/United+Peace+Foundation/@22.8419924,86.1944603,17z/data=!4m14!1m7!3m6!1s0x39f5e38dfe795257:0x285b399e76600865!2sUnited+Peace+Foundation!8m2!3d22.8417228!4d86.1965133!16s%2Fg%2F11khsljlw7!3m5!1s0x39f5e38dfe795257:0x285b399e76600865!8m2!3d22.8417228!4d86.1965133!16s%2Fg%2F11khsljlw7?entry=ttu" target="_blank" class="d-flex text-white" style="text-decoration: none;">
-                      <span class="mr-3 fa fa-location-arrow"></span>
-                      <span>Zakir Nagar, Mango, Jamshedpur</span>
-                  </a>
-              </li>
+                        <li class="d-flex">
+                            <a href="https://www.google.com/maps/place/United+Peace+Foundation/@22.8419924,86.1944603,17z/data=!4m14!1m7!3m6!1s0x39f5e38dfe795257:0x285b399e76600865!2sUnited+Peace+Foundation!8m2!3d22.8417228!4d86.1965133!16s%2Fg%2F11khsljlw7!3m5!1s0x39f5e38dfe795257:0x285b399e76600865!8m2!3d22.8417228!4d86.1965133!16s%2Fg%2F11khsljlw7?entry=ttu"
+                                target="_blank" class="d-flex text-white" style="text-decoration: none;">
+                                <span class="mr-3 fa fa-location-arrow"></span>
+                                <span>Atmos Tower, Kenddih Main Road, Kapali, Mango, Jamshedpur, Jharkhand 831012</span>
+                            </a>
+                        </li>
                         <li class="d-flex">
                             <span class="mr-3 fa fa-phone"></span><span class="text-white">+91 7463062868</span>
                         </li>
@@ -246,7 +249,7 @@
     <script src="js/jquery.waypoints.min.js"></script>
     <script src="js/main.js"></script>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             load_gallery();
 
             function load_gallery(filterYear = 'all') {
@@ -254,11 +257,11 @@
                     url: 'api/index.php',
                     type: 'POST',
                     data: { gallery_action: 1 },
-                    success: function(response) {
+                    success: function (response) {
                         const galleryData = JSON.parse(response);
                         let years = new Set();
                         let output = '';
-                        
+
                         galleryData.forEach(item => {
                             years.add(item.year); // Assuming `year` is part of your response data
                             if (filterYear === 'all' || parseInt(filterYear) === parseInt(item.year)) {
@@ -274,7 +277,7 @@
 
                         $('.gallery').html(output);
 
-                        if(filterYear=='all'){
+                        if (filterYear == 'all') {
                             // Populate filters
                             let filterOutput = '<li><a href="#" data-filter="all" class="active">All</a></li>';
                             years.forEach(year => {
@@ -283,14 +286,14 @@
                             $('#gallery-filters').html(filterOutput);
                         }
                     },
-                    error: function(error) {
+                    error: function (error) {
                         console.error('Error loading gallery:', error);
                     }
                 });
             }
 
             // Event delegation for filter clicks
-            $('#gallery-filters').on('click', 'a', function(event) {
+            $('#gallery-filters').on('click', 'a', function (event) {
                 event.preventDefault();
                 const filterYear = $(this).data('filter');
                 $('#gallery-filters a').removeClass('active');
